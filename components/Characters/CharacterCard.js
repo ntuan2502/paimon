@@ -33,12 +33,21 @@ function CharacterCard({ characterName, localeGenshinData }) {
   if (error) return <div className="pt-16">failed to load</div>;
   if (!data) return <div className="pt-16">loading...</div>;
 
+  var nameCard = data.id;
+  if (nameCard == "hu_tao") nameCard = "Hu_Tao";
+  else if (nameCard == "traveler_anemo") nameCard = "Traveler_Anemo";
+  else if (nameCard == "traveler_geo") nameCard = "Traveler_Geo";
+
+  nameCard = nameCard.replace(/\w\S*/g, (w) =>
+    w.replace(/^\w/, (c) => c.toUpperCase())
+  );
+
   return (
     <Link href={`/characters/${data.id}`}>
       <div className="relative bg-white py-6 px-6 rounded-3xl w-96 my-4 hover:shadow-xl cursor-pointer">
         <img
           className="w-96 h-auto"
-          src={`/img/character/card/Character_${data.id.replace(/\w\S*/g, (w) => (w.replace(/^\w/, (c) => c.toUpperCase())))}_Card.webp`}
+          src={`/img/character/card/Character_${nameCard}_Card.webp`}
         />
         <div className="mt-8">
           <p className="text-xl font-semibold my-2">{data.name}</p>
