@@ -49,14 +49,14 @@ function CharacterSkill({ dataGenshinData, dataGenshinDB, name }) {
   return (
     <div>
       <div className="py-4 rounded-xl bg-item flex flex-col mb-4">
-        <div className="flex mb-2 items-start px-4">
+        <div className="mb-2 items-start px-4">
           <img
-            className={`w-16 h-16 mr-4 bg-blue-500 rounded-full`}
+            className={`w-16 h-16 mr-4 bg-blue-500 rounded-full float-left`}
             src={`/img/character/skills/${name}/talent_1.png`}
             alt=""
           />
           <div>
-            <p className="font-black font-display text-xl">
+            <p className="font-black font-display text-xl h-16 flex items-center">
               {dataGenshinData.skills[0].name}
             </p>
             <div
@@ -97,8 +97,17 @@ function CharacterSkill({ dataGenshinData, dataGenshinDB, name }) {
                   <tbody className="bg-white divide-y divide-gray-200">
                     {dataGenshinData.skills[0].attributes.map(
                       (attribute, index) => (
-                        <tr key={index} className={`${index % 2 != 0 ? "bg-green-100" : "bg-blue-100"}`}>
-                          <td className={`px-6 py-4 whitespace-nowrap text-sm text-gray-500 font-bold ${index % 2 != 0 ? "bg-green-200" : "bg-blue-200"}`}>
+                        <tr
+                          key={index}
+                          className={`${
+                            index % 2 != 0 ? "bg-green-100" : "bg-blue-100"
+                          }`}
+                        >
+                          <td
+                            className={`px-6 py-4 whitespace-nowrap text-sm text-gray-500 font-bold ${
+                              index % 2 != 0 ? "bg-green-200" : "bg-blue-200"
+                            }`}
+                          >
                             {attribute[0]}
                           </td>
                           {dataGenshinData.skills[0].attributes[0][1].map(
@@ -122,14 +131,14 @@ function CharacterSkill({ dataGenshinData, dataGenshinDB, name }) {
         </div>
       </div>
       <div className="py-4 rounded-xl bg-item flex flex-col mb-4">
-        <div className="flex mb-2 items-start px-4">
+        <div className="mb-2 items-start px-4">
           <img
-            className={`w-16 h-16 mr-4 bg-blue-500 rounded-full`}
+            className={`w-16 h-16 mr-4 bg-blue-500 rounded-full float-left`}
             src={`/img/character/skills/${name}/talent_2.png`}
             alt=""
           />
           <div>
-            <p className="font-black font-display text-xl">
+            <p className="font-black font-display text-xl h-16 flex items-center">
               {dataGenshinData.skills[1].name}
             </p>
             <div
@@ -170,8 +179,17 @@ function CharacterSkill({ dataGenshinData, dataGenshinDB, name }) {
                   <tbody className="bg-white divide-y divide-gray-200">
                     {dataGenshinData.skills[1].attributes.map(
                       (attribute, index) => (
-                        <tr key={index} className={`${index % 2 != 0 ? "bg-green-100" : "bg-blue-100"}`}>
-                          <td className={`px-6 py-4 whitespace-nowrap text-sm text-gray-500 font-bold ${index % 2 != 0 ? "bg-green-200" : "bg-blue-200"}`}>
+                        <tr
+                          key={index}
+                          className={`${
+                            index % 2 != 0 ? "bg-green-100" : "bg-blue-100"
+                          }`}
+                        >
+                          <td
+                            className={`px-6 py-4 whitespace-nowrap text-sm text-gray-500 font-bold ${
+                              index % 2 != 0 ? "bg-green-200" : "bg-blue-200"
+                            }`}
+                          >
                             {attribute[0]}
                           </td>
                           {dataGenshinData.skills[1].attributes[0][1].map(
@@ -195,12 +213,14 @@ function CharacterSkill({ dataGenshinData, dataGenshinDB, name }) {
         </div>
       </div>
       <div className="py-4 rounded-xl bg-item flex flex-col mb-4">
-        <div className="flex mb-2 items-start px-4">
+        <div className="mb-2 items-start px-4">
           <img
-            className={`w-16 h-16 mr-4 bg-blue-500 rounded-full`}
-            src={`/img/character/skills/${name}/talent_3.png`}
+            className={`w-16 h-16 mr-4 bg-blue-500 rounded-full float-left`}
+            src={`/img/character/skills/${name}/talent_${
+              name == "mona" ? "7" : "3"
+            }.png`}
             alt=""
-          />
+           h-16 flex items-center/>
           <div>
             <p className="font-black font-display text-xl">
               {dataGenshinData.skills[2].name}
@@ -243,8 +263,17 @@ function CharacterSkill({ dataGenshinData, dataGenshinDB, name }) {
                   <tbody className="bg-white divide-y divide-gray-200">
                     {dataGenshinData.skills[2].attributes.map(
                       (attribute, index) => (
-                        <tr key={index} className={`${index % 2 != 0 ? "bg-green-100" : "bg-blue-100"}`}>
-                          <td className={`px-6 py-4 whitespace-nowrap text-sm text-gray-500 font-bold ${index % 2 != 0 ? "bg-green-200" : "bg-blue-200"}`}>
+                        <tr
+                          key={index}
+                          className={`${
+                            index % 2 != 0 ? "bg-green-100" : "bg-blue-100"
+                          }`}
+                        >
+                          <td
+                            className={`px-6 py-4 whitespace-nowrap text-sm text-gray-500 font-bold ${
+                              index % 2 != 0 ? "bg-green-200" : "bg-blue-200"
+                            }`}
+                          >
                             {attribute[0]}
                           </td>
                           {dataGenshinData.skills[2].attributes[0][1].map(
@@ -267,6 +296,93 @@ function CharacterSkill({ dataGenshinData, dataGenshinDB, name }) {
           </div>
         </div>
       </div>
+
+      {dataGenshinData.skills[3] ? (
+        <div className="py-4 rounded-xl bg-item flex flex-col mb-4">
+          <div className="mb-2 items-start px-4">
+            <img
+              className={`w-16 h-16 mr-4 bg-blue-500 rounded-full float-left`}
+              src={`/img/character/skills/${name}/talent_3.png`}
+              alt=""
+            />
+            <div>
+              <p className="font-black font-display text-xl h-16 flex items-center">
+                {dataGenshinData.skills[3].name}
+              </p>
+              <div
+                className="py-2"
+                dangerouslySetInnerHTML={createMarkup(
+                  dataGenshinData.skills[3].description
+                )}
+              />
+            </div>
+          </div>
+          <div className="flex flex-col">
+            <div className="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+              <div className="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
+                <div className="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
+                  <table className="min-w-full divide-y divide-gray-200">
+                    <thead className="bg-gray-50">
+                      <tr className="bg-red-200">
+                        <th scope="col" className="relative px-6 py-3">
+                          <span className="sr-only">Level</span>
+                        </th>
+                        {dataGenshinData.skills[3].attributes[0][1].map(
+                          (value, key) => (
+                            <th
+                              key={key}
+                              scope="col"
+                              className="px-6 py-3 text-left text-xs text-gray-500 font-bold uppercase tracking-wider"
+                            >
+                              {key + 1}
+                            </th>
+                          )
+                        )}
+
+                        {/* <th scope="col" className="relative px-6 py-3">
+                        <span className="sr-only">Edit</span>
+                      </th> */}
+                      </tr>
+                    </thead>
+                    <tbody className="bg-white divide-y divide-gray-200">
+                      {dataGenshinData.skills[3].attributes.map(
+                        (attribute, index) => (
+                          <tr
+                            key={index}
+                            className={`${
+                              index % 2 != 0 ? "bg-green-100" : "bg-blue-100"
+                            }`}
+                          >
+                            <td
+                              className={`px-6 py-4 whitespace-nowrap text-sm text-gray-500 font-bold ${
+                                index % 2 != 0 ? "bg-green-200" : "bg-blue-200"
+                              }`}
+                            >
+                              {attribute[0]}
+                            </td>
+                            {dataGenshinData.skills[3].attributes[0][1].map(
+                              (value, key) => (
+                                <td
+                                  key={key}
+                                  className="px-4 py-4 whitespace-nowrap text-sm text-gray-500"
+                                >
+                                  {attribute[1][key]}
+                                </td>
+                              )
+                            )}
+                          </tr>
+                        )
+                      )}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      ) : (
+        ""
+      )}
     </div>
   );
 }

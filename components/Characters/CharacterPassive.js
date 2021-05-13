@@ -49,14 +49,14 @@ function CharacterPassive({ dataGenshinData, dataGenshinDB, name }) {
   return (
     <div>
       <div className="py-4 rounded-xl bg-item flex flex-col mb-4">
-        <div className="flex mb-2 items-start px-4">
+        <div className=" mb-2 items-start px-4">
           <img
-            className={`w-16 h-16 mr-4 bg-blue-500 rounded-full`}
+            className={`w-16 h-16 mr-4 bg-blue-500 rounded-full float-left`}
             src={`/img/character/skills/${name}/talent_4.png`}
             alt=""
           />
           <div>
-            <p className="font-black font-display text-xl">
+            <p className="font-black font-display text-xl h-16 flex items-center">
               {dataGenshinData.passives[0].name}
             </p>
             <div
@@ -69,14 +69,14 @@ function CharacterPassive({ dataGenshinData, dataGenshinDB, name }) {
         </div>
       </div>
       <div className="py-4 rounded-xl bg-item flex flex-col mb-4">
-        <div className="flex mb-2 items-start px-4">
+        <div className=" mb-2 items-start px-4">
           <img
-            className={`w-16 h-16 mr-4 bg-blue-500 rounded-full`}
+            className={`w-16 h-16 mr-4 bg-blue-500 rounded-full float-left`}
             src={`/img/character/skills/${name}/talent_5.png`}
             alt=""
           />
           <div>
-            <p className="font-black font-display text-xl">
+            <p className="font-black font-display text-xl h-16 flex items-center">
               {dataGenshinData.passives[1].name}
             </p>
             <div
@@ -90,14 +90,14 @@ function CharacterPassive({ dataGenshinData, dataGenshinDB, name }) {
       </div>
       {dataGenshinData.passives[2] ? (
         <div className="py-4 rounded-xl bg-item flex flex-col mb-4">
-          <div className="flex mb-2 items-start px-4">
+          <div className=" mb-2 items-start px-4">
             <img
-              className={`w-16 h-16 mr-4 bg-blue-500 rounded-full`}
+              className={`w-16 h-16 mr-4 bg-blue-500 rounded-full float-left`}
               src={`/img/character/skills/${name}/talent_6.png`}
               alt=""
             />
             <div>
-              <p className="font-black font-display text-xl">
+              <p className="font-black font-display text-xl h-16 flex items-center">
                 {dataGenshinData.passives[2].name}
               </p>
               <div

@@ -88,19 +88,39 @@ function Character() {
     errorGenshinDB = error;
   }
 
-  if (errorGenshinData) return <div className="pt-16">failed to load</div>;
-  if (!dataGenshinData) return <div className="pt-16">loading...</div>;
-  if (errorGenshinDB) return <div className="pt-16">failed to load</div>;
-  if (!dataGenshinDB) return <div className="pt-16">loading...</div>;
+  if (errorGenshinData)
+    return (
+      <div className="bg-white p-5 sm:p-3">
+        <div className="flex justify-center items-center mx-auto h-screen w-full sm:w-5/6">failed to load</div>
+      </div>
+    );
+  if (!dataGenshinData)
+    return (
+      <div className="bg-white p-5 sm:p-3">
+        <div className="flex justify-center items-center mx-auto h-screen w-full sm:w-5/6">loading...</div>
+      </div>
+    );
+  if (errorGenshinDB)
+    return (
+      <div className="bg-white p-5 sm:p-3">
+        <div className="flex justify-center items-center mx-auto h-screen w-full sm:w-5/6">failed to load</div>
+      </div>
+    );
+  if (!dataGenshinDB)
+    return (
+      <div className="bg-white p-5 sm:p-3">
+        <div className="flex justify-center items-center mx-auto h-screen w-full sm:w-5/6">loading...</div>
+      </div>
+    );
 
   return (
     <div>
       <Head>
         <title>Genshin | {dataGenshinData.name}</title>
       </Head>
-      <div className="pt-16">
-        <div className="bg-white flex flex-row flex-wrap p-3">
-          <div className="mx-auto w-5/6">
+      <div className="">
+        <div className="bg-white flex flex-row flex-wrap p-5 sm:p-3">
+          <div className="mx-auto w-full sm:w-5/6">
             <CharacterBackground
               dataGenshinData={dataGenshinData}
               dataGenshinDB={dataGenshinDB}

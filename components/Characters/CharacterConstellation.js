@@ -60,14 +60,14 @@ function CharacterConstellation({ dataGenshinData, dataGenshinDB }) {
   return (
     <div>
       <div className="py-4 rounded-xl bg-item flex flex-col mb-4">
-        <div className="flex mb-2 items-start px-4">
+        <div className="mb-2 items-start px-4">
           <img
-            className={`w-16 h-16 mr-4 bg-blue-500 rounded-full`}
+            className={`w-16 h-16 mr-4 bg-blue-500 rounded-full float-left`}
             src={data[name + ".json"].c1}
             alt=""
           />
           <div>
-            <p className="font-black font-display text-xl">
+            <p className="font-black font-display text-xl h-16 flex items-center">
               {dataGenshinData.constellations[0].name}
             </p>
             <div
@@ -80,14 +80,14 @@ function CharacterConstellation({ dataGenshinData, dataGenshinDB }) {
         </div>
       </div>
       <div className="py-4 rounded-xl bg-item flex flex-col mb-4">
-        <div className="flex mb-2 items-start px-4">
+        <div className="mb-2 items-start px-4">
           <img
-            className={`w-16 h-16 mr-4 bg-blue-500 rounded-full`}
+            className={`w-16 h-16 mr-4 bg-blue-500 rounded-full float-left`}
             src={data[name + ".json"].c2}
             alt=""
           />
           <div>
-            <p className="font-black font-display text-xl">
+            <p className="font-black font-display text-xl h-16 flex items-center">
               {dataGenshinData.constellations[1].name}
             </p>
             <div
@@ -100,14 +100,14 @@ function CharacterConstellation({ dataGenshinData, dataGenshinDB }) {
         </div>
       </div>
       <div className="py-4 rounded-xl bg-item flex flex-col mb-4">
-        <div className="flex mb-2 items-start px-4">
+        <div className="mb-2 items-start px-4">
           <img
-            className={`w-16 h-16 mr-4 bg-blue-500 rounded-full`}
+            className={`w-16 h-16 mr-4 bg-blue-500 rounded-full float-left`}
             src={data[name + ".json"].c3}
             alt=""
           />
           <div>
-            <p className="font-black font-display text-xl">
+            <p className="font-black font-display text-xl h-16 flex items-center">
               {dataGenshinData.constellations[2].name}
             </p>
             <div
@@ -120,14 +120,14 @@ function CharacterConstellation({ dataGenshinData, dataGenshinDB }) {
         </div>
       </div>
       <div className="py-4 rounded-xl bg-item flex flex-col mb-4">
-        <div className="flex mb-2 items-start px-4">
+        <div className="mb-2 items-start px-4">
           <img
-            className={`w-16 h-16 mr-4 bg-blue-500 rounded-full`}
+            className={`w-16 h-16 mr-4 bg-blue-500 rounded-full float-left`}
             src={data[name + ".json"].c4}
             alt=""
           />
           <div>
-            <p className="font-black font-display text-xl">
+            <p className="font-black font-display text-xl h-16 flex items-center">
               {dataGenshinData.constellations[3].name}
             </p>
             <div
@@ -140,14 +140,14 @@ function CharacterConstellation({ dataGenshinData, dataGenshinDB }) {
         </div>
       </div>
       <div className="py-4 rounded-xl bg-item flex flex-col mb-4">
-        <div className="flex mb-2 items-start px-4">
+        <div className="mb-2 items-start px-4">
           <img
-            className={`w-16 h-16 mr-4 bg-blue-500 rounded-full`}
+            className={`w-16 h-16 mr-4 bg-blue-500 rounded-full float-left`}
             src={data[name + ".json"].c5}
             alt=""
           />
           <div>
-            <p className="font-black font-display text-xl">
+            <p className="font-black font-display text-xl h-16 flex items-center">
               {dataGenshinData.constellations[4].name}
             </p>
             <div
@@ -160,14 +160,14 @@ function CharacterConstellation({ dataGenshinData, dataGenshinDB }) {
         </div>
       </div>
       <div className="py-4 rounded-xl bg-item flex flex-col mb-4">
-        <div className="flex mb-2 items-start px-4">
+        <div className="mb-2 items-start px-4">
           <img
-            className={`w-16 h-16 mr-4 bg-blue-500 rounded-full`}
+            className={`w-16 h-16 mr-4 bg-blue-500 rounded-full float-left`}
             src={data[name + ".json"].c6}
             alt=""
           />
           <div>
-            <p className="font-black font-display text-xl">
+            <p className="font-black font-display text-xl h-16 flex items-center">
               {dataGenshinData.constellations[5].name}
             </p>
             <div
