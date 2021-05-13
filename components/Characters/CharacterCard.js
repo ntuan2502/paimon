@@ -38,7 +38,7 @@ function CharacterCard({ characterName, localeGenshinData }) {
       <div className="relative bg-white py-6 px-6 rounded-3xl w-96 my-4 hover:shadow-xl cursor-pointer">
         <img
           className="w-96 h-auto"
-          src={`/img/character/card/Character_${data.id}_Card.webp`}
+          src={`/img/character/card/Character_${data.id.replace(/\w\S*/g, (w) => (w.replace(/^\w/, (c) => c.toUpperCase())))}_Card.webp`}
         />
         <div className="mt-8">
           <p className="text-xl font-semibold my-2">{data.name}</p>
