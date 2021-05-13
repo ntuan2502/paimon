@@ -44,7 +44,9 @@ function CharacterAscension({ dataGenshinData, dataGenshinDB, name }) {
                         className="px-6 py-3 text-xs text-gray-500 font-bold capitalize tracking-wider"
                       >
                         <div className="flex justify-center items-center">
-                          <div className="px-2">{dataGenshinData.ascension[1].mat1.name}</div>
+                          <div className="px-2">
+                            {dataGenshinData.ascension[1].mat1.name}
+                          </div>
                           <img
                             src={`/img/item/${dataGenshinData.ascension[1].mat1.id}.png`}
                             className="w-auto h-10"
@@ -52,25 +54,41 @@ function CharacterAscension({ dataGenshinData, dataGenshinDB, name }) {
                           />
                         </div>
                       </th>
+                      {dataGenshinData.ascension[1].mat2 ? (
+                        <th
+                          scope="col"
+                          className="px-6 py-3 text-xs text-gray-500 font-bold capitalize tracking-wider"
+                        >
+                          <div className="flex justify-center items-center">
+                            <div className="px-2">
+                              {dataGenshinData.ascension[1].mat2.name}
+                            </div>
+                            <img
+                              src={`/img/item/${dataGenshinData.ascension[1].mat2.id}.png`}
+                              className="w-auto h-10"
+                              alt=""
+                            />
+                          </div>
+                        </th>
+                      ) : (
+                        <th
+                          scope="col"
+                          className="px-6 py-3 text-xs text-gray-500 font-bold capitalize tracking-wider"
+                        >
+                          <div className="flex justify-center items-center">
+                            <div className="px-2">null</div>
+                          </div>
+                        </th>
+                      )}
+
                       <th
                         scope="col"
                         className="px-6 py-3 text-xs text-gray-500 font-bold capitalize tracking-wider"
                       >
                         <div className="flex justify-center items-center">
-                          <div className="px-2">{dataGenshinData.ascension[1].mat2.name}</div>
-                          <img
-                            src={`/img/item/${dataGenshinData.ascension[1].mat2.id}.png`}
-                            className="w-auto h-10"
-                            alt=""
-                          />
-                        </div>
-                      </th>
-                      <th
-                        scope="col"
-                        className="px-6 py-3 text-xs text-gray-500 font-bold capitalize tracking-wider"
-                      >
-                        <div className="flex justify-center items-center">
-                          <div className="px-2">{dataGenshinData.ascension[1].mat3.name}</div>
+                          <div className="px-2">
+                            {dataGenshinData.ascension[1].mat3.name}
+                          </div>
                           <img
                             src={`/img/item/${dataGenshinData.ascension[1].mat3.id}.png`}
                             className="w-auto h-10"
@@ -83,7 +101,9 @@ function CharacterAscension({ dataGenshinData, dataGenshinDB, name }) {
                         className="px-6 py-3 text-xs text-gray-500 font-bold capitalize tracking-wider"
                       >
                         <div className="flex justify-center items-center">
-                          <div className="px-2">{dataGenshinData.ascension[1].mat4.name}</div>
+                          <div className="px-2">
+                            {dataGenshinData.ascension[1].mat4.name}
+                          </div>
                           <img
                             src={`/img/item/${dataGenshinData.ascension[1].mat4.id}.png`}
                             className="w-auto h-10"
