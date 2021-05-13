@@ -44,7 +44,7 @@ function CharacterTalentMaterials({ dataGenshinData, dataGenshinDB, name }) {
                               <div className="flex items-center">
                                 <img
                                   src={`/img/item/mora.png`}
-                                  className="w-auto h-10"
+                                  className="w-10 h-auto"
                                   alt=""
                                 />
                                 <div className="px-2 flex">
@@ -59,7 +59,7 @@ function CharacterTalentMaterials({ dataGenshinData, dataGenshinDB, name }) {
                                   <div key={key} className="flex items-center">
                                     <img
                                       src={`/img/item/${value.id}.png`}
-                                      className="w-auto h-10"
+                                      className="w-10 h-auto"
                                       alt=""
                                     />
                                     <div className="px-2 flex">
