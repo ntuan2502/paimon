@@ -2,6 +2,8 @@ import CharacterBackground from "../../components/Characters/CharacterBackground
 import CharacterConstellation from "../../components/Characters/CharacterConstellation";
 import CharacterSkill from "../../components/Characters/CharacterSkill";
 import CharacterPassive from "../../components/Characters/CharacterPassive";
+import CharacterAscension from "../../components/Characters/CharacterAscension";
+import CharacterTalentMaterials from "../../components/Characters/CharacterTalentMaterials";
 import { useRouter } from "next/router";
 import Head from "next/head";
 import useSWR from "swr";
@@ -127,6 +129,16 @@ function Character() {
               name={name}
             />
             <br />
+            <CharacterAscension
+              dataGenshinData={dataGenshinData}
+              dataGenshinDB={dataGenshinDB}
+              name={name}
+            />
+            <CharacterTalentMaterials
+              dataGenshinData={dataGenshinData}
+              dataGenshinDB={dataGenshinDB}
+              name={name}
+            />
             <CharacterSkill
               dataGenshinData={dataGenshinData}
               dataGenshinDB={dataGenshinDB}

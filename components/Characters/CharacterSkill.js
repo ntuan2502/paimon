@@ -220,9 +220,9 @@ function CharacterSkill({ dataGenshinData, dataGenshinDB, name }) {
               name == "mona" ? "7" : "3"
             }.png`}
             alt=""
-           h-16 flex items-center/>
+          />
           <div>
-            <p className="font-black font-display text-xl">
+            <p className="font-black font-display text-xl h-16 flex items-center">
               {dataGenshinData.skills[2].name}
             </p>
             <div
