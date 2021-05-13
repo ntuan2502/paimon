@@ -30,8 +30,22 @@ function CharacterCard({ characterName, localeGenshinData }) {
       characterName
   );
 
-  if (error) return <div className="pt-16">failed to load</div>;
-  if (!data) return <div className="pt-16">loading...</div>;
+  if (error)
+    return (
+      <div className="bg-white p-5 sm:p-3">
+        <div className="flex justify-center items-center mx-auto h-screen w-full sm:w-5/6">
+          failed to load
+        </div>
+      </div>
+    );
+  if (!data)
+    return (
+      <div className="bg-white p-5 sm:p-3">
+        <div className="flex justify-center items-center mx-auto h-screen w-full sm:w-5/6">
+          loading...
+        </div>
+      </div>
+    );
 
   var nameCard = data.id;
   if (nameCard == "hu_tao") nameCard = "Hu_Tao";

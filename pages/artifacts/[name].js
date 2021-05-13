@@ -110,13 +110,53 @@ const Artifact = () => {
   }
 
   if (errorArtifactGenshinData)
-    return <div className="pt-16">failed to load</div>;
-  if (!dataArtifactGenshinData) return <div className="pt-16">loading...</div>;
+    return (
+      <div className="bg-white p-5 sm:p-3">
+        <div className="flex justify-center items-center mx-auto h-screen w-full sm:w-5/6">
+          failed to load
+        </div>
+      </div>
+    );
+  if (!dataArtifactGenshinData)
+    return (
+      <div className="bg-white p-5 sm:p-3">
+        <div className="flex justify-center items-center mx-auto h-screen w-full sm:w-5/6">
+          loading...
+        </div>
+      </div>
+    );
   if (errorArtifactGenshinDB)
-    return <div className="pt-16">failed to load</div>;
-  if (!dataArtifactGenshinDB) return <div className="pt-16">loading...</div>;
-  if (errorImages) return <div className="pt-16">failed to load</div>;
-  if (!dataImages) return <div className="pt-16">loading...</div>;
+    return (
+      <div className="bg-white p-5 sm:p-3">
+        <div className="flex justify-center items-center mx-auto h-screen w-full sm:w-5/6">
+          failed to load
+        </div>
+      </div>
+    );
+  if (!dataArtifactGenshinDB)
+    return (
+      <div className="bg-white p-5 sm:p-3">
+        <div className="flex justify-center items-center mx-auto h-screen w-full sm:w-5/6">
+          loading...
+        </div>
+      </div>
+    );
+  if (errorImages)
+    return (
+      <div className="bg-white p-5 sm:p-3">
+        <div className="flex justify-center items-center mx-auto h-screen w-full sm:w-5/6">
+          failed to load
+        </div>
+      </div>
+    );
+  if (!dataImages)
+    return (
+      <div className="bg-white p-5 sm:p-3">
+        <div className="flex justify-center items-center mx-auto h-screen w-full sm:w-5/6">
+          loading...
+        </div>
+      </div>
+    );
 
   return (
     <div>
@@ -166,10 +206,10 @@ const Artifact = () => {
                   {dataArtifactGenshinDB.flower.relictype}
                 </p>
                 <div className="text-lg text-white font-semibold px-5 py-1 pt-5">
-                    ---
+                  ---
                 </div>
                 <div className="text-xl text-white font-bold px-5 py-1">
-                    ---
+                  ---
                 </div>
                 <div className="px-5 pt-2 py-2">
                   <div
@@ -183,18 +223,10 @@ const Artifact = () => {
                 <div className="border-t-2 border-black"></div>
               </div>
               <div className="bg-gray-200 pb-3 text-lg">
-                <div className="text-lg font-bold px-10 pt-5 py-1">
-                    ---
-                </div>
-                <div className="text-lg font-bold px-10 py-1">
-                    ---
-                </div>
-                <div className="text-lg font-bold px-10 py-1">
-                    ---
-                </div>
-                <div className="text-lg font-bold px-10 py-1">
-                    ---
-                </div>
+                <div className="text-lg font-bold px-10 pt-5 py-1">---</div>
+                <div className="text-lg font-bold px-10 py-1">---</div>
+                <div className="text-lg font-bold px-10 py-1">---</div>
+                <div className="text-lg font-bold px-10 py-1">---</div>
                 <p className="text-lg text-green-400 font-semibold px-5 pt-1 pb-1">
                   {dataArtifactGenshinData.name}:
                 </p>
@@ -312,10 +344,10 @@ const Artifact = () => {
                   {dataArtifactGenshinDB.plume.relictype}
                 </p>
                 <div className="text-lg text-white font-semibold px-5 py-1 pt-5">
-                    ---
+                  ---
                 </div>
                 <div className="text-xl text-white font-bold px-5 py-1">
-                    ---
+                  ---
                 </div>
                 <div className="px-5 pt-2 py-2">
                   <div
@@ -329,18 +361,10 @@ const Artifact = () => {
                 <div className="border-t-2 border-black"></div>
               </div>
               <div className="bg-gray-200 pb-3 text-lg">
-                <div className="text-lg font-bold px-10 pt-5 py-1">
-                    ---
-                </div>
-                <div className="text-lg font-bold px-10 py-1">
-                    ---
-                </div>
-                <div className="text-lg font-bold px-10 py-1">
-                    ---
-                </div>
-                <div className="text-lg font-bold px-10 py-1">
-                    ---
-                </div>
+                <div className="text-lg font-bold px-10 pt-5 py-1">---</div>
+                <div className="text-lg font-bold px-10 py-1">---</div>
+                <div className="text-lg font-bold px-10 py-1">---</div>
+                <div className="text-lg font-bold px-10 py-1">---</div>
                 <p className="text-lg text-green-400 font-semibold px-5 pt-1 pb-1">
                   {dataArtifactGenshinData.name}:
                 </p>
@@ -458,10 +482,10 @@ const Artifact = () => {
                   {dataArtifactGenshinDB.sands.relictype}
                 </p>
                 <div className="text-lg text-white font-semibold px-5 py-1 pt-5">
-                    ---
+                  ---
                 </div>
                 <div className="text-xl text-white font-bold px-5 py-1">
-                    ---
+                  ---
                 </div>
                 <div className="px-5 pt-2 py-2">
                   <div
@@ -475,18 +499,10 @@ const Artifact = () => {
                 <div className="border-t-2 border-black"></div>
               </div>
               <div className="bg-gray-200 pb-3 text-lg">
-                <div className="text-lg font-bold px-10 pt-5 py-1">
-                    ---
-                </div>
-                <div className="text-lg font-bold px-10 py-1">
-                    ---
-                </div>
-                <div className="text-lg font-bold px-10 py-1">
-                    ---
-                </div>
-                <div className="text-lg font-bold px-10 py-1">
-                    ---
-                </div>
+                <div className="text-lg font-bold px-10 pt-5 py-1">---</div>
+                <div className="text-lg font-bold px-10 py-1">---</div>
+                <div className="text-lg font-bold px-10 py-1">---</div>
+                <div className="text-lg font-bold px-10 py-1">---</div>
                 <p className="text-lg text-green-400 font-semibold px-5 pt-1 pb-1">
                   {dataArtifactGenshinData.name}:
                 </p>
@@ -604,10 +620,10 @@ const Artifact = () => {
                   {dataArtifactGenshinDB.goblet.relictype}
                 </p>
                 <div className="text-lg text-white font-semibold px-5 py-1 pt-5">
-                    ---
+                  ---
                 </div>
                 <div className="text-xl text-white font-bold px-5 py-1">
-                    ---
+                  ---
                 </div>
                 <div className="px-5 pt-2 py-2">
                   <div
@@ -621,18 +637,10 @@ const Artifact = () => {
                 <div className="border-t-2 border-black"></div>
               </div>
               <div className="bg-gray-200 pb-3 text-lg">
-                <div className="text-lg font-bold px-10 pt-5 py-1">
-                    ---
-                </div>
-                <div className="text-lg font-bold px-10 py-1">
-                    ---
-                </div>
-                <div className="text-lg font-bold px-10 py-1">
-                    ---
-                </div>
-                <div className="text-lg font-bold px-10 py-1">
-                    ---
-                </div>
+                <div className="text-lg font-bold px-10 pt-5 py-1">---</div>
+                <div className="text-lg font-bold px-10 py-1">---</div>
+                <div className="text-lg font-bold px-10 py-1">---</div>
+                <div className="text-lg font-bold px-10 py-1">---</div>
                 <p className="text-lg text-green-400 font-semibold px-5 pt-1 pb-1">
                   {dataArtifactGenshinData.name}:
                 </p>
@@ -750,10 +758,10 @@ const Artifact = () => {
                   {dataArtifactGenshinDB.circlet.relictype}
                 </p>
                 <div className="text-lg text-white font-semibold px-5 py-1 pt-5">
-                    ---
+                  ---
                 </div>
                 <div className="text-xl text-white font-bold px-5 py-1">
-                    ---
+                  ---
                 </div>
                 <div className="px-5 pt-2 py-2">
                   <div
@@ -767,18 +775,10 @@ const Artifact = () => {
                 <div className="border-t-2 border-black"></div>
               </div>
               <div className="bg-gray-200 pb-3 text-lg">
-                <div className="text-lg font-bold px-10 pt-5 py-1">
-                    ---
-                </div>
-                <div className="text-lg font-bold px-10 py-1">
-                    ---
-                </div>
-                <div className="text-lg font-bold px-10 py-1">
-                    ---
-                </div>
-                <div className="text-lg font-bold px-10 py-1">
-                    ---
-                </div>
+                <div className="text-lg font-bold px-10 pt-5 py-1">---</div>
+                <div className="text-lg font-bold px-10 py-1">---</div>
+                <div className="text-lg font-bold px-10 py-1">---</div>
+                <div className="text-lg font-bold px-10 py-1">---</div>
                 <p className="text-lg text-green-400 font-semibold px-5 pt-1 pb-1">
                   {dataArtifactGenshinData.name}:
                 </p>

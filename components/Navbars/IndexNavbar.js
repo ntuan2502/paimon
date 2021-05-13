@@ -40,7 +40,7 @@ const solutions = [
   {
     name: "Foods",
     description: "",
-    href: "/weapons",
+    href: "/foods",
     icon: BeakerIcon,
   },
   {
@@ -49,12 +49,12 @@ const solutions = [
     href: "/weapons",
     icon: FireIcon,
   },
-  {
-    name: "Other",
-    description: "",
-    href: "#",
-    icon: PlusSmIcon,
-  },
+  // {
+  //   name: "Other",
+  //   description: "",
+  //   href: "#",
+  //   icon: PlusSmIcon,
+  // },
 ];
 const callsToAction = [
   { name: "Watch Demo", href: "#", icon: PlayIcon },

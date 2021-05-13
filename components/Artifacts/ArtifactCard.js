@@ -46,10 +46,38 @@ function ArtifactCard({ artifactName, localeGenshinData }) {
     errorImages = error;
   }
 
-  if (errorArtifact) return <div className="pt-16">failed to load</div>;
-  if (!dataArtifact) return <div className="pt-16">loading...</div>;
-  if (errorImages) return <div className="pt-16">failed to load</div>;
-  if (!dataImages) return <div className="pt-16">loading...</div>;
+  if (errorArtifact)
+    return (
+      <div className="bg-white p-5 sm:p-3">
+        <div className="flex justify-center items-center mx-auto h-screen w-full sm:w-5/6">
+          failed to load
+        </div>
+      </div>
+    );
+  if (!dataArtifact)
+    return (
+      <div className="bg-white p-5 sm:p-3">
+        <div className="flex justify-center items-center mx-auto h-screen w-full sm:w-5/6">
+          loading...
+        </div>
+      </div>
+    );
+  if (errorImages)
+    return (
+      <div className="bg-white p-5 sm:p-3">
+        <div className="flex justify-center items-center mx-auto h-screen w-full sm:w-5/6">
+          failed to load
+        </div>
+      </div>
+    );
+  if (!dataImages)
+    return (
+      <div className="bg-white p-5 sm:p-3">
+        <div className="flex justify-center items-center mx-auto h-screen w-full sm:w-5/6">
+          loading...
+        </div>
+      </div>
+    );
 
   return (
     <Link href={`/artifacts/${dataArtifact.id}`}>

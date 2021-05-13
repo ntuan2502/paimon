@@ -1,4 +1,3 @@
-// import { promises as fs } from "fs";
 import { useRouter } from "next/router";
 import ArtifactCard from "../../components/Artifacts/ArtifactCard";
 import Head from "next/head";

@@ -93,25 +93,33 @@ function Character() {
   if (errorGenshinData)
     return (
       <div className="bg-white p-5 sm:p-3">
-        <div className="flex justify-center items-center mx-auto h-screen w-full sm:w-5/6">failed to load</div>
+        <div className="flex justify-center items-center mx-auto h-screen w-full sm:w-5/6">
+          failed to load
+        </div>
       </div>
     );
   if (!dataGenshinData)
     return (
       <div className="bg-white p-5 sm:p-3">
-        <div className="flex justify-center items-center mx-auto h-screen w-full sm:w-5/6">loading...</div>
+        <div className="flex justify-center items-center mx-auto h-screen w-full sm:w-5/6">
+          loading...
+        </div>
       </div>
     );
   if (errorGenshinDB)
     return (
       <div className="bg-white p-5 sm:p-3">
-        <div className="flex justify-center items-center mx-auto h-screen w-full sm:w-5/6">failed to load</div>
+        <div className="flex justify-center items-center mx-auto h-screen w-full sm:w-5/6">
+          failed to load
+        </div>
       </div>
     );
   if (!dataGenshinDB)
     return (
       <div className="bg-white p-5 sm:p-3">
-        <div className="flex justify-center items-center mx-auto h-screen w-full sm:w-5/6">loading...</div>
+        <div className="flex justify-center items-center mx-auto h-screen w-full sm:w-5/6">
+          loading...
+        </div>
       </div>
     );
 
