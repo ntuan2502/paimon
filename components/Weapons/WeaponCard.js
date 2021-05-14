@@ -226,7 +226,7 @@ function WeaponCard({ weaponName, localeGenshinData, dataImages }) {
             </svg>
           </div>
         </div>
-        {/* {dataWeapon.refinements.length > 0 ? (
+        {dataWeapon.refinements.length > 0 ? (
           <div className="text-white flex justify-around pt-3">
             <div
               onClick={() => setWeaponState(1)}
@@ -271,7 +271,7 @@ function WeaponCard({ weaponName, localeGenshinData, dataImages }) {
           </div>
         ) : (
           ""
-        )} */}
+        )}
 
         {dataWeapon.passive != "" ? (
           <div className="font-bold px-5 pt-3">{dataWeapon.passive}</div>
@@ -279,12 +279,11 @@ function WeaponCard({ weaponName, localeGenshinData, dataImages }) {
           ""
         )}
 
-        <div className="font-bold px-5 py-0">
-          {" "}
+        {/* <div className="font-bold px-5 py-0">
           <div dangerouslySetInnerHTML={replaceMarkup(dataWeapon.bonus)} />
-        </div>
+        </div> */}
 
-        {/* {dataWeapon.refinements.length > 0 ? (
+        {dataWeapon.refinements.length > 0 ? (
           <div className="font-bold px-5 py-0">
             {dataWeapon.refinements[0] && weaponState == 1 ? (
               <div
@@ -334,7 +333,7 @@ function WeaponCard({ weaponName, localeGenshinData, dataImages }) {
           </div>
         ) : (
           ""
-        )} */}
+        )}
 
         <div className="font-semibold px-5 py-3">{dataWeapon.description}</div>
       </div>
