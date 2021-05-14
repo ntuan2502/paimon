@@ -405,6 +405,58 @@ export default function IndexNavbar() {
                   </div>
                   <div className="mt-6">
                     <nav className="grid gap-y-8">
+                      <div className="-m-3 p-3 flex justify-end items-center rounded-md hover:bg-gray-50">
+                        <span className="ml-3 text-base font-medium text-gray-900">
+                          <div className="flex items-center justify-end md:flex-1 lg:w-0">
+                            <Menu as="div" className="ml-3 relative">
+                              {({ open }) => (
+                                <>
+                                  <div>
+                                    <Menu.Button className="max-w-xs bg-gray-800 rounded-full flex items-center text-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
+                                      <span className="sr-only">
+                                        Open user menu
+                                      </span>
+                                      <img
+                                        className="h-8 rounded-full"
+                                        src={`/img/flag/${locale}.bmp`}
+                                        alt=""
+                                      />
+                                    </Menu.Button>
+                                  </div>
+                                  <Transition
+                                    show={open}
+                                    as={Fragment}
+                                    enter="transition ease-out duration-100"
+                                    enterFrom="transform opacity-0 scale-95"
+                                    enterTo="transform opacity-100 scale-100"
+                                    leave="transition ease-in duration-75"
+                                    leaveFrom="transform opacity-100 scale-100"
+                                    leaveTo="transform opacity-0 scale-95"
+                                  >
+                                    <Menu.Items
+                                      static
+                                      className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
+                                    >
+                                      <Language language="vi" />
+                                      <Language language="en" />
+                                      <Language language="chs" />
+                                      <Language language="cht" />
+                                      <Language language="fr" />
+                                      <Language language="de" />
+                                      <Language language="id" />
+                                      <Language language="ja" />
+                                      <Language language="ko" />
+                                      <Language language="pt" />
+                                      <Language language="ru" />
+                                      <Language language="th" />
+                                    </Menu.Items>
+                                  </Transition>
+                                </>
+                              )}
+                            </Menu>
+                          </div>
+                        </span>
+                      </div>
                       <Link href="/">
                         <a className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50">
                           {/* <item.icon

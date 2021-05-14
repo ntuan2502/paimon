@@ -1,6 +1,6 @@
 {
   "name": "paimon",
-  "version": "0.1.0",
+  "version": "1.5.1",
   "private": true,
   "scripts": {
     "run-dev": "tailwind build styles/index.css -o styles/tailwind-custom.css && next dev",

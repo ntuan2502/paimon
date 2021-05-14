@@ -1,7 +1,9 @@
+import packageInfo  from "../../package.json";
+
 const Footer = () => {
   return (
     <footer className="relative bg-blueGray-200 pt-8 pb-6">
-      {/* <div
+      <div
         className="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20 h-20"
         style={{ transform: "translateZ(0)" }}
       >
@@ -19,39 +21,39 @@ const Footer = () => {
             points="2560 0 2560 100 0 100"
           ></polygon>
         </svg>
-      </div> */}
+      </div>
       <div className="container mx-auto px-4">
-        {/* <div className="flex flex-wrap text-center lg:text-left">
+        <div className="flex flex-wrap text-center lg:text-left">
           <div className="w-full lg:w-6/12 px-4">
-            <h4 className="text-3xl font-semibold">Let's keep in touch!</h4>
+            <h4 className="text-3xl font-semibold">Follow me!</h4>
             <h5 className="text-lg mt-0 mb-2 text-blueGray-600">
-              Find us on any of these platforms, we respond 1-2 business days.
+              Website version <b>{packageInfo.version}</b>
             </h5>
             <div className="mt-6 lg:mb-0 mb-6">
-              <button
-                className="bg-white text-lightBlue-400 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
-                type="button"
-              >
-                <i className="fab fa-twitter"></i>
-              </button>
-              <button
-                className="bg-white text-lightBlue-600 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
-                type="button"
-              >
-                <i className="fab fa-facebook-square"></i>
-              </button>
-              <button
-                className="bg-white text-pink-400 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
-                type="button"
-              >
-                <i className="fab fa-dribbble"></i>
-              </button>
-              <button
-                className="bg-white text-blueGray-800 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
-                type="button"
-              >
-                <i className="fab fa-github"></i>
-              </button>
+              <a href="https://www.youtube.com/c/petun" target="_blank">
+                <button
+                  className="bg-white text-red-500 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
+                  type="button"
+                >
+                  <i className="fab fa-youtube"></i>
+                </button>
+              </a>
+              <a href="https://www.facebook.com/petun.2502" target="_blank">
+                <button
+                  className="bg-white text-lightBlue-600 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
+                  type="button"
+                >
+                  <i className="fab fa-facebook-square"></i>
+                </button>
+              </a>
+              <a href="https://www.github.com/ntuan2502" target="_blank">
+                <button
+                  className="bg-white text-blueGray-800 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
+                  type="button"
+                >
+                  <i className="fab fa-github"></i>
+                </button>
+              </a>
             </div>
           </div>
           <div className="w-full lg:w-6/12 px-4">
@@ -64,33 +66,28 @@ const Footer = () => {
                   <li>
                     <a
                       className="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm"
-                      href="https://www.creative-tim.com/presentation?ref=nnjs-footer"
+                      href="https://www.youtube.com/c/petun"
+                      target="_blank"
                     >
-                      About Us
+                      Youtube
                     </a>
                   </li>
                   <li>
                     <a
                       className="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm"
-                      href="https://blog.creative-tim.com?ref=nnjs-footer"
+                      href="https://www.facebook.com/petun.2502"
+                      target="_blank"
                     >
-                      Blog
+                      Facebook
                     </a>
                   </li>
                   <li>
                     <a
                       className="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm"
-                      href="https://www.github.com/creativetimofficial?ref=nnjs-footer"
+                      href="https://www.github.com/ntuan2502"
+                      target="_blank"
                     >
                       Github
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      className="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm"
-                      href="https://www.creative-tim.com/bootstrap-themes/free?ref=nnjs-footer"
-                    >
-                      Free Products
                     </a>
                   </li>
                 </ul>
@@ -103,7 +100,7 @@ const Footer = () => {
                   <li>
                     <a
                       className="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm"
-                      href="https://github.com/creativetimofficial/notus-nextjs/blob/main/LICENSE.md?ref=nnjs-footer"
+                      href="#"
                     >
                       MIT License
                     </a>
@@ -111,7 +108,7 @@ const Footer = () => {
                   <li>
                     <a
                       className="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm"
-                      href="https://creative-tim.com/terms?ref=nnjs-footer"
+                      href="#"
                     >
                       Terms & Conditions
                     </a>
@@ -119,7 +116,7 @@ const Footer = () => {
                   <li>
                     <a
                       className="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm"
-                      href="https://creative-tim.com/privacy?ref=nnjs-footer"
+                      href="#"
                     >
                       Privacy Policy
                     </a>
@@ -127,7 +124,7 @@ const Footer = () => {
                   <li>
                     <a
                       className="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm"
-                      href="https://creative-tim.com/contact-us?ref=nnjs-footer"
+                      href="#"
                     >
                       Contact Us
                     </a>
@@ -136,19 +133,12 @@ const Footer = () => {
               </div>
             </div>
           </div>
-        </div> */}
+        </div>
         <hr className="my-6 border-blueGray-300" />
         <div className="flex flex-wrap items-center md:justify-between justify-center">
           <div className="w-full md:w-4/12 px-4 mx-auto text-center">
             <div className="text-sm text-blueGray-500 font-semibold py-1">
-              Copyright © {new Date().getFullYear()} Rika by{" "}
-              <a
-                href="#"
-                className="text-blueGray-500 hover:text-blueGray-800"
-              >
-                Pé Tún
-              </a>
-              .
+              Copyright © {new Date().getFullYear()} by Pé Tún.
             </div>
           </div>
         </div>

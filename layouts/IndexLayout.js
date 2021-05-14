@@ -5,7 +5,7 @@ const Index = ({ children }) => {
   return (
     <div>
       <IndexNavbar />
-      <div className="select-none py-16 pb-96 md:pb-20">{children}</div>
+      <div className="select-none py-16 pb-24 md:pb-20">{children}</div>
       <IndexFooter />
     </div>
   );
