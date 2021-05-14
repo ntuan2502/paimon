@@ -128,8 +128,8 @@ function Character() {
       <Head>
         <title>Genshin | {dataGenshinData.name}</title>
       </Head>
-      <div className="">
-        <div className="bg-white flex flex-row flex-wrap p-5 sm:p-3">
+      <div className="py-5">
+        <div className="bg-white flex flex-row flex-wrap p-5 ">
           <div className="mx-auto w-full sm:w-5/6">
             <CharacterBackground
               dataGenshinData={dataGenshinData}

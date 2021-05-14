@@ -152,7 +152,7 @@ const Artifact = () => {
       <Head>
         <title>Genshin | {dataArtifactGenshinData.name}</title>
       </Head>
-      <div className="pt-16">
+      <div className="py-5">
         <div className="flex items-center justify-center">
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
             <div className="w-96 hover:shadow-xl">

@@ -63,16 +63,18 @@ function Characters() {
       <Head>
         <title>Genshin | Characters</title>
       </Head>
-      <div className="pt-16">
-        <div className="flex items-center justify-center">
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
-            {characters.map((characterName, index) => (
-              <CharacterCard characterName={characterName} localeGenshinData={localeGenshinData} key={index} />
-            ))}
-            {/* {posts.map((post, index) => (
+      <div className="flex items-center justify-center">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
+          {characters.map((characterName, index) => (
+            <CharacterCard
+              characterName={characterName}
+              localeGenshinData={localeGenshinData}
+              key={index}
+            />
+          ))}
+          {/* {posts.map((post, index) => (
               <Character data={post} key={index} />
             ))} */}
-          </div>
         </div>
       </div>
     </div>

@@ -74,19 +74,46 @@ function WeaponCard({ weaponName, localeGenshinData, dataImages }) {
         <img
           className="w-40 h-auto float-right p-2"
           src={`${
-            dataImages[dataWeapon.id.replace(/_/g, "") + ".json"]
-              ? dataImages[dataWeapon.id.replace(/_/g, "") + ".json"].icon
-              : ""
+            level < 6
+              ? dataImages[dataWeapon.id.replace(/_/g, "") + ".json"]
+                ? dataImages[dataWeapon.id.replace(/_/g, "") + ".json"].icon
+                : ""
+              : dataImages[dataWeapon.id.replace(/_/g, "") + ".json"]
+              ? dataImages[dataWeapon.id.replace(/_/g, "") + ".json"].awakenicon
+              : dataImages[dataWeapon.id.replace(/_/g, "") + ".json"].icon
           }`}
         />
-        <p className="text-md text-white font-bold px-5 pt-1">{dataWeapon.type}</p>
+        <p className="text-md text-white font-bold px-5 pt-1">
+          {dataWeapon.type}
+        </p>
         {dataWeapon.secondary ? (
           <div>
             <p className="text-md text-white font-semibold px-5">
               {dataWeapon.secondary.name}
             </p>
             <p className="text-md text-white font-bold px-5">
-              {dataWeapon.secondary.value}
+              {level == 0 ? dataWeapon.secondary.value : ""}
+              {level == 1 && dataWeapon.ascensions[0]
+                ? dataWeapon.ascensions[0].secondary
+                : ""}
+              {level == 2 && dataWeapon.ascensions[1]
+                ? dataWeapon.ascensions[1].secondary
+                : ""}
+              {level == 3 && dataWeapon.ascensions[2]
+                ? dataWeapon.ascensions[2].secondary
+                : ""}
+              {level == 4 && dataWeapon.ascensions[3]
+                ? dataWeapon.ascensions[3].secondary
+                : ""}
+              {level == 5 && dataWeapon.ascensions[4]
+                ? dataWeapon.ascensions[4].secondary
+                : ""}
+              {level == 6 && dataWeapon.ascensions[5]
+                ? dataWeapon.ascensions[5].secondary
+                : ""}
+              {level == 7 && dataWeapon.ascensions[6]
+                ? dataWeapon.ascensions[6].secondary
+                : ""}
             </p>
           </div>
         ) : (
@@ -99,7 +126,28 @@ function WeaponCard({ weaponName, localeGenshinData, dataImages }) {
           {dataWeapon.primary.name}
         </p>
         <p className="text-4xl text-white font-bold px-5">
-          {dataWeapon.primary.value}
+          {level == 0 ? dataWeapon.primary.value : ""}
+          {level == 1 && dataWeapon.ascensions[0]
+            ? dataWeapon.ascensions[0].primary
+            : ""}
+          {level == 2 && dataWeapon.ascensions[1]
+            ? dataWeapon.ascensions[1].primary
+            : ""}
+          {level == 3 && dataWeapon.ascensions[2]
+            ? dataWeapon.ascensions[2].primary
+            : ""}
+          {level == 4 && dataWeapon.ascensions[3]
+            ? dataWeapon.ascensions[3].primary
+            : ""}
+          {level == 5 && dataWeapon.ascensions[4]
+            ? dataWeapon.ascensions[4].primary
+            : ""}
+          {level == 6 && dataWeapon.ascensions[5]
+            ? dataWeapon.ascensions[5].primary
+            : ""}
+          {level == 7 && dataWeapon.ascensions[6]
+            ? dataWeapon.ascensions[6].primary
+            : ""}
         </p>
         <div className="px-5 pt-0 py-1">
           <div
@@ -111,7 +159,74 @@ function WeaponCard({ weaponName, localeGenshinData, dataImages }) {
         <div className="border-t-2 border-black"></div>
       </div>
       <div className="bg-gray-200 pb-3 text-lg">
-        {dataWeapon.refinements.length > 0 ? (
+        <div className="font-semibold px-5 py-1 flex items-center text-white bg-gray-700">
+          <div className="px-1">
+            Level {level == 0 ? "01" : ""}
+            {level == 1 && dataWeapon.ascensions[0]
+              ? dataWeapon.ascensions[0].maxLevel
+              : ""}
+            {level == 2 && dataWeapon.ascensions[1]
+              ? dataWeapon.ascensions[1].maxLevel
+              : ""}
+            {level == 3 && dataWeapon.ascensions[2]
+              ? dataWeapon.ascensions[2].maxLevel
+              : ""}
+            {level == 4 && dataWeapon.ascensions[3]
+              ? dataWeapon.ascensions[3].maxLevel
+              : ""}
+            {level == 5 && dataWeapon.ascensions[4]
+              ? dataWeapon.ascensions[4].maxLevel
+              : ""}
+            {level == 6 && dataWeapon.ascensions[5]
+              ? dataWeapon.ascensions[5].maxLevel
+              : ""}
+            {level == 7 && dataWeapon.ascensions[6]
+              ? dataWeapon.ascensions[6].maxLevel
+              : ""}
+            /{dataWeapon.ascensions[dataWeapon.ascensions.length - 1].maxLevel}
+          </div>
+          <div className="px-1">
+            <svg
+              onClick={
+                level > 0 ? () => setLevel(level - 1) : () => setLevel(level)
+              }
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-6 w-6 cursor-pointer"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M15 12H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"
+              />
+            </svg>
+          </div>
+          <div className="px-1">
+            <svg
+              onClick={
+                level < dataWeapon.ascensions.length
+                  ? () => setLevel(level + 1)
+                  : () => setLevel(level)
+              }
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-6 w-6 cursor-pointer"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"
+              />
+            </svg>
+          </div>
+        </div>
+        {/* {dataWeapon.refinements.length > 0 ? (
           <div className="text-white flex justify-around pt-3">
             <div
               onClick={() => setWeaponState(1)}
@@ -156,7 +271,7 @@ function WeaponCard({ weaponName, localeGenshinData, dataImages }) {
           </div>
         ) : (
           ""
-        )}
+        )} */}
 
         {dataWeapon.passive != "" ? (
           <div className="font-bold px-5 pt-3">{dataWeapon.passive}</div>
@@ -164,7 +279,12 @@ function WeaponCard({ weaponName, localeGenshinData, dataImages }) {
           ""
         )}
 
-        {dataWeapon.refinements.length > 0 ? (
+        <div className="font-bold px-5 py-0">
+          {" "}
+          <div dangerouslySetInnerHTML={replaceMarkup(dataWeapon.bonus)} />
+        </div>
+
+        {/* {dataWeapon.refinements.length > 0 ? (
           <div className="font-bold px-5 py-0">
             {dataWeapon.refinements[0] && weaponState == 1 ? (
               <div
@@ -214,7 +334,7 @@ function WeaponCard({ weaponName, localeGenshinData, dataImages }) {
           </div>
         ) : (
           ""
-        )}
+        )} */}
 
         <div className="font-semibold px-5 py-3">{dataWeapon.description}</div>
       </div>
