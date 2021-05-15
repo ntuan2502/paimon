@@ -1,5 +1,3 @@
-import useSWR from "swr";
-
 function createMarkup(markup) {
   var temp = markup;
   for (let i = 0; i < 50; i++) {
