@@ -13,7 +13,9 @@ function WeaponAscension({ dataGenshinData, dataGenshinDB, name }) {
 
   for (let index = 0; index < dataGenshinData.ascensions.length; index++) {
     if (index == 0) continue;
-    cost += dataGenshinData.ascensions[index].cost;
+    cost += dataGenshinData.ascensions[index].cost
+      ? dataGenshinData.ascensions[index].cost
+      : 0;
     if (index == 1) {
       mat11 += dataGenshinData.ascensions[index].materials[0].amount;
       mat21 += dataGenshinData.ascensions[index].materials[1].amount;
@@ -30,14 +32,16 @@ function WeaponAscension({ dataGenshinData, dataGenshinDB, name }) {
       mat13 += dataGenshinData.ascensions[index].materials[0].amount;
       mat22 += dataGenshinData.ascensions[index].materials[1].amount;
       mat32 += dataGenshinData.ascensions[index].materials[2].amount;
-    } else if (index == 5) {
-      mat13 += dataGenshinData.ascensions[index].materials[0].amount;
-      mat23 += dataGenshinData.ascensions[index].materials[1].amount;
-      mat33 += dataGenshinData.ascensions[index].materials[2].amount;
-    } else if (index == 6) {
-      mat14 += dataGenshinData.ascensions[index].materials[0].amount;
-      mat23 += dataGenshinData.ascensions[index].materials[1].amount;
-      mat33 += dataGenshinData.ascensions[index].materials[2].amount;
+    } else if (dataGenshinData.ascensions.length > 5) {
+      if (index == 5) {
+        mat13 += dataGenshinData.ascensions[index].materials[0].amount;
+        mat23 += dataGenshinData.ascensions[index].materials[1].amount;
+        mat33 += dataGenshinData.ascensions[index].materials[2].amount;
+      } else {
+        mat14 += dataGenshinData.ascensions[index].materials[0].amount;
+        mat23 += dataGenshinData.ascensions[index].materials[1].amount;
+        mat33 += dataGenshinData.ascensions[index].materials[2].amount;
+      }
     }
   }
 
@@ -202,24 +206,30 @@ function WeaponAscension({ dataGenshinData, dataGenshinDB, name }) {
                             alt=""
                           />
                           <div className="font-bold px-2">x{mat32}</div>
-                          <img
-                            src={`/img/item/${dataGenshinData.ascensions[6].materials[0].id}.png`}
-                            className="w-auto h-10"
-                            alt=""
-                          />
-                          <div className="font-bold px-2">x{mat13}</div>
-                          <img
-                            src={`/img/item/${dataGenshinData.ascensions[6].materials[1].id}.png`}
-                            className="w-auto h-10"
-                            alt=""
-                          />
-                          <div className="font-bold px-2">x{mat23}</div>
-                          <img
-                            src={`/img/item/${dataGenshinData.ascensions[6].materials[2].id}.png`}
-                            className="w-auto h-10"
-                            alt=""
-                          />
-                          <div className="font-bold px-2">x{mat33}</div>
+                          {dataGenshinData.ascensions[6] ? (
+                            <div className="flex items-center">
+                              <img
+                                src={`/img/item/${dataGenshinData.ascensions[6].materials[0].id}.png`}
+                                className="w-auto h-10"
+                                alt=""
+                              />
+                              <div className="font-bold px-2">x{mat13}</div>
+                              <img
+                                src={`/img/item/${dataGenshinData.ascensions[6].materials[1].id}.png`}
+                                className="w-auto h-10"
+                                alt=""
+                              />
+                              <div className="font-bold px-2">x{mat23}</div>
+                              <img
+                                src={`/img/item/${dataGenshinData.ascensions[6].materials[2].id}.png`}
+                                className="w-auto h-10"
+                                alt=""
+                              />
+                              <div className="font-bold px-2">x{mat33}</div>
+                            </div>
+                          ) : (
+                            ""
+                          )}
                         </div>
                       </td>
                     </tr>
