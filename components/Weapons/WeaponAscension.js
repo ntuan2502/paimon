@@ -69,22 +69,6 @@ function WeaponAscension({ dataGenshinData, dataGenshinDB, name }) {
                           {attribute.ascensionLevel}
                         </td>
                         <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-500 flex">
-                          {attribute.cost ? (
-                            <div className="flex items-center w-72">
-                              <div className="px-2">Mora</div>
-                              <img
-                                src={`/img/item/mora.png`}
-                                className="w-auto h-10"
-                                alt=""
-                              />
-                              <div className="font-bold px-2">
-                                x{attribute.cost ? attribute.cost : "0"}
-                              </div>
-                            </div>
-                          ) : (
-                            ""
-                          )}
-
                           {attribute.materials[0] ? (
                             <div className="flex items-center w-72">
                               <div className="px-2">
@@ -148,6 +132,22 @@ function WeaponAscension({ dataGenshinData, dataGenshinDB, name }) {
                                 {attribute.materials[2]
                                   ? attribute.materials[2].amount
                                   : "0"}
+                              </div>
+                            </div>
+                          ) : (
+                            ""
+                          )}
+
+                          {attribute.cost ? (
+                            <div className="flex items-center w-48">
+                              <div className="px-2">Mora</div>
+                              <img
+                                src={`/img/item/mora.png`}
+                                className="w-auto h-10"
+                                alt=""
+                              />
+                              <div className="font-bold px-2">
+                                x{attribute.cost ? attribute.cost : "0"}
                               </div>
                             </div>
                           ) : (

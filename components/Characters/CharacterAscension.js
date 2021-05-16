@@ -57,98 +57,6 @@ function CharacterAscension({ dataGenshinData, dataGenshinDB, name }) {
             <div className="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
               <div className="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
                 <table className="min-w-full divide-y divide-gray-200">
-                  {/* <thead className="bg-gray-50">
-                    <tr className="bg-red-200 text-center">
-                      <th scope="col" className="relative px-6 py-3">
-                        <span className="sr-only">Level</span>
-                      </th>
-                      <th
-                        scope="col"
-                        className="px-6 py-3 text-xs text-gray-500 font-bold capitalize tracking-wider"
-                      >
-                        <div className="flex justify-center items-center">
-                          <div className="px-2">Mora</div>
-                          <img
-                            src={`/img/item/mora.png`}
-                            className="w-auto h-10"
-                            alt=""
-                          />
-                        </div>
-                      </th>
-                      <th
-                        scope="col"
-                        className="px-6 py-3 text-xs text-gray-500 font-bold capitalize tracking-wider"
-                      >
-                        <div className="flex justify-center items-center">
-                          <div className="px-2">
-                            {dataGenshinData.ascension[1].mat1.name}
-                          </div>
-                          <img
-                            src={`/img/item/${dataGenshinData.ascension[1].mat1.id}.png`}
-                            className="w-auto h-10"
-                            alt=""
-                          />
-                        </div>
-                      </th>
-                      {dataGenshinData.ascension[1].mat2 ? (
-                        <th
-                          scope="col"
-                          className="px-6 py-3 text-xs text-gray-500 font-bold capitalize tracking-wider"
-                        >
-                          <div className="flex justify-center items-center">
-                            <div className="px-2">
-                              {dataGenshinData.ascension[1].mat2.name}
-                            </div>
-                            <img
-                              src={`/img/item/${dataGenshinData.ascension[1].mat2.id}.png`}
-                              className="w-auto h-10"
-                              alt=""
-                            />
-                          </div>
-                        </th>
-                      ) : (
-                        <th
-                          scope="col"
-                          className="px-6 py-3 text-xs text-gray-500 font-bold capitalize tracking-wider"
-                        >
-                          <div className="flex justify-center items-center">
-                            <div className="px-2">null</div>
-                          </div>
-                        </th>
-                      )}
-
-                      <th
-                        scope="col"
-                        className="px-6 py-3 text-xs text-gray-500 font-bold capitalize tracking-wider"
-                      >
-                        <div className="flex justify-center items-center">
-                          <div className="px-2">
-                            {dataGenshinData.ascension[1].mat3.name}
-                          </div>
-                          <img
-                            src={`/img/item/${dataGenshinData.ascension[1].mat3.id}.png`}
-                            className="w-auto h-10"
-                            alt=""
-                          />
-                        </div>
-                      </th>
-                      <th
-                        scope="col"
-                        className="px-6 py-3 text-xs text-gray-500 font-bold capitalize tracking-wider"
-                      >
-                        <div className="flex justify-center items-center">
-                          <div className="px-2">
-                            {dataGenshinData.ascension[1].mat4.name}
-                          </div>
-                          <img
-                            src={`/img/item/${dataGenshinData.ascension[1].mat4.id}.png`}
-                            className="w-auto h-10"
-                            alt=""
-                          />
-                        </div>
-                      </th>
-                    </tr>
-                  </thead> */}
                   <tbody className="bg-white divide-y divide-gray-200">
                     {dataGenshinData.ascension.map((attribute, index) => (
                       <tr
@@ -165,9 +73,9 @@ function CharacterAscension({ dataGenshinData, dataGenshinDB, name }) {
                           {attribute.ascension} [{attribute.level[0]} -{" "}
                           {attribute.level[1]}]
                         </td>
-                        <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-500">
+                        <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-500 flex">
                           {attribute.cost ? (
-                            <div className="flex justify-end items-center w-64">
+                            <div className="flex items-center w-48">
                               <div className="px-2">Mora</div>
                               <img
                                 src={`/img/item/mora.png`}
@@ -181,10 +89,9 @@ function CharacterAscension({ dataGenshinData, dataGenshinDB, name }) {
                           ) : (
                             ""
                           )}
-                        </td>
-                        <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-500">
+
                           {attribute.mat1 ? (
-                            <div className="flex justify-end items-center w-64">
+                            <div className="flex items-center w-64">
                               <div className="px-2">
                                 {attribute.mat1 ? attribute.mat1.name : ""}
                               </div>
@@ -200,10 +107,45 @@ function CharacterAscension({ dataGenshinData, dataGenshinDB, name }) {
                           ) : (
                             ""
                           )}
-                        </td>
-                        <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-500">
+
+                          {attribute.mat3 ? (
+                            <div className="flex items-center w-64">
+                              <div className="px-2">
+                                {attribute.mat3 ? attribute.mat3.name : ""}
+                              </div>
+                              <img
+                                src={`/img/item/${attribute.mat3.id}.png`}
+                                className="w-auto h-10"
+                                alt=""
+                              />
+                              <div className="font-bold px-2">
+                                x{attribute.mat3 ? attribute.mat3.amount : "0"}
+                              </div>
+                            </div>
+                          ) : (
+                            ""
+                          )}
+
+                          {attribute.mat4 ? (
+                            <div className="flex items-center w-64">
+                              <div className="px-2">
+                                {attribute.mat4 ? attribute.mat4.name : ""}
+                              </div>
+                              <img
+                                src={`/img/item/${attribute.mat4.id}.png`}
+                                className="w-auto h-10"
+                                alt=""
+                              />
+                              <div className="font-bold px-2">
+                                x{attribute.mat4 ? attribute.mat4.amount : "0"}
+                              </div>
+                            </div>
+                          ) : (
+                            ""
+                          )}
+
                           {attribute.mat2 ? (
-                            <div className="flex justify-end items-center w-64">
+                            <div className="flex items-center w-64">
                               <div className="px-2">
                                 {attribute.mat2 ? attribute.mat2.name : ""}
                               </div>
@@ -220,44 +162,6 @@ function CharacterAscension({ dataGenshinData, dataGenshinDB, name }) {
                             ""
                           )}
                         </td>
-                        <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-500">
-                          {attribute.mat3 ? (
-                            <div className="flex justify-end items-center w-64">
-                              <div className="px-2">
-                                {attribute.mat3 ? attribute.mat3.name : ""}
-                              </div>
-                              <img
-                                src={`/img/item/${attribute.mat3.id}.png`}
-                                className="w-auto h-10"
-                                alt=""
-                              />
-                              <div className="font-bold px-2">
-                                x{attribute.mat3 ? attribute.mat3.amount : "0"}
-                              </div>
-                            </div>
-                          ) : (
-                            ""
-                          )}
-                        </td>
-                        <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-500">
-                          {attribute.mat4 ? (
-                            <div className="flex justify-end items-center w-64">
-                              <div className="px-2">
-                                {attribute.mat4 ? attribute.mat4.name : ""}
-                              </div>
-                              <img
-                                src={`/img/item/${attribute.mat4.id}.png`}
-                                className="w-auto h-10"
-                                alt=""
-                              />
-                              <div className="font-bold px-2">
-                                x{attribute.mat4 ? attribute.mat4.amount : "0"}
-                              </div>
-                            </div>
-                          ) : (
-                            ""
-                          )}
-                        </td>
                       </tr>
                     ))}
                     <tr className={`bg-red-300`}>
@@ -266,9 +170,8 @@ function CharacterAscension({ dataGenshinData, dataGenshinDB, name }) {
                       >
                         Total
                       </td>
-                      <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-500">
-                        <div className="flex justify-end items-center">
-                          <div className="px-2">Mora</div>
+                      <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-500 flex">
+                        <div className="flex items-center">
                           <img
                             src={`/img/item/mora.png`}
                             className="w-auto h-10"
@@ -276,9 +179,8 @@ function CharacterAscension({ dataGenshinData, dataGenshinDB, name }) {
                           />
                           <div className="font-bold px-2">x{cost}</div>
                         </div>
-                      </td>
-                      <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-500">
-                        <div className="flex justify-end items-center">
+
+                        <div className="flex items-center">
                           <img
                             src={`/img/item/${dataGenshinData.ascension[0].mat1.id}.png`}
                             className="w-auto h-10"
@@ -304,13 +206,9 @@ function CharacterAscension({ dataGenshinData, dataGenshinDB, name }) {
                           />
                           <div className="font-bold px-2">x{mat14}</div>
                         </div>
-                      </td>
-                      <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-500">
+
                         {dataGenshinData.ascension[1].mat2 ? (
-                          <div className="flex justify-end items-center">
-                            <div className="px-2">
-                              {dataGenshinData.ascension[1].mat2.name}
-                            </div>
+                          <div className="flex items-center">
                             <img
                               src={`/img/item/${dataGenshinData.ascension[1].mat2.id}.png`}
                               className="w-auto h-10"
@@ -321,14 +219,8 @@ function CharacterAscension({ dataGenshinData, dataGenshinDB, name }) {
                         ) : (
                           ""
                         )}
-                      </td>
-                      <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-500">
-                        <div className="flex justify-end items-center">
-                          <div className="px-2">
-                            {dataGenshinData.ascension[1].mat3
-                              ? dataGenshinData.ascension[1].mat3.name
-                              : ""}
-                          </div>
+
+                        <div className="flex items-center">
                           <img
                             src={`/img/item/${dataGenshinData.ascension[1].mat3.id}.png`}
                             className="w-auto h-10"
@@ -336,9 +228,8 @@ function CharacterAscension({ dataGenshinData, dataGenshinDB, name }) {
                           />
                           <div className="font-bold px-2">x{mat3}</div>
                         </div>
-                      </td>
-                      <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-500">
-                        <div className="flex justify-end items-center">
+
+                        <div className="flex items-center">
                           <img
                             src={`/img/item/${dataGenshinData.ascension[0].mat4.id}.png`}
                             className="w-auto h-10"
