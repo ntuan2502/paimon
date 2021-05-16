@@ -158,7 +158,7 @@ const Weapons = () => {
     );
 
   return (
-<div>
+    <div>
       <Head>
         <title>Genshin | Weapons</title>
       </Head>

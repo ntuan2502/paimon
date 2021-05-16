@@ -51,113 +51,115 @@ function WeaponCard({ weaponName, localeGenshinData, dataImages }) {
     );
 
   return (
-    // <Link href={`/weapons/${dataWeapon.id}`}>
-    <div className="w-96 hover:shadow-xl ">
-      <div
-        className={`relative ${dataWeapon.rarity == 1 ? "bg-gray-400" : ""}${
-          dataWeapon.rarity == 2 ? "bg-green-400" : ""
-        }${dataWeapon.rarity == 3 ? "bg-blue-400" : ""}${
-          dataWeapon.rarity == 4 ? "bg-purple-400" : ""
-        } ${dataWeapon.rarity == 5 ? "bg-yellow-400" : ""} w-96 `}
-      >
+    <div className="w-96 hover:shadow-xl">
+      <Link href={`/weapons/${dataWeapon.id}`}>
         <div
-          className={`text-xl text-white ${
-            dataWeapon.rarity == 1 ? "bg-gray-500" : ""
-          }${dataWeapon.rarity == 2 ? "bg-green-500" : ""}${
-            dataWeapon.rarity == 3 ? "bg-blue-500" : ""
-          }${dataWeapon.rarity == 4 ? "bg-purple-500" : ""}${
-            dataWeapon.rarity == 5 ? "bg-yellow-500" : ""
-          } font-semibold px-5 py-3`}
+          className={`cursor-pointer relative ${dataWeapon.rarity == 1 ? "bg-gray-400" : ""}${
+            dataWeapon.rarity == 2 ? "bg-green-400" : ""
+          }${dataWeapon.rarity == 3 ? "bg-blue-400" : ""}${
+            dataWeapon.rarity == 4 ? "bg-purple-400" : ""
+          } ${dataWeapon.rarity == 5 ? "bg-yellow-400" : ""} w-96 `}
         >
-          {dataWeapon.name}
-        </div>
-        <img
-          className="w-40 h-auto float-right p-2"
-          src={`${
-            level < 6
-              ? dataImages[dataWeapon.id.replace(/_/g, "") + ".json"]
-                ? dataImages[dataWeapon.id.replace(/_/g, "") + ".json"].icon
-                : ""
-              : dataImages[dataWeapon.id.replace(/_/g, "") + ".json"]
-              ? dataImages[dataWeapon.id.replace(/_/g, "") + ".json"].awakenicon
-              : dataImages[dataWeapon.id.replace(/_/g, "") + ".json"].icon
-          }`}
-        />
-        <p className="text-md text-white font-bold px-5 pt-1">
-          {dataWeapon.type}
-        </p>
-        {dataWeapon.secondary ? (
-          <div>
-            <p className="text-md text-white font-semibold px-5">
-              {dataWeapon.secondary.name}
-            </p>
-            <p className="text-md text-white font-bold px-5">
-              {level == 0 ? dataWeapon.secondary.value : ""}
-              {level == 1 && dataWeapon.ascensions[0]
-                ? dataWeapon.ascensions[0].secondary
-                : ""}
-              {level == 2 && dataWeapon.ascensions[1]
-                ? dataWeapon.ascensions[1].secondary
-                : ""}
-              {level == 3 && dataWeapon.ascensions[2]
-                ? dataWeapon.ascensions[2].secondary
-                : ""}
-              {level == 4 && dataWeapon.ascensions[3]
-                ? dataWeapon.ascensions[3].secondary
-                : ""}
-              {level == 5 && dataWeapon.ascensions[4]
-                ? dataWeapon.ascensions[4].secondary
-                : ""}
-              {level == 6 && dataWeapon.ascensions[5]
-                ? dataWeapon.ascensions[5].secondary
-                : ""}
-              {level == 7 && dataWeapon.ascensions[6]
-                ? dataWeapon.ascensions[6].secondary
-                : ""}
-            </p>
-          </div>
-        ) : (
-          <div>
-            <p className="text-md text-white font-semibold px-5">-</p>
-            <p className="text-md text-white font-bold px-5">-</p>
-          </div>
-        )}
-        <p className="text-md text-white font-semibold px-5">
-          {dataWeapon.primary.name}
-        </p>
-        <p className="text-4xl text-white font-bold px-5">
-          {level == 0 ? dataWeapon.primary.value : ""}
-          {level == 1 && dataWeapon.ascensions[0]
-            ? dataWeapon.ascensions[0].primary
-            : ""}
-          {level == 2 && dataWeapon.ascensions[1]
-            ? dataWeapon.ascensions[1].primary
-            : ""}
-          {level == 3 && dataWeapon.ascensions[2]
-            ? dataWeapon.ascensions[2].primary
-            : ""}
-          {level == 4 && dataWeapon.ascensions[3]
-            ? dataWeapon.ascensions[3].primary
-            : ""}
-          {level == 5 && dataWeapon.ascensions[4]
-            ? dataWeapon.ascensions[4].primary
-            : ""}
-          {level == 6 && dataWeapon.ascensions[5]
-            ? dataWeapon.ascensions[5].primary
-            : ""}
-          {level == 7 && dataWeapon.ascensions[6]
-            ? dataWeapon.ascensions[6].primary
-            : ""}
-        </p>
-        <div className="px-5 pt-0 py-1">
           <div
-            className="flex h-7 w-auto text-yellow-300"
-            dangerouslySetInnerHTML={createMarkup(dataWeapon.rarity)}
+            className={`text-xl text-white ${
+              dataWeapon.rarity == 1 ? "bg-gray-500" : ""
+            }${dataWeapon.rarity == 2 ? "bg-green-500" : ""}${
+              dataWeapon.rarity == 3 ? "bg-blue-500" : ""
+            }${dataWeapon.rarity == 4 ? "bg-purple-500" : ""}${
+              dataWeapon.rarity == 5 ? "bg-yellow-500" : ""
+            } font-semibold px-5 py-3`}
+          >
+            {dataWeapon.name}
+          </div>
+          <img
+            className="w-40 h-auto float-right p-2"
+            src={`${
+              level < 6
+                ? dataImages[dataWeapon.id.replace(/_/g, "") + ".json"]
+                  ? dataImages[dataWeapon.id.replace(/_/g, "") + ".json"].icon
+                  : ""
+                : dataImages[dataWeapon.id.replace(/_/g, "") + ".json"]
+                ? dataImages[dataWeapon.id.replace(/_/g, "") + ".json"]
+                    .awakenicon
+                : dataImages[dataWeapon.id.replace(/_/g, "") + ".json"].icon
+            }`}
           />
-        </div>
+          <p className="text-md text-white font-bold px-5 pt-1">
+            {dataWeapon.type}
+          </p>
+          {dataWeapon.secondary ? (
+            <div>
+              <p className="text-md text-white font-semibold px-5">
+                {dataWeapon.secondary.name}
+              </p>
+              <p className="text-md text-white font-bold px-5">
+                {level == 0 ? dataWeapon.secondary.value : ""}
+                {level == 1 && dataWeapon.ascensions[0]
+                  ? dataWeapon.ascensions[0].secondary
+                  : ""}
+                {level == 2 && dataWeapon.ascensions[1]
+                  ? dataWeapon.ascensions[1].secondary
+                  : ""}
+                {level == 3 && dataWeapon.ascensions[2]
+                  ? dataWeapon.ascensions[2].secondary
+                  : ""}
+                {level == 4 && dataWeapon.ascensions[3]
+                  ? dataWeapon.ascensions[3].secondary
+                  : ""}
+                {level == 5 && dataWeapon.ascensions[4]
+                  ? dataWeapon.ascensions[4].secondary
+                  : ""}
+                {level == 6 && dataWeapon.ascensions[5]
+                  ? dataWeapon.ascensions[5].secondary
+                  : ""}
+                {level == 7 && dataWeapon.ascensions[6]
+                  ? dataWeapon.ascensions[6].secondary
+                  : ""}
+              </p>
+            </div>
+          ) : (
+            <div>
+              <p className="text-md text-white font-semibold px-5">-</p>
+              <p className="text-md text-white font-bold px-5">-</p>
+            </div>
+          )}
+          <p className="text-md text-white font-semibold px-5">
+            {dataWeapon.primary.name}
+          </p>
+          <p className="text-4xl text-white font-bold px-5">
+            {level == 0 ? dataWeapon.primary.value : ""}
+            {level == 1 && dataWeapon.ascensions[0]
+              ? dataWeapon.ascensions[0].primary
+              : ""}
+            {level == 2 && dataWeapon.ascensions[1]
+              ? dataWeapon.ascensions[1].primary
+              : ""}
+            {level == 3 && dataWeapon.ascensions[2]
+              ? dataWeapon.ascensions[2].primary
+              : ""}
+            {level == 4 && dataWeapon.ascensions[3]
+              ? dataWeapon.ascensions[3].primary
+              : ""}
+            {level == 5 && dataWeapon.ascensions[4]
+              ? dataWeapon.ascensions[4].primary
+              : ""}
+            {level == 6 && dataWeapon.ascensions[5]
+              ? dataWeapon.ascensions[5].primary
+              : ""}
+            {level == 7 && dataWeapon.ascensions[6]
+              ? dataWeapon.ascensions[6].primary
+              : ""}
+          </p>
+          <div className="px-5 pt-0 py-1">
+            <div
+              className="flex h-7 w-auto text-yellow-300"
+              dangerouslySetInnerHTML={createMarkup(dataWeapon.rarity)}
+            />
+          </div>
 
-        <div className="border-t-2 border-black"></div>
-      </div>
+          <div className="border-t-2 border-black"></div>
+        </div>
+      </Link>
       <div className="bg-gray-200 pb-3 text-lg">
         <div className="font-semibold px-5 py-1 flex items-center text-white bg-gray-700">
           <div className="px-1">
@@ -338,7 +340,6 @@ function WeaponCard({ weaponName, localeGenshinData, dataImages }) {
         <div className="font-semibold px-5 py-3">{dataWeapon.description}</div>
       </div>
     </div>
-    // </Link>
   );
 }
 
