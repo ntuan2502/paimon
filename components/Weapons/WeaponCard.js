@@ -54,11 +54,13 @@ function WeaponCard({ weaponName, localeGenshinData, dataImages }) {
     <div className="w-96 hover:shadow-xl">
       <Link href={`/weapons/${dataWeapon.id}`}>
         <div
-          className={`cursor-pointer relative ${dataWeapon.rarity == 1 ? "bg-gray-400" : ""}${
-            dataWeapon.rarity == 2 ? "bg-green-400" : ""
-          }${dataWeapon.rarity == 3 ? "bg-blue-400" : ""}${
-            dataWeapon.rarity == 4 ? "bg-purple-400" : ""
-          } ${dataWeapon.rarity == 5 ? "bg-yellow-400" : ""} w-96 `}
+          className={`cursor-pointer relative bg-gradient-to-r ${
+            dataWeapon.rarity == 1 ? "from-gray-500 to-gray-300" : ""
+          }${dataWeapon.rarity == 2 ? "from-green-500 to-green-300" : ""}${
+            dataWeapon.rarity == 3 ? "from-blue-500 to-blue-300" : ""
+          }${dataWeapon.rarity == 4 ? "from-purple-500 to-purple-300" : ""} ${
+            dataWeapon.rarity == 5 ? "from-yellow-500 to-yellow-300" : ""
+          } w-96 `}
         >
           <div
             className={`text-xl text-white ${
