@@ -122,11 +122,45 @@ function Character() {
         </div>
       </div>
     );
+  if (name == "hutao") name = "hu_tao";
 
   return (
     <div>
       <Head>
         <title>Genshin | {dataGenshinData.name}</title>
+        <meta itemProp="name" content={dataGenshinData.name} />
+        <meta itemProp="description" content={dataGenshinData.description} />
+        <meta
+          itemProp="image"
+          content={`/img/character/1/backgrounds/${name}.png`}
+        />
+
+        <meta itemProp="name" content={dataGenshinData.name} />
+        <meta itemProp="description" content={dataGenshinData.description} />
+        <meta
+          itemProp="image"
+          content={`/img/character/1/backgrounds/${name}.png`}
+        />
+
+        <meta property="og:url" content="https://paimon.vercel.app" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content={dataGenshinData.name} />
+        <meta property="og:description" content={dataGenshinData.description} />
+        <meta
+          property="og:image"
+          content={`/img/character/1/backgrounds/${name}.png`}
+        />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={dataGenshinData.name} />
+        <meta
+          name="twitter:description"
+          content={dataGenshinData.description}
+        />
+        <meta
+          name="twitter:image"
+          content={`/img/character/1/backgrounds/${name}.png`}
+        />
       </Head>
       <div className="py-5">
         <div className="bg-white flex flex-row flex-wrap p-5 ">

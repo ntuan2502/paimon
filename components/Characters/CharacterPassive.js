@@ -43,7 +43,6 @@ function createMarkup(markup) {
 }
 
 function CharacterPassive({ dataGenshinData, dataGenshinDB, name }) {
-  if (name == "hutao") name = "hu_tao";
   return (
     <div>
       <div className="py-4 rounded-xl bg-item flex flex-col mb-4">

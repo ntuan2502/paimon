@@ -1,5 +1,4 @@
 function CharacterTalentMaterials({ dataGenshinData, dataGenshinDB, name }) {
-  if (name == "hutao") name = "hu_tao";
 
   var cost = 0;
   var mat11 = 0;

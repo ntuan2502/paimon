@@ -45,7 +45,6 @@ function createMarkup(markup) {
 }
 
 function CharacterConstellation({ dataGenshinData, dataGenshinDB, name }) {
-  if (name == "hutao") name = "hu_tao";
 
   return (
     <div>

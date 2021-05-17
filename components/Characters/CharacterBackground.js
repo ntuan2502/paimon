@@ -9,7 +9,6 @@ function createMarkup(markup) {
 }
 
 const CharacterBackground = ({ dataGenshinData, dataGenshinDB, name }) => {
-  if (name == "hutao") name = "hu_tao";
   return (
     <div
       className={`rounded-lg shadow-lg bg-gray-600 w-full flex flex-row flex-wrap p-3 antialiased ${
