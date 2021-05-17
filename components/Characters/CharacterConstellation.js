@@ -45,31 +45,9 @@ function createMarkup(markup) {
 }
 
 function CharacterConstellation({ dataGenshinData, dataGenshinDB }) {
-  const { data, error } = useSWR(
-    "https://paimon-laravel.herokuapp.com/api/genshin-db/image/constellations"
-  );
-
   var name = dataGenshinData.id;
-  if (name == "traveler_anemo") name = "traveleranemo";
-  else if (name == "traveler_geo") name = "travelergeo";
-  else if (name == "hu_tao") name = "hutao";
-
-  if (error)
-    return (
-      <div className="bg-white p-5 sm:p-3">
-        <div className="flex justify-center items-center mx-auto h-screen w-full sm:w-5/6">
-          loading...
-        </div>
-      </div>
-    );
-  if (!data)
-    return (
-      <div className="bg-white p-5 sm:p-3">
-        <div className="flex justify-center items-center mx-auto h-screen w-full sm:w-5/6">
-          loading...
-        </div>
-      </div>
-    );
+  if (name == "traveler_anemo") name = "lumine";
+  else if (name == "traveler_geo") name = "aether";
 
   return (
     <div>
@@ -77,7 +55,7 @@ function CharacterConstellation({ dataGenshinData, dataGenshinDB }) {
         <div className="mb-2 items-start px-4">
           <img
             className={`w-16 h-16 mr-4 bg-blue-500 rounded-full float-left`}
-            src={data[name + ".json"].c1}
+            src={`/img/character/skills/${name}/constellation_${dataGenshinData.constellations[0].id}.webp`}
             alt=""
           />
           <div>
@@ -97,7 +75,7 @@ function CharacterConstellation({ dataGenshinData, dataGenshinDB }) {
         <div className="mb-2 items-start px-4">
           <img
             className={`w-16 h-16 mr-4 bg-blue-500 rounded-full float-left`}
-            src={data[name + ".json"].c2}
+            src={`/img/character/skills/${name}/constellation_${dataGenshinData.constellations[1].id}.webp`}
             alt=""
           />
           <div>
@@ -117,7 +95,7 @@ function CharacterConstellation({ dataGenshinData, dataGenshinDB }) {
         <div className="mb-2 items-start px-4">
           <img
             className={`w-16 h-16 mr-4 bg-blue-500 rounded-full float-left`}
-            src={data[name + ".json"].c3}
+            src={`/img/character/skills/${name}/constellation_${dataGenshinData.constellations[2].id}.webp`}
             alt=""
           />
           <div>
@@ -137,7 +115,7 @@ function CharacterConstellation({ dataGenshinData, dataGenshinDB }) {
         <div className="mb-2 items-start px-4">
           <img
             className={`w-16 h-16 mr-4 bg-blue-500 rounded-full float-left`}
-            src={data[name + ".json"].c4}
+            src={`/img/character/skills/${name}/constellation_${dataGenshinData.constellations[3].id}.webp`}
             alt=""
           />
           <div>
@@ -157,7 +135,7 @@ function CharacterConstellation({ dataGenshinData, dataGenshinDB }) {
         <div className="mb-2 items-start px-4">
           <img
             className={`w-16 h-16 mr-4 bg-blue-500 rounded-full float-left`}
-            src={data[name + ".json"].c5}
+            src={`/img/character/skills/${name}/constellation_${dataGenshinData.constellations[4].id}.webp`}
             alt=""
           />
           <div>
@@ -177,7 +155,7 @@ function CharacterConstellation({ dataGenshinData, dataGenshinDB }) {
         <div className="mb-2 items-start px-4">
           <img
             className={`w-16 h-16 mr-4 bg-blue-500 rounded-full float-left`}
-            src={data[name + ".json"].c6}
+            src={`/img/character/skills/${name}/constellation_${dataGenshinData.constellations[5].id}.webp`}
             alt=""
           />
           <div>

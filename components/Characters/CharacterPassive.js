@@ -50,7 +50,7 @@ function CharacterPassive({ dataGenshinData, dataGenshinDB, name }) {
         <div className=" mb-2 items-start px-4">
           <img
             className={`w-16 h-16 mr-4 bg-blue-500 rounded-full float-left`}
-            src={`/img/character/skills/${name}/talent_4.png`}
+            src={`/img/character/skills/${name}/talent_${dataGenshinData.passives[0].id}.webp`}
             alt=""
           />
           <div>
@@ -70,7 +70,7 @@ function CharacterPassive({ dataGenshinData, dataGenshinDB, name }) {
         <div className=" mb-2 items-start px-4">
           <img
             className={`w-16 h-16 mr-4 bg-blue-500 rounded-full float-left`}
-            src={`/img/character/skills/${name}/talent_5.png`}
+            src={`/img/character/skills/${name}/talent_${dataGenshinData.passives[1].id}.webp`}
             alt=""
           />
           <div>
@@ -91,7 +91,7 @@ function CharacterPassive({ dataGenshinData, dataGenshinDB, name }) {
           <div className=" mb-2 items-start px-4">
             <img
               className={`w-16 h-16 mr-4 bg-blue-500 rounded-full float-left`}
-              src={`/img/character/skills/${name}/talent_6.png`}
+              src={`/img/character/skills/${name}/talent_${dataGenshinData.passives[2].id}.webp`}
               alt=""
             />
             <div>

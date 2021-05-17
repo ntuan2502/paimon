@@ -50,7 +50,7 @@ function CharacterSkill({ dataGenshinData, dataGenshinDB, name }) {
         <div className="mb-2 items-start px-4">
           <img
             className={`w-16 h-16 mr-4 bg-blue-500 rounded-full float-left`}
-            src={`/img/character/skills/${name}/talent_1.png`}
+            src={`/img/character/skills/${name}/talent_${dataGenshinData.skills[0].id.replace("normal_attack_", "")}.webp`}
             alt=""
           />
           <div>
@@ -132,7 +132,7 @@ function CharacterSkill({ dataGenshinData, dataGenshinDB, name }) {
         <div className="mb-2 items-start px-4">
           <img
             className={`w-16 h-16 mr-4 bg-blue-500 rounded-full float-left`}
-            src={`/img/character/skills/${name}/talent_2.png`}
+            src={`/img/character/skills/${name}/talent_${dataGenshinData.skills[1].id}.webp`}
             alt=""
           />
           <div>
@@ -214,9 +214,7 @@ function CharacterSkill({ dataGenshinData, dataGenshinDB, name }) {
         <div className="mb-2 items-start px-4">
           <img
             className={`w-16 h-16 mr-4 bg-blue-500 rounded-full float-left`}
-            src={`/img/character/skills/${name}/talent_${
-              name == "mona" ? "7" : "3"
-            }.png`}
+            src={`/img/character/skills/${name}/talent_${dataGenshinData.skills[2].id}.webp`}
             alt=""
           />
           <div>
@@ -300,7 +298,7 @@ function CharacterSkill({ dataGenshinData, dataGenshinDB, name }) {
           <div className="mb-2 items-start px-4">
             <img
               className={`w-16 h-16 mr-4 bg-blue-500 rounded-full float-left`}
-              src={`/img/character/skills/${name}/talent_3.png`}
+              src={`/img/character/skills/${name}/talent_${dataGenshinData.skills[3].id}.webp`}
               alt=""
             />
             <div>
