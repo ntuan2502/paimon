@@ -44,10 +44,8 @@ function createMarkup(markup) {
   return { __html: temp };
 }
 
-function CharacterConstellation({ dataGenshinData, dataGenshinDB }) {
-  var name = dataGenshinData.id;
-  if (name == "traveler_anemo") name = "lumine";
-  else if (name == "traveler_geo") name = "aether";
+function CharacterConstellation({ dataGenshinData, dataGenshinDB, name }) {
+  if (name == "hutao") name = "hu_tao";
 
   return (
     <div>

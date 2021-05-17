@@ -133,33 +133,34 @@ function Character() {
           <div className="mx-auto w-full sm:w-5/6">
             <CharacterBackground
               dataGenshinData={dataGenshinData}
-              dataGenshinDB={dataGenshinDB}
               name={name}
+              dataGenshinDB={dataGenshinDB}
             />
             <br />
             <CharacterAscension
               dataGenshinData={dataGenshinData}
-              dataGenshinDB={dataGenshinDB}
               name={name}
+              // dataGenshinDB={dataGenshinDB}
             />
             <CharacterTalentMaterials
               dataGenshinData={dataGenshinData}
-              dataGenshinDB={dataGenshinDB}
               name={name}
+              // dataGenshinDB={dataGenshinDB}
             />
             <CharacterSkill
               dataGenshinData={dataGenshinData}
-              dataGenshinDB={dataGenshinDB}
               name={name}
+              // dataGenshinDB={dataGenshinDB}
             />
             <CharacterPassive
               dataGenshinData={dataGenshinData}
-              dataGenshinDB={dataGenshinDB}
               name={name}
+              // dataGenshinDB={dataGenshinDB}
             />
             <CharacterConstellation
               dataGenshinData={dataGenshinData}
-              dataGenshinDB={dataGenshinDB}
+              name={name}
+              // dataGenshinDB={dataGenshinDB}
             />
           </div>
         </div>
