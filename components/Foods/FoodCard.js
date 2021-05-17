@@ -84,14 +84,38 @@ function FoodCard({ foodName, localeGenshinData, dataImages }) {
             ""
           )}
         </div>
-        <img
-          className="w-40 h-auto float-right"
-          src={`${
-            dataImages[dataFood.id.replace(/_/g, "") + ".json"]
-              ? dataImages[dataFood.id.replace(/_/g, "") + ".json"].image
-              : ""
-          }`}
-        />
+        {dataFood.results.suspicious && foodState == 1 ? (
+          <img
+            className="w-40 h-auto float-right"
+            src={`/img/food/item_suspicious_${dataFood.id}.webp`}
+          />
+        ) : (
+          ""
+        )}
+        {dataFood.results.normal && foodState == 2 ? (
+          <img
+            className="w-40 h-auto float-right"
+            src={`/img/food/item_${dataFood.id}.webp`}
+          />
+        ) : (
+          ""
+        )}
+        {dataFood.results.delicious && foodState == 3 ? (
+          <img
+            className="w-40 h-auto float-right"
+            src={`/img/food/item_delicious_${dataFood.id}.webp`}
+          />
+        ) : (
+          ""
+        )}
+        {dataFood.results.special && foodState == 4 ? (
+          <img
+            className="w-40 h-auto float-right"
+            src={`/img/food/item_${dataFood.id}.webp`}
+          />
+        ) : (
+          ""
+        )}
         <p className="text-lg text-white font-semibold px-5 py-1">
           {dataFood.dish_type ? dataFood.dish_type : "None"}
         </p>
@@ -100,7 +124,7 @@ function FoodCard({ foodName, localeGenshinData, dataImages }) {
             ? dataFood.results.special.character.name
             : "None"}
         </p>
-        <div className="px-5 pt-24 py-2">
+        <div className="px-5 pt-20 py-2">
           <div
             className="flex h-7 w-32 text-yellow-300"
             dangerouslySetInnerHTML={createMarkup(dataFood.rarity)}
