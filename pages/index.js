@@ -60,7 +60,7 @@ export default function Home() {
           content="http://webstatic-sea.mihoyo.com/hk4e/upload/fb/en.jpg"
         />
       </Head>
-      <div className="min-w-full min-h-screen">
+      <div className="min-w-full min-h-screen flex justify-center">
         <img src="/img/background/index.jpg" alt="" />
       </div>
     </div>
