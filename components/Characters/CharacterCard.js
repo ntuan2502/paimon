@@ -47,14 +47,15 @@ function CharacterCard({ characterName, localeGenshinData }) {
 
   return (
     <Link href={`/characters/${data.id}`}>
-      <div className="relative bg-white py-6 px-6 rounded-3xl w-96 my-4 hover:shadow-xl cursor-pointer">
-        <img
-          className="w-96 h-auto"
-          src={`/img/character/card/Character_${nameCard}_Card.webp`}
-        />
-        <div className="mt-8">
-          <p className="text-xl font-semibold my-2">{data.name}</p>
-          {/* <div className="flex space-x-2 text-gray-400 text-sm">
+      <a>
+        <div className="relative bg-white py-6 px-6 rounded-3xl w-96 my-4 hover:shadow-xl cursor-pointer">
+          <img
+            className="w-96 h-auto"
+            src={`/img/character/card/Character_${nameCard}_Card.webp`}
+          />
+          <div className="mt-8">
+            <p className="text-xl font-semibold my-2">{data.name}</p>
+            {/* <div className="flex space-x-2 text-gray-400 text-sm">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5"
@@ -98,17 +99,17 @@ function CharacterCard({ characterName, localeGenshinData }) {
                 : "null"}
             </p>
           </div> */}
-          <div className="border-t-2"></div>
+            <div className="border-t-2"></div>
 
-          <div className="flex justify-between">
-            <div className="my-2">
-              {/* <p className="font-semibold text-base mb-2">Team Member</p> */}
-              <div className="flex space-x-2">
-                <div
-                  className="flex h-7 w-32 text-yellow-500"
-                  dangerouslySetInnerHTML={createMarkup(data.rarity)}
-                />
-                {/* <img
+            <div className="flex justify-between">
+              <div className="my-2">
+                {/* <p className="font-semibold text-base mb-2">Team Member</p> */}
+                <div className="flex space-x-2">
+                  <div
+                    className="flex h-7 w-32 text-yellow-500"
+                    dangerouslySetInnerHTML={createMarkup(data.rarity)}
+                  />
+                  {/* <img
                 src="https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
                 className="w-6 h-6 rounded-full"
               />
@@ -120,17 +121,18 @@ function CharacterCard({ characterName, localeGenshinData }) {
                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxSqK0tVELGWDYAiUY1oRrfnGJCKSKv95OGUtm9eKG9HQLn769YDujQi1QFat32xl-BiY&usqp=CAU"
                 className="w-6 h-6 rounded-full"
               /> */}
+                </div>
               </div>
-            </div>
-            {/* <div className="my-2">
+              {/* <div className="my-2">
             <p className="font-semibold text-base mb-2">Progress</p>
             <div className="text-base text-gray-400 font-semibold">
               <p>34%</p>
             </div>
           </div> */}
+            </div>
           </div>
         </div>
-      </div>
+      </a>
     </Link>
   );
 }

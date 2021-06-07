@@ -1,6 +1,7 @@
 // import { promises as fs } from "fs";
 import { useRouter } from "next/router";
 import CharacterCard from "../../components/Characters/CharacterCard";
+import CharacterCardUp from "../../components/Characters/CharacterCardUp";
 import Head from "next/head";
 
 const characters = [
@@ -72,6 +73,10 @@ function Characters() {
               key={index}
             />
           ))}
+          <CharacterCardUp name="Kaedehara Kazuha" nameCard="Kazuha" rarity="5" />
+          <CharacterCardUp name="Yoimiya" nameCard="Yoimiya" rarity="5" />
+          <CharacterCardUp name="Kamisato Ayaka" nameCard="Ayaka" rarity="5" />
+          <CharacterCardUp name="Sayu" nameCard="Sayu" rarity="4" />
           {/* {posts.map((post, index) => (
               <Character data={post} key={index} />
             ))} */}
