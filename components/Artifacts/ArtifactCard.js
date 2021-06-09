@@ -70,122 +70,129 @@ function ArtifactCard({ artifactName, localeGenshinData }) {
 
   return (
     <Link href={`/artifacts/${dataArtifact.id}`}>
-      <div className="w-96 hover:shadow-xl cursor-pointer">
-        <div
-          className={`relative ${
-            dataArtifact.max_rarity == 3 ? "bg-blue-400" : ""
-          }${dataArtifact.max_rarity == 4 ? "bg-purple-400" : ""} ${
-            dataArtifact.max_rarity == 5 ? "bg-yellow-400" : ""
-          } w-96 `}
-        >
-          <p
-            className={`text-2xl text-white ${
-              dataArtifact.max_rarity == 3 ? "bg-blue-500" : ""
-            }${dataArtifact.max_rarity == 4 ? "bg-purple-500" : ""}${
-              dataArtifact.max_rarity == 5 ? "bg-yellow-500" : ""
-            } font-semibold px-5 py-3`}
+      <a>
+        <div className="w-96 hover:shadow-xl cursor-pointer">
+          <div
+            className={`relative ${
+              dataArtifact.max_rarity == 3 ? "bg-blue-400" : ""
+            }${dataArtifact.max_rarity == 4 ? "bg-purple-400" : ""} ${
+              dataArtifact.max_rarity == 5 ? "bg-yellow-400" : ""
+            } w-96 `}
           >
-            {dataArtifact.name}
-          </p>
-          <img
-            className="w-40 h-auto float-right"
-            src={`${
-              dataImages[dataArtifact.id.replace(/_/g, "") + ".json"].flower
-                ? dataImages[dataArtifact.id.replace(/_/g, "") + ".json"].flower
-                : dataImages[dataArtifact.id.replace(/_/g, "") + ".json"]
-                    .circlet
-            }`}
-          />
-          <p className="text-lg text-white font-semibold px-5 py-1">
-            Artifact Set
-          </p>
-          <div className="px-5 pt-24 py-2">
-            <div
-              className="flex h-7 w-32 text-yellow-300"
-              dangerouslySetInnerHTML={createMarkup(dataArtifact.max_rarity)}
+            <p
+              className={`text-2xl text-white ${
+                dataArtifact.max_rarity == 3 ? "bg-blue-500" : ""
+              }${dataArtifact.max_rarity == 4 ? "bg-purple-500" : ""}${
+                dataArtifact.max_rarity == 5 ? "bg-yellow-500" : ""
+              } font-semibold px-5 py-3`}
+            >
+              {dataArtifact.name}
+            </p>
+            <img
+              className="w-40 h-auto float-right"
+              src={`${
+                dataImages[dataArtifact.id.replace(/_/g, "") + ".json"].flower
+                  ? dataImages[dataArtifact.id.replace(/_/g, "") + ".json"]
+                      .flower
+                  : dataImages[dataArtifact.id.replace(/_/g, "") + ".json"]
+                      .circlet
+              }`}
             />
-          </div>
+            <p className="text-lg text-white font-semibold px-5 py-1">
+              Artifact Set
+            </p>
+            <div className="px-5 pt-24 py-2">
+              <div
+                className="flex h-7 w-32 text-yellow-300"
+                dangerouslySetInnerHTML={createMarkup(dataArtifact.max_rarity)}
+              />
+            </div>
 
-          <div className="border-t-2 border-black"></div>
-        </div>
-        <div className="bg-gray-200 pb-3 text-lg">
-          <p className="text-lg text-green-400 font-semibold px-5 pt-5 pb-1">
-            {dataArtifact.name}:
-          </p>
-          {dataArtifact["1pc"] ? (
-            <div className="px-5 flex">
+            <div className="border-t-2 border-black"></div>
+          </div>
+          <div className="bg-gray-200 pb-3 text-lg">
+            <p className="text-lg text-green-400 font-semibold px-5 pt-5 pb-1">
+              {dataArtifact.name}:
+            </p>
+            {dataArtifact["1pc"] ? (
+              <div className="px-5 flex">
+                <div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-5 w-5"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636"
+                    />
+                  </svg>
+                </div>
+                <div className="px-5 font-semibold">{dataArtifact["1pc"]}</div>
+              </div>
+            ) : (
               <div>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-5 w-5"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636"
-                  />
-                </svg>
-              </div>
-              <div className="px-5 font-semibold">{dataArtifact["1pc"]}</div>
-            </div>
-          ) : (
-            <div>
-              <div className="px-5 flex">
-                <div>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-5 w-5"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636"
-                    />
-                  </svg>
+                <div className="px-5 flex">
+                  <div>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-5 w-5"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636"
+                      />
+                    </svg>
+                  </div>
+                  <div className="px-5 font-semibold">
+                    {dataArtifact["2pc"]}
+                  </div>
                 </div>
-                <div className="px-5 font-semibold">{dataArtifact["2pc"]}</div>
-              </div>
-              <div className="px-5 flex">
-                <div>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-5 w-5"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636"
-                    />
-                  </svg>
+                <div className="px-5 flex">
+                  <div>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-5 w-5"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636"
+                      />
+                    </svg>
+                  </div>
+                  <div className="px-5 font-semibold">
+                    {dataArtifact["4pc"]}
+                  </div>
                 </div>
-                <div className="px-5 font-semibold">{dataArtifact["4pc"]}</div>
               </div>
+            )}
+
+            <div className="font-bold px-5 py-0">
+              <p>Set Includes:</p>
+
+              {dataArtifact.flower ? <p>- {dataArtifact.flower.name}</p> : ""}
+              {dataArtifact.plume ? <p>- {dataArtifact.plume.name}</p> : ""}
+              {dataArtifact.sands ? <p>- {dataArtifact.sands.name}</p> : ""}
+              {dataArtifact.goblet ? <p>- {dataArtifact.goblet.name}</p> : ""}
+              {dataArtifact.circlet ? <p>- {dataArtifact.circlet.name}</p> : ""}
             </div>
-          )}
-
-          <div className="font-bold px-5 py-0">
-            <p>Set Includes:</p>
-
-            {dataArtifact.flower ? <p>- {dataArtifact.flower.name}</p> : ""}
-            {dataArtifact.plume ? <p>- {dataArtifact.plume.name}</p> : ""}
-            {dataArtifact.sands ? <p>- {dataArtifact.sands.name}</p> : ""}
-            {dataArtifact.goblet ? <p>- {dataArtifact.goblet.name}</p> : ""}
-            {dataArtifact.circlet ? <p>- {dataArtifact.circlet.name}</p> : ""}
           </div>
         </div>
-      </div>
+      </a>
     </Link>
   );
 }

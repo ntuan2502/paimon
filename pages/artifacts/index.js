@@ -2,6 +2,7 @@ import { useRouter } from "next/router";
 import ArtifactCard from "../../components/Artifacts/ArtifactCard";
 import Head from "next/head";
 
+//https://paimon-laravel.herokuapp.com/api/data/genshin-data/vietnamese/artifacts
 const artifacts = [
   "adventurer",
   "archaic_petra",

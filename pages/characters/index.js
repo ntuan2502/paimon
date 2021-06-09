@@ -4,6 +4,7 @@ import CharacterCard from "../../components/Characters/CharacterCard";
 import CharacterCardUp from "../../components/Characters/CharacterCardUp";
 import Head from "next/head";
 
+//https://paimon-laravel.herokuapp.com/api/data/genshin-data/vietnamese/characters
 const characters = [
   "albedo",
   "amber",
@@ -18,6 +19,7 @@ const characters = [
   "ganyu",
   "hu_tao",
   "jean",
+  "kaedehara_kazuha",
   "kaeya",
   "keqing",
   "klee",
@@ -73,7 +75,11 @@ function Characters() {
               key={index}
             />
           ))}
-          <CharacterCardUp name="Kaedehara Kazuha" nameCard="Kazuha" rarity="5" />
+          {/* <CharacterCardUp
+            name="Kaedehara Kazuha"
+            nameCard="Kazuha"
+            rarity="5"
+          /> */}
           <CharacterCardUp name="Yoimiya" nameCard="Yoimiya" rarity="5" />
           <CharacterCardUp name="Kamisato Ayaka" nameCard="Ayaka" rarity="5" />
           <CharacterCardUp name="Sayu" nameCard="Sayu" rarity="4" />

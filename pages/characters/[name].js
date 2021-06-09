@@ -76,6 +76,7 @@ function Character() {
   if (name == "traveler_anemo") name = "lumine";
   else if (name == "traveler_geo") name = "aether";
   else if (name == "hu_tao") name = "hutao";
+  else if (name == "kaedehara_kazuha") name = "kaedeharakazuha";
 
   var dataGenshinDB = "";
   var errorGenshinDB = "";
