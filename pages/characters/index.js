@@ -68,6 +68,9 @@ function Characters() {
       </Head>
       <div className="flex items-center justify-center">
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
+          <CharacterCardUp name="Yoimiya" nameCard="Yoimiya" rarity="5" />
+          <CharacterCardUp name="Kamisato Ayaka" nameCard="Ayaka" rarity="5" />
+          <CharacterCardUp name="Sayu" nameCard="Sayu" rarity="4" />
           {characters.map((characterName, index) => (
             <CharacterCard
               characterName={characterName}
@@ -75,14 +78,6 @@ function Characters() {
               key={index}
             />
           ))}
-          {/* <CharacterCardUp
-            name="Kaedehara Kazuha"
-            nameCard="Kazuha"
-            rarity="5"
-          /> */}
-          <CharacterCardUp name="Yoimiya" nameCard="Yoimiya" rarity="5" />
-          <CharacterCardUp name="Kamisato Ayaka" nameCard="Ayaka" rarity="5" />
-          <CharacterCardUp name="Sayu" nameCard="Sayu" rarity="4" />
           {/* {posts.map((post, index) => (
               <Character data={post} key={index} />
             ))} */}

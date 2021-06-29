@@ -124,6 +124,7 @@ function Character() {
       </div>
     );
   if (name == "hutao") name = "hu_tao";
+  if (name == "kaedeharakazuha") name = "kaedehara_kazuha";
 
   return (
     <div>
