@@ -77,6 +77,7 @@ function Character() {
   else if (name == "traveler_geo") name = "aether";
   else if (name == "hu_tao") name = "hutao";
   else if (name == "kaedehara_kazuha") name = "kaedeharakazuha";
+  else if (name == "kamisato_ayaka") name = "kamisatoayaka";
 
   var dataGenshinDB = "";
   var errorGenshinDB = "";
@@ -125,6 +126,7 @@ function Character() {
     );
   if (name == "hutao") name = "hu_tao";
   if (name == "kaedeharakazuha") name = "kaedehara_kazuha";
+  if (name == "kamisatoayaka") name = "kamisato_ayaka";
 
   return (
     <div>

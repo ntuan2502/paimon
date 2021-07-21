@@ -41,6 +41,7 @@ function CharacterCard({ characterName, localeGenshinData }) {
   else if (nameCard == "traveler_anemo") nameCard = "Traveler_Anemo";
   else if (nameCard == "traveler_geo") nameCard = "Traveler_Geo";
   else if (nameCard == "kaedehara_kazuha") nameCard = "Kazuha";
+  else if (nameCard == "kamisato_ayaka") nameCard = "Ayaka";
 
   nameCard = nameCard.replace(/\w\S*/g, (w) =>
     w.replace(/^\w/, (c) => c.toUpperCase())
