@@ -36,6 +36,7 @@ const characters = [
   "tartaglia",
   "traveler_anemo",
   "traveler_geo",
+  "traveler_electro",
   "venti",
   "xiangling",
   "xiao",

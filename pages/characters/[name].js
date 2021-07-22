@@ -73,9 +73,7 @@ function Character() {
     errorGenshinData = error;
   }
 
-  if (name == "traveler_anemo") name = "lumine";
-  else if (name == "traveler_geo") name = "aether";
-  else if (name == "hu_tao") name = "hutao";
+  if (name == "hu_tao") name = "hutao";
   else if (name == "kaedehara_kazuha") name = "kaedeharakazuha";
   else if (name == "kamisato_ayaka") name = "kamisatoayaka";
 
