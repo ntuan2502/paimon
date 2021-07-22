@@ -8,7 +8,7 @@ function createMarkup(markup) {
   return { __html: temp };
 }
 
-const CharacterBackground = ({ dataGenshinData, dataGenshinDB, name }) => {
+const CharacterBackground = ({ dataGenshinData, name }) => {
   return (
     <div
       className={`rounded-lg shadow-lg bg-gray-600 w-full flex flex-row flex-wrap p-3 antialiased ${
@@ -35,7 +35,7 @@ const CharacterBackground = ({ dataGenshinData, dataGenshinDB, name }) => {
           </div>
           <br />
           <div className="text-normal text-gray-300">
-            <span className="pb-1">{dataGenshinDB.birthday}</span>
+            <span className="pb-1">{dataGenshinData.birthday[0]}/{dataGenshinData.birthday[1]}</span>
           </div>
           <div className="text-normal text-gray-300">
             <span className="pb-1">{dataGenshinData.constellation}</span>

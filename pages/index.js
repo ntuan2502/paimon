@@ -61,7 +61,7 @@ export default function Home() {
         />
       </Head>
       <div className="min-w-full min-h-screen flex justify-center">
-        <img src="/img/background/1.6.jpg" alt="" />
+        <img src="/img/background/2.0.jpg" alt="" />
       </div>
     </div>
   );

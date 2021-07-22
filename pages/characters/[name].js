@@ -79,18 +79,18 @@ function Character() {
   else if (name == "kaedehara_kazuha") name = "kaedeharakazuha";
   else if (name == "kamisato_ayaka") name = "kamisatoayaka";
 
-  var dataGenshinDB = "";
-  var errorGenshinDB = "";
-  if (1) {
-    const { data, error } = useSWR(
-      "https://paimon-laravel.herokuapp.com/api/data/genshin-db/" +
-        localeGenshinDB +
-        "/characters/" +
-        name
-    );
-    dataGenshinDB = data;
-    errorGenshinDB = error;
-  }
+  // var dataGenshinDB = "";
+  // var errorGenshinDB = "";
+  // if (1) {
+  //   const { data, error } = useSWR(
+  //     "https://paimon-laravel.herokuapp.com/api/data/genshin-db/" +
+  //       localeGenshinDB +
+  //       "/characters/" +
+  //       name
+  //   );
+  //   dataGenshinDB = data;
+  //   errorGenshinDB = error;
+  // }
 
   if (errorGenshinData)
     return (
@@ -108,22 +108,22 @@ function Character() {
         </div>
       </div>
     );
-  if (errorGenshinDB)
-    return (
-      <div className="bg-white p-5 sm:p-3">
-        <div className="flex justify-center items-center mx-auto h-screen w-full sm:w-5/6">
-          failed to load
-        </div>
-      </div>
-    );
-  if (!dataGenshinDB)
-    return (
-      <div className="bg-white p-5 sm:p-3">
-        <div className="flex justify-center items-center mx-auto h-screen w-full sm:w-5/6">
-          loading...
-        </div>
-      </div>
-    );
+  // if (errorGenshinDB)
+  //   return (
+  //     <div className="bg-white p-5 sm:p-3">
+  //       <div className="flex justify-center items-center mx-auto h-screen w-full sm:w-5/6">
+  //         failed to load
+  //       </div>
+  //     </div>
+  //   );
+  // if (!dataGenshinDB)
+  //   return (
+  //     <div className="bg-white p-5 sm:p-3">
+  //       <div className="flex justify-center items-center mx-auto h-screen w-full sm:w-5/6">
+  //         loading...
+  //       </div>
+  //     </div>
+  //   );
   if (name == "hutao") name = "hu_tao";
   if (name == "kaedeharakazuha") name = "kaedehara_kazuha";
   if (name == "kamisatoayaka") name = "kamisato_ayaka";
@@ -172,7 +172,7 @@ function Character() {
             <CharacterBackground
               dataGenshinData={dataGenshinData}
               name={name}
-              dataGenshinDB={dataGenshinDB}
+              // dataGenshinDB={dataGenshinDB}
             />
             <br />
             <CharacterAscension
