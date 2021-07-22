@@ -72,6 +72,9 @@ function Characters() {
       </Head>
       <div className="flex items-center justify-center">
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
+          <CharacterCardUp name="Raiden Shogun" nameCard="Raiden_Shogun" rarity="5" />
+          <CharacterCardUp name="Sangonomiya Kokomi" nameCard="Sangonomiya_Kokomi" rarity="5" />
+          <CharacterCardUp name="Kujou Sara" nameCard="Kujou_Sara" rarity="4" />
           {characters.map((characterName, index) => (
             <CharacterCard
               characterName={characterName}
