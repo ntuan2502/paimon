@@ -26,6 +26,16 @@ function FoodCard({ foodName, localeGenshinData, dataImages }) {
     dataFood = data;
     errorFood = error;
   }
+  var dataFoodEnglish = "";
+  var errorFoodEnglish = "";
+  if (1) {
+    const { data, error } = useSWR(
+      "https://paimon-laravel.herokuapp.com/api/data/genshin-data/english/food/" +
+        foodName
+    );
+    dataFoodEnglish = data;
+    errorFoodEnglish = error;
+  }
 
   if (errorFood)
     return (
@@ -36,6 +46,23 @@ function FoodCard({ foodName, localeGenshinData, dataImages }) {
       </div>
     );
   if (!dataFood)
+    return (
+      <div className="bg-white p-5 sm:p-3">
+        <div className="flex justify-center items-center mx-auto h-screen w-full sm:w-5/6">
+          loading...
+        </div>
+      </div>
+    );
+
+  if (errorFoodEnglish)
+    return (
+      <div className="bg-white p-5 sm:p-3">
+        <div className="flex justify-center items-center mx-auto h-screen w-full sm:w-5/6">
+          failed to load
+        </div>
+      </div>
+    );
+  if (!dataFoodEnglish)
     return (
       <div className="bg-white p-5 sm:p-3">
         <div className="flex justify-center items-center mx-auto h-screen w-full sm:w-5/6">
@@ -111,7 +138,15 @@ function FoodCard({ foodName, localeGenshinData, dataImages }) {
         {dataFood.results.special && foodState == 4 ? (
           <img
             className="w-40 h-auto float-right"
-            src={`/img/food/item_${dataFood.id}.webp`}
+            src={`/img/food/item_${dataFoodEnglish.results.special.name
+              .replace(/"/g, "")
+              .replace(/\(/g, "")
+              .replace(/\)/g, "")
+              .replace(/'/g, "")
+              .replace(/-/g, "")
+              .replace(/!/g, "")
+              .replace(/ /g, "_")
+              .replace(/.593/g, "._593").toLowerCase()}.webp`}
           />
         ) : (
           ""
