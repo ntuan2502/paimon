@@ -12,13 +12,13 @@ export default function CharactersPage({ characters }) {
       </Head>
       <div className="flex items-center justify-center">
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
-          <CharacterCard id="Raiden_Shogun" name="Raiden Shogun" rarity="5" />
+          <CharacterCard id="raiden_shogun" name="Raiden Shogun" rarity="5" />
           <CharacterCard
-            id="Sangonomiya_Kokomi"
+            id="sangonomiya_kokomi"
             name="Sangonomiya Kokomi"
             rarity="5"
           />
-          <CharacterCard id="Kujou_Sara" name="Kujou Sara" rarity="4" />
+          <CharacterCard id="kujou_sara" name="Kujou Sara" rarity="4" />
 
           {characters.map((character, index) => (
             <CharacterCard
