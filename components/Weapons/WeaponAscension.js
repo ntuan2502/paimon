@@ -1,4 +1,4 @@
-function WeaponAscension({ dataGenshinData, dataGenshinDB, name }) {
+export default function WeaponAscension({ ascensions }) {
   var cost = 0;
   var mat11 = 0;
   var mat12 = 0;
@@ -11,36 +11,34 @@ function WeaponAscension({ dataGenshinData, dataGenshinDB, name }) {
   var mat32 = 0;
   var mat33 = 0;
 
-  for (let index = 0; index < dataGenshinData.ascensions.length; index++) {
+  for (let index = 0; index < ascensions.length; index++) {
     if (index == 0) continue;
-    cost += dataGenshinData.ascensions[index].cost
-      ? dataGenshinData.ascensions[index].cost
-      : 0;
+    cost += ascensions[index].cost ? ascensions[index].cost : 0;
     if (index == 1) {
-      mat11 += dataGenshinData.ascensions[index].materials[0].amount;
-      mat21 += dataGenshinData.ascensions[index].materials[1].amount;
-      mat31 += dataGenshinData.ascensions[index].materials[2].amount;
+      mat11 += ascensions[index].materials[0].amount;
+      mat21 += ascensions[index].materials[1].amount;
+      mat31 += ascensions[index].materials[2].amount;
     } else if (index == 2) {
-      mat12 += dataGenshinData.ascensions[index].materials[0].amount;
-      mat21 += dataGenshinData.ascensions[index].materials[1].amount;
-      mat31 += dataGenshinData.ascensions[index].materials[2].amount;
+      mat12 += ascensions[index].materials[0].amount;
+      mat21 += ascensions[index].materials[1].amount;
+      mat31 += ascensions[index].materials[2].amount;
     } else if (index == 3) {
-      mat12 += dataGenshinData.ascensions[index].materials[0].amount;
-      mat22 += dataGenshinData.ascensions[index].materials[1].amount;
-      mat32 += dataGenshinData.ascensions[index].materials[2].amount;
+      mat12 += ascensions[index].materials[0].amount;
+      mat22 += ascensions[index].materials[1].amount;
+      mat32 += ascensions[index].materials[2].amount;
     } else if (index == 4) {
-      mat13 += dataGenshinData.ascensions[index].materials[0].amount;
-      mat22 += dataGenshinData.ascensions[index].materials[1].amount;
-      mat32 += dataGenshinData.ascensions[index].materials[2].amount;
-    } else if (dataGenshinData.ascensions.length > 5) {
+      mat13 += ascensions[index].materials[0].amount;
+      mat22 += ascensions[index].materials[1].amount;
+      mat32 += ascensions[index].materials[2].amount;
+    } else if (ascensions.length > 5) {
       if (index == 5) {
-        mat13 += dataGenshinData.ascensions[index].materials[0].amount;
-        mat23 += dataGenshinData.ascensions[index].materials[1].amount;
-        mat33 += dataGenshinData.ascensions[index].materials[2].amount;
+        mat13 += ascensions[index].materials[0].amount;
+        mat23 += ascensions[index].materials[1].amount;
+        mat33 += ascensions[index].materials[2].amount;
       } else {
-        mat14 += dataGenshinData.ascensions[index].materials[0].amount;
-        mat23 += dataGenshinData.ascensions[index].materials[1].amount;
-        mat33 += dataGenshinData.ascensions[index].materials[2].amount;
+        mat14 += ascensions[index].materials[0].amount;
+        mat23 += ascensions[index].materials[1].amount;
+        mat33 += ascensions[index].materials[2].amount;
       }
     }
   }
@@ -54,115 +52,119 @@ function WeaponAscension({ dataGenshinData, dataGenshinDB, name }) {
               <div className="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
                 <table className="min-w-full divide-y divide-gray-200">
                   <tbody className="bg-white divide-y divide-gray-200">
-                    {dataGenshinData.ascensions.map((attribute, index) => (
-                      <tr
-                        key={index}
-                        className={`${
-                          index % 2 != 0 ? "bg-green-100" : "bg-blue-100"
-                        }`}
-                      >
-                        <td
-                          className={`px-6 py-4 whitespace-nowrap text-sm text-gray-500 font-bold ${
-                            index % 2 != 0 ? "bg-green-200" : "bg-blue-200"
+                    {ascensions.map((attribute, index) =>
+                      index != 0 ? (
+                        <tr
+                          key={index}
+                          className={`${
+                            index % 2 != 0 ? "bg-green-100" : "bg-blue-100"
                           }`}
                         >
-                          {attribute.ascensionLevel}
-                        </td>
-                        <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-500 flex">
-                          {attribute.materials[0] ? (
-                            <div className="flex items-center w-72">
-                              <div className="px-2">
-                                {attribute.materials[0]
-                                  ? attribute.materials[0].name
-                                  : ""}
+                          <td
+                            className={`px-6 py-4 whitespace-nowrap text-sm text-gray-500 font-bold ${
+                              index % 2 != 0 ? "bg-green-200" : "bg-blue-200"
+                            }`}
+                          >
+                            {attribute.ascension}
+                          </td>
+                          <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-500 flex">
+                            {attribute.materials[0] ? (
+                              <div className="flex items-center w-72">
+                                <div className="px-2">
+                                  {attribute.materials[0]
+                                    ? attribute.materials[0].name
+                                    : ""}
+                                </div>
+                                <img
+                                  src={`/img/item/${attribute.materials[0].id}.png`}
+                                  className="w-auto h-10"
+                                  alt=""
+                                />
+                                <div className="font-bold px-2">
+                                  x
+                                  {attribute.materials[0]
+                                    ? attribute.materials[0].amount
+                                    : "0"}
+                                </div>
                               </div>
-                              <img
-                                src={`/img/item/${attribute.materials[0].id}.png`}
-                                className="w-auto h-10"
-                                alt=""
-                              />
-                              <div className="font-bold px-2">
-                                x
-                                {attribute.materials[0]
-                                  ? attribute.materials[0].amount
-                                  : "0"}
-                              </div>
-                            </div>
-                          ) : (
-                            ""
-                          )}
+                            ) : (
+                              ""
+                            )}
 
-                          {attribute.materials[1] ? (
-                            <div className="flex items-center w-72">
-                              <div className="px-2">
-                                {attribute.materials[1]
-                                  ? attribute.materials[1].name
-                                  : ""}
+                            {attribute.materials[1] ? (
+                              <div className="flex items-center w-72">
+                                <div className="px-2">
+                                  {attribute.materials[1]
+                                    ? attribute.materials[1].name
+                                    : ""}
+                                </div>
+                                <img
+                                  src={`/img/item/${attribute.materials[1].id}.png`}
+                                  className="w-auto h-10"
+                                  alt=""
+                                />
+                                <div className="font-bold px-2">
+                                  x
+                                  {attribute.materials[1]
+                                    ? attribute.materials[1].amount
+                                    : "0"}
+                                </div>
                               </div>
-                              <img
-                                src={`/img/item/${attribute.materials[1].id}.png`}
-                                className="w-auto h-10"
-                                alt=""
-                              />
-                              <div className="font-bold px-2">
-                                x
-                                {attribute.materials[1]
-                                  ? attribute.materials[1].amount
-                                  : "0"}
-                              </div>
-                            </div>
-                          ) : (
-                            ""
-                          )}
+                            ) : (
+                              ""
+                            )}
 
-                          {attribute.materials[2] ? (
-                            <div className="flex items-center w-72">
-                              <div className="px-2">
-                                {attribute.materials[2]
-                                  ? attribute.materials[2].name
-                                  : ""}
+                            {attribute.materials[2] ? (
+                              <div className="flex items-center w-72">
+                                <div className="px-2">
+                                  {attribute.materials[2]
+                                    ? attribute.materials[2].name
+                                    : ""}
+                                </div>
+                                <img
+                                  src={`/img/item/${attribute.materials[2].id}.png`}
+                                  className="w-auto h-10"
+                                  alt=""
+                                />
+                                <div className="font-bold px-2">
+                                  x
+                                  {attribute.materials[2]
+                                    ? attribute.materials[2].amount
+                                    : "0"}
+                                </div>
                               </div>
-                              <img
-                                src={`/img/item/${attribute.materials[2].id}.png`}
-                                className="w-auto h-10"
-                                alt=""
-                              />
-                              <div className="font-bold px-2">
-                                x
-                                {attribute.materials[2]
-                                  ? attribute.materials[2].amount
-                                  : "0"}
-                              </div>
-                            </div>
-                          ) : (
-                            ""
-                          )}
+                            ) : (
+                              ""
+                            )}
 
-                          {attribute.cost ? (
-                            <div className="flex items-center w-48">
-                              <div className="px-2">Mora</div>
-                              <img
-                                src={`/img/item/mora.png`}
-                                className="w-auto h-10"
-                                alt=""
-                              />
-                              <div className="font-bold px-2">
-                                x{attribute.cost ? attribute.cost : "0"}
+                            {attribute.cost ? (
+                              <div className="flex items-center w-48">
+                                <div className="px-2">Mora</div>
+                                <img
+                                  src={`/img/item/mora.png`}
+                                  className="w-auto h-10"
+                                  alt=""
+                                />
+                                <div className="font-bold px-2">
+                                  x{attribute.cost ? attribute.cost : "0"}
+                                </div>
                               </div>
-                            </div>
-                          ) : (
-                            ""
-                          )}
-                        </td>
-                      </tr>
-                    ))}
+                            ) : (
+                              ""
+                            )}
+                          </td>
+                        </tr>
+                      ) : (
+                        ""
+                      )
+                    )}
                     <tr className={`bg-red-300`}>
                       <td
-                        className={`px-6 py-4 whitespace-nowrap text-sm text-gray-500 font-bold bg-red-400`}
+                        className={`px-6 py-4 whitespace-nowrap text-sm font-bold bg-red-400`}
                       >
-                        Total
+                        +
                       </td>
-                      <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-500">
+                      <td className="px-4 py-4 whitespace-nowrap text-sm">
                         <div className="flex items-center">
                           <img
                             src={`/img/item/mora.png`}
@@ -171,57 +173,57 @@ function WeaponAscension({ dataGenshinData, dataGenshinDB, name }) {
                           />
                           <div className="font-bold px-2">x{cost}</div>
                           <img
-                            src={`/img/item/${dataGenshinData.ascensions[1].materials[0].id}.png`}
+                            src={`/img/item/${ascensions[1].materials[0].id}.png`}
                             className="w-auto h-10"
                             alt=""
                           />
                           <div className="font-bold px-2">x{mat11}</div>
                           <img
-                            src={`/img/item/${dataGenshinData.ascensions[1].materials[1].id}.png`}
+                            src={`/img/item/${ascensions[1].materials[1].id}.png`}
                             className="w-auto h-10"
                             alt=""
                           />
                           <div className="font-bold px-2">x{mat21}</div>
                           <img
-                            src={`/img/item/${dataGenshinData.ascensions[1].materials[2].id}.png`}
+                            src={`/img/item/${ascensions[1].materials[2].id}.png`}
                             className="w-auto h-10"
                             alt=""
                           />
                           <div className="font-bold px-2">x{mat31}</div>
                           <img
-                            src={`/img/item/${dataGenshinData.ascensions[3].materials[0].id}.png`}
+                            src={`/img/item/${ascensions[3].materials[0].id}.png`}
                             className="w-auto h-10"
                             alt=""
                           />
                           <div className="font-bold px-2">x{mat12}</div>
                           <img
-                            src={`/img/item/${dataGenshinData.ascensions[4].materials[1].id}.png`}
+                            src={`/img/item/${ascensions[4].materials[1].id}.png`}
                             className="w-auto h-10"
                             alt=""
                           />
                           <div className="font-bold px-2">x{mat22}</div>
                           <img
-                            src={`/img/item/${dataGenshinData.ascensions[4].materials[2].id}.png`}
+                            src={`/img/item/${ascensions[4].materials[2].id}.png`}
                             className="w-auto h-10"
                             alt=""
                           />
                           <div className="font-bold px-2">x{mat32}</div>
-                          {dataGenshinData.ascensions[6] ? (
+                          {ascensions[6] ? (
                             <div className="flex items-center">
                               <img
-                                src={`/img/item/${dataGenshinData.ascensions[6].materials[0].id}.png`}
+                                src={`/img/item/${ascensions[6].materials[0].id}.png`}
                                 className="w-auto h-10"
                                 alt=""
                               />
                               <div className="font-bold px-2">x{mat13}</div>
                               <img
-                                src={`/img/item/${dataGenshinData.ascensions[6].materials[1].id}.png`}
+                                src={`/img/item/${ascensions[6].materials[1].id}.png`}
                                 className="w-auto h-10"
                                 alt=""
                               />
                               <div className="font-bold px-2">x{mat23}</div>
                               <img
-                                src={`/img/item/${dataGenshinData.ascensions[6].materials[2].id}.png`}
+                                src={`/img/item/${ascensions[6].materials[2].id}.png`}
                                 className="w-auto h-10"
                                 alt=""
                               />
@@ -244,4 +246,4 @@ function WeaponAscension({ dataGenshinData, dataGenshinDB, name }) {
   );
 }
 
-export default WeaponAscension;
+

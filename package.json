@@ -1,6 +1,6 @@
 {
   "name": "paimon",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "private": true,
   "scripts": {
     "run-dev": "tailwind build styles/index.css -o styles/tailwind-custom.css && next dev",
@@ -10,13 +10,13 @@
     "tailwind": "tailwind build styles/index.css -o styles/tailwind-custom.css"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^5.15.3",
+    "@fortawesome/fontawesome-free": "^5.15.4",
     "@headlessui/react": "^1.2.0",
     "@heroicons/react": "^1.0.1",
     "autoprefixer": "^10.2.5",
-    "genshin-data": "^0.9.0",
-    "genshin-db": "^3.3.0",
-    "next": "10.2.0",
+    "genshin-data": "^0.12.0",
+    "genshin-db": "^3.9.4",
+    "next": "11.1.0",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "swr": "^0.5.6",

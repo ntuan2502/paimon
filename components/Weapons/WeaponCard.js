@@ -1,122 +1,76 @@
 import Link from "next/link";
 import { useState } from "react";
-import useSWR from "swr";
+import { star } from "../../lib/localData";
 
-function createMarkup(markup) {
-  var temp = "";
-  for (let i = 0; i < parseInt(markup); i++) {
-    temp += `    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-  </svg>`;
-  }
-  return { __html: temp };
-}
 function replaceMarkup(markup) {
   var temp = markup;
   temp = temp.replace(/<span>/g, '<span style="color:blue;">');
   return { __html: temp };
 }
-function WeaponCard({ weaponName, localeGenshinData, dataImages }) {
+export default function WeaponCard({ weapon }) {
   const [weaponState, setWeaponState] = useState(1);
   const [level, setLevel] = useState(0);
 
-  var dataWeapon = "";
-  var errorWeapon = "";
-  if (1) {
-    const { data, error } = useSWR(
-      "https://paimon-laravel.herokuapp.com/api/data/genshin-data/" +
-        localeGenshinData +
-        "/weapons/" +
-        weaponName
-    );
-    dataWeapon = data;
-    errorWeapon = error;
-  }
-
-  if (errorWeapon)
-    return (
-      <div className="bg-white p-5 sm:p-3">
-        <div className="flex justify-center items-center mx-auto h-screen w-full sm:w-5/6">
-          failed to load
-        </div>
-      </div>
-    );
-  if (!dataWeapon)
-    return (
-      <div className="bg-white p-5 sm:p-3">
-        <div className="flex justify-center items-center mx-auto h-screen w-full sm:w-5/6">
-          loading...
-        </div>
-      </div>
-    );
-
   return (
     <div className="w-96 hover:shadow-xl">
-      <Link href={`/weapons/${dataWeapon.id}`}>
+      <Link href={`/weapons/${weapon.id}`}>
         <a>
           <div
             className={`cursor-pointer relative bg-gradient-to-r ${
-              dataWeapon.rarity == 1 ? "from-gray-500 to-gray-300" : ""
-            }${dataWeapon.rarity == 2 ? "from-green-500 to-green-300" : ""}${
-              dataWeapon.rarity == 3 ? "from-blue-500 to-blue-300" : ""
-            }${dataWeapon.rarity == 4 ? "from-purple-500 to-purple-300" : ""} ${
-              dataWeapon.rarity == 5 ? "from-yellow-500 to-yellow-300" : ""
+              weapon.rarity == 1 ? "from-gray-500 to-gray-300" : ""
+            }${weapon.rarity == 2 ? "from-green-500 to-green-300" : ""}${
+              weapon.rarity == 3 ? "from-blue-500 to-blue-300" : ""
+            }${weapon.rarity == 4 ? "from-purple-500 to-purple-300" : ""} ${
+              weapon.rarity == 5 ? "from-yellow-500 to-yellow-300" : ""
             } w-96 `}
           >
             <div
               className={`text-xl text-white ${
-                dataWeapon.rarity == 1 ? "bg-gray-500" : ""
-              }${dataWeapon.rarity == 2 ? "bg-green-500" : ""}${
-                dataWeapon.rarity == 3 ? "bg-blue-500" : ""
-              }${dataWeapon.rarity == 4 ? "bg-purple-500" : ""}${
-                dataWeapon.rarity == 5 ? "bg-yellow-500" : ""
+                weapon.rarity == 1 ? "bg-gray-500" : ""
+              }${weapon.rarity == 2 ? "bg-green-500" : ""}${
+                weapon.rarity == 3 ? "bg-blue-500" : ""
+              }${weapon.rarity == 4 ? "bg-purple-500" : ""}${
+                weapon.rarity == 5 ? "bg-yellow-500" : ""
               } font-semibold px-5 py-3`}
             >
-              {dataWeapon.name}
+              {weapon.name}
             </div>
             <img
               className="w-40 h-auto float-right p-2"
-              src={`${
-                level < 6
-                  ? dataImages[dataWeapon.id.replace(/_/g, "") + ".json"]
-                    ? dataImages[dataWeapon.id.replace(/_/g, "") + ".json"].icon
-                    : ""
-                  : dataImages[dataWeapon.id.replace(/_/g, "") + ".json"]
-                  ? dataImages[dataWeapon.id.replace(/_/g, "") + ".json"]
-                      .awakenicon
-                  : dataImages[dataWeapon.id.replace(/_/g, "") + ".json"].icon
-              }`}
+              src={`/img/weapons/${weapon.id}.png`}
             />
             <p className="text-md text-white font-bold px-5 pt-1">
-              {dataWeapon.type}
+              {weapon.type}
             </p>
-            {dataWeapon.secondary ? (
+            {weapon.stats.secondary ? (
               <div>
                 <p className="text-md text-white font-semibold px-5">
-                  {dataWeapon.secondary.name}
+                  {weapon.stats.secondary}
                 </p>
                 <p className="text-md text-white font-bold px-5">
-                  {level == 0 ? dataWeapon.secondary.value : ""}
-                  {level == 1 && dataWeapon.ascensions[0]
-                    ? dataWeapon.ascensions[0].secondary
+                  {level == 0
+                    ? weapon.stats.levels[0] && weapon.stats.levels[0].secondary
                     : ""}
-                  {level == 2 && dataWeapon.ascensions[1]
-                    ? dataWeapon.ascensions[1].secondary
+                  {level == 1 && weapon.stats.levels[1]
+                    ? weapon.stats.levels[1].secondary
                     : ""}
-                  {level == 3 && dataWeapon.ascensions[2]
-                    ? dataWeapon.ascensions[2].secondary
+                  {level == 2 && weapon.stats.levels[3]
+                    ? weapon.stats.levels[3].secondary
                     : ""}
-                  {level == 4 && dataWeapon.ascensions[3]
-                    ? dataWeapon.ascensions[3].secondary
+                  {level == 3 && weapon.stats.levels[5]
+                    ? weapon.stats.levels[5].secondary
                     : ""}
-                  {level == 5 && dataWeapon.ascensions[4]
-                    ? dataWeapon.ascensions[4].secondary
+                  {level == 4 && weapon.stats.levels[7]
+                    ? weapon.stats.levels[7].secondary
                     : ""}
-                  {level == 6 && dataWeapon.ascensions[5]
-                    ? dataWeapon.ascensions[5].secondary
+                  {level == 5 && weapon.stats.levels[9]
+                    ? weapon.stats.levels[9].secondary
                     : ""}
-                  {level == 7 && dataWeapon.ascensions[6]
-                    ? dataWeapon.ascensions[6].secondary
+                  {level == 6 && weapon.stats.levels[11]
+                    ? weapon.stats.levels[11].secondary
+                    : ""}
+                  {level == 7 && weapon.stats.levels[13]
+                    ? weapon.stats.levels[13].secondary
                     : ""}
                 </p>
               </div>
@@ -127,36 +81,38 @@ function WeaponCard({ weaponName, localeGenshinData, dataImages }) {
               </div>
             )}
             <p className="text-md text-white font-semibold px-5">
-              {dataWeapon.primary.name}
+              {weapon.stats.primary}
             </p>
             <p className="text-4xl text-white font-bold px-5">
-              {level == 0 ? dataWeapon.primary.value : ""}
-              {level == 1 && dataWeapon.ascensions[0]
-                ? dataWeapon.ascensions[0].primary
+              {level == 0
+                ? weapon.stats.levels[0] && weapon.stats.levels[0].primary
                 : ""}
-              {level == 2 && dataWeapon.ascensions[1]
-                ? dataWeapon.ascensions[1].primary
+              {level == 1 && weapon.stats.levels[1]
+                ? weapon.stats.levels[1].primary
                 : ""}
-              {level == 3 && dataWeapon.ascensions[2]
-                ? dataWeapon.ascensions[2].primary
+              {level == 2 && weapon.stats.levels[3]
+                ? weapon.stats.levels[3].primary
                 : ""}
-              {level == 4 && dataWeapon.ascensions[3]
-                ? dataWeapon.ascensions[3].primary
+              {level == 3 && weapon.stats.levels[5]
+                ? weapon.stats.levels[5].primary
                 : ""}
-              {level == 5 && dataWeapon.ascensions[4]
-                ? dataWeapon.ascensions[4].primary
+              {level == 4 && weapon.stats.levels[7]
+                ? weapon.stats.levels[7].primary
                 : ""}
-              {level == 6 && dataWeapon.ascensions[5]
-                ? dataWeapon.ascensions[5].primary
+              {level == 5 && weapon.stats.levels[9]
+                ? weapon.stats.levels[9].primary
                 : ""}
-              {level == 7 && dataWeapon.ascensions[6]
-                ? dataWeapon.ascensions[6].primary
+              {level == 6 && weapon.stats.levels[11]
+                ? weapon.stats.levels[11].primary
+                : ""}
+              {level == 7 && weapon.stats.levels[13]
+                ? weapon.stats.levels[13].primary
                 : ""}
             </p>
             <div className="px-5 pt-0 py-1">
               <div
                 className="flex h-7 w-auto text-yellow-300"
-                dangerouslySetInnerHTML={createMarkup(dataWeapon.rarity)}
+                dangerouslySetInnerHTML={star(weapon.rarity)}
               />
             </div>
 
@@ -168,28 +124,28 @@ function WeaponCard({ weaponName, localeGenshinData, dataImages }) {
         <div className="font-semibold px-5 py-1 flex items-center text-white bg-gray-700">
           <div className="px-1">
             Level {level == 0 ? "01" : ""}
-            {level == 1 && dataWeapon.ascensions[0]
-              ? dataWeapon.ascensions[0].maxLevel
+            {level == 1 && weapon.ascensions[0]
+              ? weapon.ascensions[0].level
               : ""}
-            {level == 2 && dataWeapon.ascensions[1]
-              ? dataWeapon.ascensions[1].maxLevel
+            {level == 2 && weapon.ascensions[1]
+              ? weapon.ascensions[1].level
               : ""}
-            {level == 3 && dataWeapon.ascensions[2]
-              ? dataWeapon.ascensions[2].maxLevel
+            {level == 3 && weapon.ascensions[2]
+              ? weapon.ascensions[2].level
               : ""}
-            {level == 4 && dataWeapon.ascensions[3]
-              ? dataWeapon.ascensions[3].maxLevel
+            {level == 4 && weapon.ascensions[3]
+              ? weapon.ascensions[3].level
               : ""}
-            {level == 5 && dataWeapon.ascensions[4]
-              ? dataWeapon.ascensions[4].maxLevel
+            {level == 5 && weapon.ascensions[4]
+              ? weapon.ascensions[4].level
               : ""}
-            {level == 6 && dataWeapon.ascensions[5]
-              ? dataWeapon.ascensions[5].maxLevel
+            {level == 6 && weapon.ascensions[5]
+              ? weapon.ascensions[5].level
               : ""}
-            {level == 7 && dataWeapon.ascensions[6]
-              ? dataWeapon.ascensions[6].maxLevel
+            {level == 7 && weapon.ascensions[6]
+              ? weapon.ascensions[6].level
               : ""}
-            /{dataWeapon.ascensions[dataWeapon.ascensions.length - 1].maxLevel}
+            /{weapon.ascensions[weapon.ascensions.length - 1].level}
           </div>
           <div className="px-1">
             <svg
@@ -213,7 +169,7 @@ function WeaponCard({ weaponName, localeGenshinData, dataImages }) {
           <div className="px-1">
             <svg
               onClick={
-                level < dataWeapon.ascensions.length
+                level < weapon.ascensions.length
                   ? () => setLevel(level + 1)
                   : () => setLevel(level)
               }
@@ -232,7 +188,7 @@ function WeaponCard({ weaponName, localeGenshinData, dataImages }) {
             </svg>
           </div>
         </div>
-        {dataWeapon.refinements.length > 0 ? (
+        {weapon.refinements.length > 0 ? (
           <div className="text-white flex justify-around pt-3">
             <div
               onClick={() => setWeaponState(1)}
@@ -279,58 +235,54 @@ function WeaponCard({ weaponName, localeGenshinData, dataImages }) {
           ""
         )}
 
-        {dataWeapon.passive != "" ? (
-          <div className="font-bold px-5 pt-3">{dataWeapon.passive}</div>
+        {weapon.passive != "" ? (
+          <div className="font-bold px-5 pt-3">{weapon.passive}</div>
         ) : (
           ""
         )}
 
-        {/* <div className="font-bold px-5 py-0">
-          <div dangerouslySetInnerHTML={replaceMarkup(dataWeapon.bonus)} />
-        </div> */}
-
-        {dataWeapon.refinements.length > 0 ? (
+        {weapon.refinements.length > 0 ? (
           <div className="font-bold px-5 py-0">
-            {dataWeapon.refinements[0] && weaponState == 1 ? (
+            {weapon.refinements[0] && weaponState == 1 ? (
               <div
                 dangerouslySetInnerHTML={replaceMarkup(
-                  dataWeapon.refinements[0].desc
+                  weapon.refinements[0].desc
                 )}
               />
             ) : (
               ""
             )}
-            {dataWeapon.refinements[1] && weaponState == 2 ? (
+            {weapon.refinements[1] && weaponState == 2 ? (
               <div
                 dangerouslySetInnerHTML={replaceMarkup(
-                  dataWeapon.refinements[1].desc
+                  weapon.refinements[1].desc
                 )}
               />
             ) : (
               ""
             )}
-            {dataWeapon.refinements[2] && weaponState == 3 ? (
+            {weapon.refinements[2] && weaponState == 3 ? (
               <div
                 dangerouslySetInnerHTML={replaceMarkup(
-                  dataWeapon.refinements[2].desc
+                  weapon.refinements[2].desc
                 )}
               />
             ) : (
               ""
             )}
-            {dataWeapon.refinements[3] && weaponState == 4 ? (
+            {weapon.refinements[3] && weaponState == 4 ? (
               <div
                 dangerouslySetInnerHTML={replaceMarkup(
-                  dataWeapon.refinements[3].desc
+                  weapon.refinements[3].desc
                 )}
               />
             ) : (
               ""
             )}
-            {dataWeapon.refinements[4] && weaponState == 5 ? (
+            {weapon.refinements[4] && weaponState == 5 ? (
               <div
                 dangerouslySetInnerHTML={replaceMarkup(
-                  dataWeapon.refinements[4].desc
+                  weapon.refinements[4].desc
                 )}
               />
             ) : (
@@ -341,10 +293,8 @@ function WeaponCard({ weaponName, localeGenshinData, dataImages }) {
           ""
         )}
 
-        <div className="font-semibold px-5 py-3">{dataWeapon.description}</div>
+        <div className="font-semibold px-5 py-3">{weapon.description}</div>
       </div>
     </div>
   );
 }
-
-export default WeaponCard;

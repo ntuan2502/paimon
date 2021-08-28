@@ -1,7 +1,5 @@
 module.exports = {
-  future: {
-    webpack5: true
-  },
+  webpack5: true,
   i18n: {
     locales: [
       "vi",
@@ -15,9 +13,8 @@ module.exports = {
       "ko",
       "pt",
       "ru",
-      "sp",
+      "es",
       "th",
-
     ],
     defaultLocale: "vi",
   },

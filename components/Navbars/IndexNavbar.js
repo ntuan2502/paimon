@@ -355,6 +355,7 @@ export default function IndexNavbar() {
                           <Language language="ko" />
                           <Language language="pt" />
                           <Language language="ru" />
+                          <Language language="es" />
                           <Language language="th" />
                         </Menu.Items>
                       </Transition>
@@ -448,6 +449,7 @@ export default function IndexNavbar() {
                                       <Language language="ko" />
                                       <Language language="pt" />
                                       <Language language="ru" />
+                                      <Language language="es" />
                                       <Language language="th" />
                                     </Menu.Items>
                                   </Transition>

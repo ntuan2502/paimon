@@ -5,7 +5,7 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-const Language = ({ language }) => {
+export default function Language({ language }) {
   const router = useRouter();
   const changeLanguage = (e) => {
     const locale = e;
@@ -41,6 +41,4 @@ const Language = ({ language }) => {
       )}
     </Menu.Item>
   );
-};
-
-export default Language;
+}

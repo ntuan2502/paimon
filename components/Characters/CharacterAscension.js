@@ -1,4 +1,4 @@
-function CharacterAscension({ dataGenshinData, dataGenshinDB, name }) {
+export default function CharacterAscension({ ascension }) {
   var cost = 0;
   var mat11 = 0;
   var mat12 = 0;
@@ -9,44 +9,22 @@ function CharacterAscension({ dataGenshinData, dataGenshinDB, name }) {
   var mat41 = 0;
   var mat42 = 0;
   var mat43 = 0;
-  for (let index = 0; index < dataGenshinData.ascension.length; index++) {
-    cost += dataGenshinData.ascension[index].cost
-      ? dataGenshinData.ascension[index].cost
-      : 0;
-    mat2 += dataGenshinData.ascension[index].mat2
-      ? dataGenshinData.ascension[index].mat2.amount
-      : 0;
-    mat3 += dataGenshinData.ascension[index].mat3
-      ? dataGenshinData.ascension[index].mat3.amount
-      : 0;
+  for (let index = 0; index < ascension.length; index++) {
+    cost += ascension[index].cost ? ascension[index].cost : 0;
+    mat2 += ascension[index].mat2 ? ascension[index].mat2.amount : 0;
+    mat3 += ascension[index].mat3 ? ascension[index].mat3.amount : 0;
     if (index == 0 || index == 1)
-      mat41 += dataGenshinData.ascension[index].mat4
-        ? dataGenshinData.ascension[index].mat4.amount
-        : 0;
+      mat41 += ascension[index].mat4 ? ascension[index].mat4.amount : 0;
     else if (index == 2 || index == 3)
-      mat42 += dataGenshinData.ascension[index].mat4
-        ? dataGenshinData.ascension[index].mat4.amount
-        : 0;
-    else
-      mat43 += dataGenshinData.ascension[index].mat4
-        ? dataGenshinData.ascension[index].mat4.amount
-        : 0;
+      mat42 += ascension[index].mat4 ? ascension[index].mat4.amount : 0;
+    else mat43 += ascension[index].mat4 ? ascension[index].mat4.amount : 0;
     if (index == 0)
-      mat11 += dataGenshinData.ascension[index].mat1
-        ? dataGenshinData.ascension[index].mat1.amount
-        : 0;
+      mat11 += ascension[index].mat1 ? ascension[index].mat1.amount : 0;
     else if (index == 1 || index == 2)
-      mat12 += dataGenshinData.ascension[index].mat1
-        ? dataGenshinData.ascension[index].mat1.amount
-        : 0;
+      mat12 += ascension[index].mat1 ? ascension[index].mat1.amount : 0;
     else if (index == 3 || index == 4)
-      mat13 += dataGenshinData.ascension[index].mat1
-        ? dataGenshinData.ascension[index].mat1.amount
-        : 0;
-    else
-      mat14 += dataGenshinData.ascension[index].mat1
-        ? dataGenshinData.ascension[index].mat1.amount
-        : 0;
+      mat13 += ascension[index].mat1 ? ascension[index].mat1.amount : 0;
+    else mat14 += ascension[index].mat1 ? ascension[index].mat1.amount : 0;
   }
   return (
     <div>
@@ -57,7 +35,7 @@ function CharacterAscension({ dataGenshinData, dataGenshinDB, name }) {
               <div className="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
                 <table className="min-w-full divide-y divide-gray-200">
                   <tbody className="bg-white divide-y divide-gray-200">
-                    {dataGenshinData.ascension.map((attribute, index) => (
+                    {ascension.map((attribute, index) => (
                       <tr
                         key={index}
                         className={`${
@@ -163,13 +141,13 @@ function CharacterAscension({ dataGenshinData, dataGenshinDB, name }) {
                         </td>
                       </tr>
                     ))}
-                    <tr className={`bg-red-300`}>
+                    <tr className={`bg-red-400`}>
                       <td
-                        className={`px-6 py-4 whitespace-nowrap text-sm text-gray-500 font-bold bg-red-400`}
+                        className={`px-6 py-4 whitespace-nowrap text-sm font-bold bg-red-500`}
                       >
                         Total
                       </td>
-                      <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-500 flex">
+                      <td className="px-4 py-4 whitespace-nowrap text-sm flex">
                         <div className="flex items-center">
                           <img
                             src={`/img/item/mora.png`}
@@ -181,35 +159,35 @@ function CharacterAscension({ dataGenshinData, dataGenshinDB, name }) {
 
                         <div className="flex items-center">
                           <img
-                            src={`/img/item/${dataGenshinData.ascension[0].mat1.id}.png`}
+                            src={`/img/item/${ascension[0].mat1.id}.png`}
                             className="w-auto h-10"
                             alt=""
                           />
                           <div className="font-bold px-2">x{mat11}</div>
                           <img
-                            src={`/img/item/${dataGenshinData.ascension[1].mat1.id}.png`}
+                            src={`/img/item/${ascension[1].mat1.id}.png`}
                             className="w-auto h-10"
                             alt=""
                           />
                           <div className="font-bold px-2">x{mat12}</div>
                           <img
-                            src={`/img/item/${dataGenshinData.ascension[3].mat1.id}.png`}
+                            src={`/img/item/${ascension[3].mat1.id}.png`}
                             className="w-auto h-10"
                             alt=""
                           />
                           <div className="font-bold px-2">x{mat13}</div>
                           <img
-                            src={`/img/item/${dataGenshinData.ascension[4].mat1.id}.png`}
+                            src={`/img/item/${ascension[4].mat1.id}.png`}
                             className="w-auto h-10"
                             alt=""
                           />
                           <div className="font-bold px-2">x{mat14}</div>
                         </div>
 
-                        {dataGenshinData.ascension[1].mat2 ? (
+                        {ascension[1].mat2 ? (
                           <div className="flex items-center">
                             <img
-                              src={`/img/item/${dataGenshinData.ascension[1].mat2.id}.png`}
+                              src={`/img/item/${ascension[1].mat2.id}.png`}
                               className="w-auto h-10"
                               alt=""
                             />
@@ -221,7 +199,7 @@ function CharacterAscension({ dataGenshinData, dataGenshinDB, name }) {
 
                         <div className="flex items-center">
                           <img
-                            src={`/img/item/${dataGenshinData.ascension[1].mat3.id}.png`}
+                            src={`/img/item/${ascension[1].mat3.id}.png`}
                             className="w-auto h-10"
                             alt=""
                           />
@@ -230,19 +208,19 @@ function CharacterAscension({ dataGenshinData, dataGenshinDB, name }) {
 
                         <div className="flex items-center">
                           <img
-                            src={`/img/item/${dataGenshinData.ascension[0].mat4.id}.png`}
+                            src={`/img/item/${ascension[0].mat4.id}.png`}
                             className="w-auto h-10"
                             alt=""
                           />
                           <div className="font-bold px-2">x{mat41}</div>
                           <img
-                            src={`/img/item/${dataGenshinData.ascension[2].mat4.id}.png`}
+                            src={`/img/item/${ascension[2].mat4.id}.png`}
                             className="w-auto h-10"
                             alt=""
                           />
                           <div className="font-bold px-2">x{mat42}</div>
                           <img
-                            src={`/img/item/${dataGenshinData.ascension[4].mat4.id}.png`}
+                            src={`/img/item/${ascension[4].mat4.id}.png`}
                             className="w-auto h-10"
                             alt=""
                           />
@@ -260,5 +238,3 @@ function CharacterAscension({ dataGenshinData, dataGenshinDB, name }) {
     </div>
   );
 }
-
-export default CharacterAscension;
