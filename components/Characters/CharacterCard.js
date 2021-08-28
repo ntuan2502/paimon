@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { star } from "../../lib/localData";
 
-export default function CharacterCard({ id, name, rarity }) {
+export default function CharacterCard({ id, name, rarity, disabled }) {
   return (
     <Link href={`/characters/${id}`}>
       <a>
@@ -29,4 +29,3 @@ export default function CharacterCard({ id, name, rarity }) {
     </Link>
   );
 }
-
