@@ -125,7 +125,7 @@ export default function CharacterTalentMaterials({ id, talent_materials }) {
                       <td
                         className={`px-6 py-4 whitespace-nowrap text-sm font-bold bg-red-500 text-center`}
                       >
-                        Total
+                        +
                       </td>
                       <td className="px-4 py-4 whitespace-nowrap text-sm">
                         {id.search("traveler") != -1 ? (
@@ -274,7 +274,7 @@ export default function CharacterTalentMaterials({ id, talent_materials }) {
                       <td
                         className={`px-6 py-4 whitespace-nowrap text-sm text-white font-bold bg-green-500 text-center`}
                       >
-                        Total x3
+                        x3
                       </td>
                       <td className="px-4 py-4 whitespace-nowrap text-sm text-white">
                         {id.search("traveler") != -1 ? (

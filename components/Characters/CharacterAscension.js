@@ -145,7 +145,7 @@ export default function CharacterAscension({ ascension }) {
                       <td
                         className={`px-6 py-4 whitespace-nowrap text-sm font-bold bg-red-500`}
                       >
-                        Total
+                        +
                       </td>
                       <td className="px-4 py-4 whitespace-nowrap text-sm flex">
                         <div className="flex items-center">
