@@ -41,7 +41,7 @@ export default function CharacterPage({ character, region }) {
 export async function getStaticPaths({ locales }) {
   const genshinData = new GenshinData({ language: "vietnamese" });
   const characters = await genshinData.characters({
-    select: ["id", "region"],
+    select: ["id"],
   });
 
   const paths = [];
@@ -69,7 +69,8 @@ export async function getStaticProps(context) {
   const genshinData1 = new GenshinData();
   const characters1 = await genshinData1.characters();
   const character1 = characters1.find((c) => c.id === context.params.name);
-  const region = character1.region;
+  var region = "Mondstadt";
+  if (character1.region) region = character1.region;
   return {
     props: {
       character,
