@@ -49,6 +49,30 @@ const solutions = [
     href: "/weapons",
     icon: FireIcon,
   },
+  {
+    name: "Potions",
+    description: "",
+    href: "/potions",
+    icon: BeakerIcon,
+  },
+  {
+    name: "Ingredients",
+    description: "",
+    href: "/ingredients",
+    icon: FireIcon,
+  },
+  {
+    name: "Common Materials",
+    description: "",
+    href: "/common_materials",
+    icon: FireIcon,
+  },
+  {
+    name: "Elemental Stone Materials",
+    description: "",
+    href: "/elemental_stone_materials",
+    icon: FireIcon,
+  },
   // {
   //   name: "Other",
   //   description: "",

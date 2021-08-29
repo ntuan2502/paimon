@@ -8,8 +8,7 @@ import Head from "next/head";
 import GenshinData from "genshin-data";
 import { getLocale } from "../../lib/localData";
 
-export default function CharacterPage({ character, region }) {
-  const basePath = "https://raw.githubusercontent.com/ntuan2502/paimon/main/public";
+export default function CharacterPage({ character, region, basePath }) {
   return (
     <div>
       <Head>
@@ -102,10 +101,14 @@ export async function getStaticProps(context) {
   var region = "Mondstadt";
   if (character1.region) region = character1.region;
 
+  const basePath =
+    "https://raw.githubusercontent.com/ntuan2502/paimon/main/public";
+
   return {
     props: {
       character,
       region,
+      basePath,
     },
   };
 }

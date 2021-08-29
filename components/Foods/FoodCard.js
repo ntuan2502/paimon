@@ -2,12 +2,12 @@
 import { useState } from "react";
 import { star } from "../../lib/localData";
 
-function FoodCard({ food, foodEnglish }) {
+export default function FoodCard({ food, foodEnglish }) {
   const [foodState, setFoodState] = useState(2);
 
   return (
     // <Link href={`/foods/${food.id}`}>
-    <div className="w-96 hover:shadow-xl ">
+    <div className="w-96 hover:shadow-xl">
       <div
         className={`relative ${food.rarity == 1 ? "bg-gray-400" : ""}${
           food.rarity == 2 ? "bg-green-400" : ""
@@ -189,5 +189,3 @@ function FoodCard({ food, foodEnglish }) {
     // </Link>
   );
 }
-
-export default FoodCard;
