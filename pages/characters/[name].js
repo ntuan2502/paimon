@@ -4,16 +4,46 @@ import CharacterSkill from "../../components/Characters/CharacterSkill";
 import CharacterPassive from "../../components/Characters/CharacterPassive";
 import CharacterAscension from "../../components/Characters/CharacterAscension";
 import CharacterTalentMaterials from "../../components/Characters/CharacterTalentMaterials";
-import { useRouter } from "next/router";
 import Head from "next/head";
 import GenshinData from "genshin-data";
 import { getLocale } from "../../lib/localData";
+import { useRouter } from "next/router";
 
 export default function CharacterPage({ character, region }) {
   return (
     <div>
       <Head>
         <title>Genshin | {character.name}</title>
+        <meta itemProp="name" content={character.title} />
+        <meta itemProp="description" content={character.description} />
+        <meta
+          itemProp="image"
+          content={`/img/character/backgrounds/${character.id}.png`}
+        />
+
+        <meta itemProp="name" content={character.title} />
+        <meta itemProp="description" content={character.description} />
+        <meta
+          itemProp="image"
+          content={`/img/character/backgrounds/${character.id}.png`}
+        />
+
+        <meta property="og:url" content="https://paimon.vercel.app" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content={character.title} />
+        <meta property="og:description" content={character.description} />
+        <meta
+          property="og:image"
+          content={`/img/character/backgrounds/${character.id}.png`}
+        />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={character.title} />
+        <meta name="twitter:description" content={character.description} />
+        <meta
+          name="twitter:image"
+          content={`/img/character/backgrounds/${character.id}.png`}
+        />
       </Head>
       <div className="py-5">
         <div className="bg-white flex flex-row flex-wrap p-5 ">
@@ -71,6 +101,7 @@ export async function getStaticProps(context) {
   const character1 = characters1.find((c) => c.id === context.params.name);
   var region = "Mondstadt";
   if (character1.region) region = character1.region;
+
   return {
     props: {
       character,
