@@ -46,7 +46,7 @@ export default function PotionCard({ potion }) {
           <p>- {potion.effect}</p>
         </div>
         <div className="font-semibold px-5 py-3">
-          <p>{potion.description.replace("<br/>", " ")}</p>
+          <p>{potion.description.replace(/<br\/>/g, " ")}</p>
         </div>
       </div>
     </div>

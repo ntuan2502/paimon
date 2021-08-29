@@ -1,31 +1,31 @@
 import { star } from "../../lib/localData";
 
-export default function CommonMaterialCard({ commonMaterial }) {
+export default function JewelsMaterialCard({ jewelsMaterial }) {
   return (
     <div className="w-96 hover:shadow-xl ">
       <div
         className={`relative ${
-          commonMaterial.rarity == 1 ? "bg-gray-400" : ""
-        }${commonMaterial.rarity == 2 ? "bg-green-400" : ""}${
-          commonMaterial.rarity == 3 ? "bg-blue-400" : ""
-        }${commonMaterial.rarity == 4 ? "bg-purple-400" : ""} ${
-          commonMaterial.rarity == 5 ? "bg-yellow-400" : ""
+          jewelsMaterial.rarity == 1 ? "bg-gray-400" : ""
+        }${jewelsMaterial.rarity == 2 ? "bg-green-400" : ""}${
+          jewelsMaterial.rarity == 3 ? "bg-blue-400" : ""
+        }${jewelsMaterial.rarity == 4 ? "bg-purple-400" : ""} ${
+          jewelsMaterial.rarity == 5 ? "bg-yellow-400" : ""
         } w-96 `}
       >
         <div
           className={`text-xl text-white ${
-            commonMaterial.rarity == 1 ? "bg-gray-500" : ""
-          }${commonMaterial.rarity == 2 ? "bg-green-500" : ""}${
-            commonMaterial.rarity == 3 ? "bg-blue-500" : ""
-          }${commonMaterial.rarity == 4 ? "bg-purple-500" : ""} ${
-            commonMaterial.rarity == 5 ? "bg-yellow-500" : ""
+            jewelsMaterial.rarity == 1 ? "bg-gray-500" : ""
+          }${jewelsMaterial.rarity == 2 ? "bg-green-500" : ""}${
+            jewelsMaterial.rarity == 3 ? "bg-blue-500" : ""
+          }${jewelsMaterial.rarity == 4 ? "bg-purple-500" : ""} ${
+            jewelsMaterial.rarity == 5 ? "bg-yellow-500" : ""
           } font-semibold px-5 py-3`}
         >
-          <div>{commonMaterial.name}</div>
+          <div>{jewelsMaterial.name}</div>
         </div>
         <img
           className="w-40 h-auto float-right"
-          src={`/img/common_materials/item_${commonMaterial.id}.webp`}
+          src={`/img/jewels_materials/item_${jewelsMaterial.id}.webp`}
         />
 
         <p className="text-lg text-white font-semibold px-5 py-1">---</p>
@@ -33,7 +33,7 @@ export default function CommonMaterialCard({ commonMaterial }) {
         <div className="px-5 pt-20 py-2">
           <div
             className="flex h-7 w-32 text-yellow-300"
-            dangerouslySetInnerHTML={star(commonMaterial.rarity)}
+            dangerouslySetInnerHTML={star(jewelsMaterial.rarity)}
           />
         </div>
 
@@ -41,13 +41,13 @@ export default function CommonMaterialCard({ commonMaterial }) {
       </div>
       <div className="bg-gray-200 pb-3 text-lg">
         <div className="font-semibold px-5 py-3">
-          <p>{commonMaterial.description.replace(/<br\/>/g, " ")}</p>
+          <p>{jewelsMaterial.description.replace(/<br\/>/g, " ")}</p>
         </div>
 
-        {commonMaterial.source ? (
+        {jewelsMaterial.source ? (
           <div>
             <div className="font-bold px-5 py-3">
-              {commonMaterial.source.map((source, index) => (
+              {jewelsMaterial.source.map((source, index) => (
                 <div className="border-2 border-gray-400 p-2 my-2" key={index}>
                   {source}
                 </div>
@@ -59,20 +59,20 @@ export default function CommonMaterialCard({ commonMaterial }) {
           ""
         )}
 
-        {commonMaterial.craft ? (
+        {jewelsMaterial.craft ? (
           <div>
             <div className="font-bold px-5 py-3">
               <div className="flex">
                 + Mora
                 <img className="w-7 h-auto mx-1" src={`/img/item/mora.png`} />x
-                {commonMaterial.craft.cost}
+                {jewelsMaterial.craft.cost}
               </div>
-              {commonMaterial.craft.items.map((craft, index) => (
+              {jewelsMaterial.craft.items.map((craft, index) => (
                 <div className="flex" key={index}>
                   + {craft.name}
                   <img
                     className="w-7 h-auto mx-1"
-                    src={`/img/common_materials/item_${craft.id}.webp`}
+                    src={`/img/jewels_materials/item_${craft.id}.webp`}
                   />
                   x{craft.amount}
                 </div>

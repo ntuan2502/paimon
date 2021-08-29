@@ -41,7 +41,7 @@ export default function ElementalStoneMaterialCard({ elementalStoneMaterial }) {
       </div>
       <div className="bg-gray-200 pb-3 text-lg">
         <div className="font-semibold px-5 py-3">
-          <p>{elementalStoneMaterial.description.replace("<br/>", " ")}</p>
+          <p>{elementalStoneMaterial.description.replace(/<br\/>/g, " ")}</p>
         </div>
 
         {elementalStoneMaterial.source ? (

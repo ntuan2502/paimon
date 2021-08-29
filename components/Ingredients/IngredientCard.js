@@ -22,7 +22,7 @@ export default function IngredientCard({ ingredient }) {
         <div className="px-5 pt-20 py-2">
           <div
             className="flex h-7 w-32 text-yellow-300"
-            dangerouslySetInnerHTML={star(0)}
+            dangerouslySetInnerHTML={star(ingredient.rarity)}
           />
         </div>
 
@@ -30,7 +30,7 @@ export default function IngredientCard({ ingredient }) {
       </div>
       <div className="bg-gray-200 pb-3 text-lg">
         <div className="font-semibold px-5 py-3">
-          <p>{ingredient.description.replace("<br/>", " ")}</p>
+          <p>{ingredient.description.replace(/<br\/>/g, " ")}</p>
         </div>
 
         {ingredient.source ? (

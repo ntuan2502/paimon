@@ -73,6 +73,30 @@ const solutions = [
     href: "/elemental_stone_materials",
     icon: FireIcon,
   },
+  {
+    name: "Jewels Materials",
+    description: "",
+    href: "/jewels_materials",
+    icon: FireIcon,
+  },
+  {
+    name: "Local Materials",
+    description: "",
+    href: "/local_materials",
+    icon: FireIcon,
+  },
+  {
+    name: "Talent Lvl Up Materials",
+    description: "",
+    href: "talent_lvl_up_materials",
+    icon: FireIcon,
+  },
+  {
+    name: "Weapon Primary Materials",
+    description: "",
+    href: "weapon_primary_materials",
+    icon: FireIcon,
+  },
   // {
   //   name: "Other",
   //   description: "",
