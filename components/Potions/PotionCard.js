@@ -25,7 +25,7 @@ export default function PotionCard({ potion }) {
         </div>
         <img
           className="w-40 h-auto float-right"
-          src={`/img/potion/item_${potion.id}.webp`}
+          src={`/img/items/item_${potion.id}.webp`}
         />
 
         <p className="text-lg text-white font-semibold px-5 py-1">

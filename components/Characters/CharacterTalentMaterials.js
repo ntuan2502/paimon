@@ -91,7 +91,7 @@ export default function CharacterTalentMaterials({ id, talent_materials }) {
                           <div className="flex">
                             <div className="flex items-center w-48">
                               <img
-                                src={`/img/item/mora.png`}
+                                src={`/img/items/item_mora.webp`}
                                 className="w-10 h-auto"
                                 alt=""
                               />
@@ -105,7 +105,7 @@ export default function CharacterTalentMaterials({ id, talent_materials }) {
                             {attribute.items.map((value, key) => (
                               <div key={key} className="flex items-center w-72">
                                 <img
-                                  src={`/img/item/${value.id}.png`}
+                                  src={`/img/items/item_${value.id}.webp`}
                                   className="w-10 h-auto"
                                   alt=""
                                 />
@@ -131,55 +131,55 @@ export default function CharacterTalentMaterials({ id, talent_materials }) {
                         {id.search("traveler") != -1 ? (
                           <div className="flex items-center">
                             <img
-                              src={`/img/item/mora.png`}
+                              src={`/img/items/item_mora.webp`}
                               className="w-auto h-10"
                               alt=""
                             />
                             <div className="font-bold px-2">x{cost}</div>
                             <img
-                              src={`/img/item/${talent_materials[0].items[0].id}.png`}
+                              src={`/img/items/item_${talent_materials[0].items[0].id}.webp`}
                               className="w-auto h-10"
                               alt=""
                             />
                             <div className="font-bold px-2">x{mat11}</div>
                             <img
-                              src={`/img/item/${talent_materials[0].items[1].id}.png`}
+                              src={`/img/items/item_${talent_materials[0].items[1].id}.webp`}
                               className="w-auto h-10"
                               alt=""
                             />
                             <div className="font-bold px-2">x{mat21}</div>
                             <img
-                              src={`/img/item/${talent_materials[1].items[0].id}.png`}
+                              src={`/img/items/item_${talent_materials[1].items[0].id}.webp`}
                               className="w-auto h-10"
                               alt=""
                             />
                             <div className="font-bold px-2">x{mat12}</div>
                             <img
-                              src={`/img/item/${talent_materials[1].items[1].id}.png`}
+                              src={`/img/items/item_${talent_materials[1].items[1].id}.webp`}
                               className="w-auto h-10"
                               alt=""
                             />
                             <div className="font-bold px-2">x{mat22}</div>
                             <img
-                              src={`/img/item/${talent_materials[8].items[0].id}.png`}
+                              src={`/img/items/item_${talent_materials[8].items[0].id}.webp`}
                               className="w-auto h-10"
                               alt=""
                             />
                             <div className="font-bold px-2">x{mat13}</div>
                             <img
-                              src={`/img/item/${talent_materials[8].items[1].id}.png`}
+                              src={`/img/items/item_${talent_materials[8].items[1].id}.webp`}
                               className="w-auto h-10"
                               alt=""
                             />
                             <div className="font-bold px-2">x{mat23}</div>
                             <img
-                              src={`/img/item/${talent_materials[8].items[2].id}.png`}
+                              src={`/img/items/item_${talent_materials[8].items[2].id}.webp`}
                               className="w-auto h-10"
                               alt=""
                             />
                             <div className="font-bold px-2">x{mat3}</div>
                             <img
-                              src={`/img/item/${talent_materials[8].items[3].id}.png`}
+                              src={`/img/items/item_${talent_materials[8].items[3].id}.webp`}
                               className="w-auto h-10"
                               alt=""
                             />
@@ -188,229 +188,80 @@ export default function CharacterTalentMaterials({ id, talent_materials }) {
                         ) : (
                           <div className="flex items-center">
                             <img
-                              src={`/img/item/mora.png`}
+                              src={`/img/items/item_mora.webp`}
                               className="w-auto h-10"
                               alt=""
                             />
                             <div className="font-bold px-2">x{cost}</div>
                             <img
-                              src={`/img/item/${talent_materials[0].items[0].id}.png`}
+                              src={`/img/items/item_${talent_materials[0].items[0].id}.webp`}
                               className="w-auto h-10"
                               alt=""
                             />
                             <div className="font-bold px-2">x{mat11}</div>
                             <img
-                              src={`/img/item/${talent_materials[0].items[1].id}.png`}
+                              src={`/img/items/item_${talent_materials[0].items[1].id}.webp`}
                               className="w-auto h-10"
                               alt=""
                             />
                             <div className="font-bold px-2">x{mat21}</div>
                             <img
-                              src={`/img/item/${talent_materials[1].items[0].id}.png`}
+                              src={`/img/items/item_${talent_materials[1].items[0].id}.webp`}
                               className="w-auto h-10"
                               alt=""
                             />
                             <div className="font-bold px-2">x{mat121}</div>
                             <img
-                              src={`/img/item/${talent_materials[3].items[0].id}.png`}
+                              src={`/img/items/item_${talent_materials[3].items[0].id}.webp`}
                               className="w-auto h-10"
                               alt=""
                             />
                             <div className="font-bold px-2">x{mat123}</div>
                             <img
-                              src={`/img/item/${talent_materials[2].items[0].id}.png`}
+                              src={`/img/items/item_${talent_materials[2].items[0].id}.webp`}
                               className="w-auto h-10"
                               alt=""
                             />
                             <div className="font-bold px-2">x{mat122}</div>
 
                             <img
-                              src={`/img/item/${talent_materials[1].items[1].id}.png`}
+                              src={`/img/items/item_${talent_materials[1].items[1].id}.webp`}
                               className="w-auto h-10"
                               alt=""
                             />
                             <div className="font-bold px-2">x{mat22}</div>
                             <img
-                              src={`/img/item/${talent_materials[5].items[0].id}.png`}
+                              src={`/img/items/item_${talent_materials[5].items[0].id}.webp`}
                               className="w-auto h-10"
                               alt=""
                             />
                             <div className="font-bold px-2">x{mat131}</div>
                             <img
-                              src={`/img/item/${talent_materials[7].items[0].id}.png`}
+                              src={`/img/items/item_${talent_materials[7].items[0].id}.webp`}
                               className="w-auto h-10"
                               alt=""
                             />
                             <div className="font-bold px-2">x{mat133}</div>
                             <img
-                              src={`/img/item/${talent_materials[6].items[0].id}.png`}
+                              src={`/img/items/item_${talent_materials[6].items[0].id}.webp`}
                               className="w-auto h-10"
                               alt=""
                             />
                             <div className="font-bold px-2">x{mat132}</div>
                             <img
-                              src={`/img/item/${talent_materials[5].items[1].id}.png`}
+                              src={`/img/items/item_${talent_materials[5].items[1].id}.webp`}
                               className="w-auto h-10"
                               alt=""
                             />
                             <div className="font-bold px-2">x{mat22}</div>
                             <img
-                              src={`/img/item/${talent_materials[8].items[2].id}.png`}
+                              src={`/img/items/item_${talent_materials[8].items[2].id}.webp`}
                               className="w-auto h-10"
                               alt=""
                             />
                             <div className="font-bold px-2">x{mat3}</div>
                             <img
-                              src={`/img/item/${talent_materials[8].items[3].id}.png`}
-                              className="w-auto h-10"
-                              alt=""
-                            />
-                            <div className="font-bold px-2">x{mat4}</div>
-                          </div>
-                        )}
-                      </td>
-                    </tr>
-                    <tr className={`bg-green-400`}>
-                      <td
-                        className={`px-6 py-4 whitespace-nowrap text-sm text-white font-bold bg-green-500 text-center`}
-                      >
-                        x3
-                      </td>
-                      <td className="px-4 py-4 whitespace-nowrap text-sm text-white">
-                        {id.search("traveler") != -1 ? (
-                          <div className="flex items-center">
-                            <img
-                              src={`/img/item/mora.png`}
-                              className="w-auto h-10"
-                              alt=""
-                            />
-                            <div className="font-bold px-2">x{cost * 3}</div>
-                            <img
-                              src={`/img/item/${talent_materials[0].items[0].id}.png`}
-                              className="w-auto h-10"
-                              alt=""
-                            />
-                            <div className="font-bold px-2">x{mat11 * 3}</div>
-                            <img
-                              src={`/img/item/${talent_materials[0].items[1].id}.png`}
-                              className="w-auto h-10"
-                              alt=""
-                            />
-                            <div className="font-bold px-2">x{mat21 * 3}</div>
-                            <img
-                              src={`/img/item/${talent_materials[1].items[0].id}.png`}
-                              className="w-auto h-10"
-                              alt=""
-                            />
-                            <div className="font-bold px-2">x{mat12 * 3}</div>
-                            <img
-                              src={`/img/item/${talent_materials[1].items[1].id}.png`}
-                              className="w-auto h-10"
-                              alt=""
-                            />
-                            <div className="font-bold px-2">x{mat22 * 3}</div>
-                            <img
-                              src={`/img/item/${talent_materials[8].items[0].id}.png`}
-                              className="w-auto h-10"
-                              alt=""
-                            />
-                            <div className="font-bold px-2">x{mat13 * 3}</div>
-                            <img
-                              src={`/img/item/${talent_materials[8].items[1].id}.png`}
-                              className="w-auto h-10"
-                              alt=""
-                            />
-                            <div className="font-bold px-2">x{mat23 * 3}</div>
-                            <img
-                              src={`/img/item/${talent_materials[8].items[2].id}.png`}
-                              className="w-auto h-10"
-                              alt=""
-                            />
-                            <div className="font-bold px-2">x{mat3 * 3}</div>
-                            <img
-                              src={`/img/item/${talent_materials[8].items[3].id}.png`}
-                              className="w-auto h-10"
-                              alt=""
-                            />
-                            <div className="font-bold px-2">x{mat4 * 3}</div>
-                          </div>
-                        ) : (
-                          <div className="flex items-center">
-                            <img
-                              src={`/img/item/mora.png`}
-                              className="w-auto h-10"
-                              alt=""
-                            />
-                            <div className="font-bold px-2">x{cost}</div>
-                            <img
-                              src={`/img/item/${talent_materials[0].items[0].id}.png`}
-                              className="w-auto h-10"
-                              alt=""
-                            />
-                            <div className="font-bold px-2">x{mat11}</div>
-                            <img
-                              src={`/img/item/${talent_materials[0].items[1].id}.png`}
-                              className="w-auto h-10"
-                              alt=""
-                            />
-                            <div className="font-bold px-2">x{mat21}</div>
-                            <img
-                              src={`/img/item/${talent_materials[1].items[0].id}.png`}
-                              className="w-auto h-10"
-                              alt=""
-                            />
-                            <div className="font-bold px-2">x{mat121}</div>
-                            <img
-                              src={`/img/item/${talent_materials[3].items[0].id}.png`}
-                              className="w-auto h-10"
-                              alt=""
-                            />
-                            <div className="font-bold px-2">x{mat123}</div>
-                            <img
-                              src={`/img/item/${talent_materials[2].items[0].id}.png`}
-                              className="w-auto h-10"
-                              alt=""
-                            />
-                            <div className="font-bold px-2">x{mat122}</div>
-
-                            <img
-                              src={`/img/item/${talent_materials[1].items[1].id}.png`}
-                              className="w-auto h-10"
-                              alt=""
-                            />
-                            <div className="font-bold px-2">x{mat22}</div>
-                            <img
-                              src={`/img/item/${talent_materials[5].items[0].id}.png`}
-                              className="w-auto h-10"
-                              alt=""
-                            />
-                            <div className="font-bold px-2">x{mat131}</div>
-                            <img
-                              src={`/img/item/${talent_materials[7].items[0].id}.png`}
-                              className="w-auto h-10"
-                              alt=""
-                            />
-                            <div className="font-bold px-2">x{mat133}</div>
-                            <img
-                              src={`/img/item/${talent_materials[6].items[0].id}.png`}
-                              className="w-auto h-10"
-                              alt=""
-                            />
-                            <div className="font-bold px-2">x{mat132}</div>
-                            <img
-                              src={`/img/item/${talent_materials[5].items[1].id}.png`}
-                              className="w-auto h-10"
-                              alt=""
-                            />
-                            <div className="font-bold px-2">x{mat22}</div>
-                            <img
-                              src={`/img/item/${talent_materials[8].items[2].id}.png`}
-                              className="w-auto h-10"
-                              alt=""
-                            />
-                            <div className="font-bold px-2">x{mat3}</div>
-                            <img
-                              src={`/img/item/${talent_materials[8].items[3].id}.png`}
+                              src={`/img/items/item_${talent_materials[8].items[3].id}.webp`}
                               className="w-auto h-10"
                               alt=""
                             />

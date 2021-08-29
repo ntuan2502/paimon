@@ -55,7 +55,7 @@ export default function CharacterAscension({ ascension }) {
                             <div className="flex items-center w-48">
                               <div className="px-2">Mora</div>
                               <img
-                                src={`/img/item/mora.png`}
+                                src={`/img/items/item_mora.webp`}
                                 className="w-auto h-10"
                                 alt=""
                               />
@@ -73,7 +73,7 @@ export default function CharacterAscension({ ascension }) {
                                 {attribute.mat1 ? attribute.mat1.name : ""}
                               </div>
                               <img
-                                src={`/img/item/${attribute.mat1.id}.png`}
+                                src={`/img/items/item_${attribute.mat1.id}.webp`}
                                 className="w-auto h-10"
                                 alt=""
                               />
@@ -91,7 +91,7 @@ export default function CharacterAscension({ ascension }) {
                                 {attribute.mat3 ? attribute.mat3.name : ""}
                               </div>
                               <img
-                                src={`/img/item/${attribute.mat3.id}.png`}
+                                src={`/img/items/item_${attribute.mat3.id}.webp`}
                                 className="w-auto h-10"
                                 alt=""
                               />
@@ -109,7 +109,7 @@ export default function CharacterAscension({ ascension }) {
                                 {attribute.mat4 ? attribute.mat4.name : ""}
                               </div>
                               <img
-                                src={`/img/item/${attribute.mat4.id}.png`}
+                                src={`/img/items/item_${attribute.mat4.id}.webp`}
                                 className="w-auto h-10"
                                 alt=""
                               />
@@ -127,7 +127,7 @@ export default function CharacterAscension({ ascension }) {
                                 {attribute.mat2 ? attribute.mat2.name : ""}
                               </div>
                               <img
-                                src={`/img/item/${attribute.mat2.id}.png`}
+                                src={`/img/items/item_${attribute.mat2.id}.webp`}
                                 className="w-auto h-10"
                                 alt=""
                               />
@@ -150,7 +150,7 @@ export default function CharacterAscension({ ascension }) {
                       <td className="px-4 py-4 whitespace-nowrap text-sm flex">
                         <div className="flex items-center">
                           <img
-                            src={`/img/item/mora.png`}
+                            src={`/img/items/item_mora.webp`}
                             className="w-auto h-10"
                             alt=""
                           />
@@ -159,25 +159,25 @@ export default function CharacterAscension({ ascension }) {
 
                         <div className="flex items-center">
                           <img
-                            src={`/img/item/${ascension[0].mat1.id}.png`}
+                            src={`/img/items/item_${ascension[0].mat1.id}.webp`}
                             className="w-auto h-10"
                             alt=""
                           />
                           <div className="font-bold px-2">x{mat11}</div>
                           <img
-                            src={`/img/item/${ascension[1].mat1.id}.png`}
+                            src={`/img/items/item_${ascension[1].mat1.id}.webp`}
                             className="w-auto h-10"
                             alt=""
                           />
                           <div className="font-bold px-2">x{mat12}</div>
                           <img
-                            src={`/img/item/${ascension[3].mat1.id}.png`}
+                            src={`/img/items/item_${ascension[3].mat1.id}.webp`}
                             className="w-auto h-10"
                             alt=""
                           />
                           <div className="font-bold px-2">x{mat13}</div>
                           <img
-                            src={`/img/item/${ascension[4].mat1.id}.png`}
+                            src={`/img/items/item_${ascension[5].mat1.id}.webp`}
                             className="w-auto h-10"
                             alt=""
                           />
@@ -187,7 +187,7 @@ export default function CharacterAscension({ ascension }) {
                         {ascension[1].mat2 ? (
                           <div className="flex items-center">
                             <img
-                              src={`/img/item/${ascension[1].mat2.id}.png`}
+                              src={`/img/items/item_${ascension[1].mat2.id}.webp`}
                               className="w-auto h-10"
                               alt=""
                             />
@@ -199,7 +199,7 @@ export default function CharacterAscension({ ascension }) {
 
                         <div className="flex items-center">
                           <img
-                            src={`/img/item/${ascension[1].mat3.id}.png`}
+                            src={`/img/items/item_${ascension[1].mat3.id}.webp`}
                             className="w-auto h-10"
                             alt=""
                           />
@@ -208,19 +208,19 @@ export default function CharacterAscension({ ascension }) {
 
                         <div className="flex items-center">
                           <img
-                            src={`/img/item/${ascension[0].mat4.id}.png`}
+                            src={`/img/items/item_${ascension[0].mat4.id}.webp`}
                             className="w-auto h-10"
                             alt=""
                           />
                           <div className="font-bold px-2">x{mat41}</div>
                           <img
-                            src={`/img/item/${ascension[2].mat4.id}.png`}
+                            src={`/img/items/item_${ascension[2].mat4.id}.webp`}
                             className="w-auto h-10"
                             alt=""
                           />
                           <div className="font-bold px-2">x{mat42}</div>
                           <img
-                            src={`/img/item/${ascension[4].mat4.id}.png`}
+                            src={`/img/items/item_${ascension[4].mat4.id}.webp`}
                             className="w-auto h-10"
                             alt=""
                           />

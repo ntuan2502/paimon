@@ -1,23 +1,20 @@
 import { Fragment } from "react";
 import { Popover, Transition, Disclosure, Menu } from "@headlessui/react";
 import {
-  BookmarkAltIcon,
-  CalendarIcon,
-  ChartBarIcon,
-  CursorClickIcon,
+  CakeIcon,
   MenuIcon,
-  PhoneIcon,
-  PlayIcon,
-  RefreshIcon,
-  ShieldCheckIcon,
-  SupportIcon,
-  ViewGridIcon,
   XIcon,
   UsersIcon,
   BeakerIcon,
-  FireIcon,
   LightningBoltIcon,
-  PlusSmIcon,
+  CollectionIcon,
+  ScissorsIcon,
+  TruckIcon,
+  ShoppingCartIcon,
+  SparklesIcon,
+  ScaleIcon,
+  LibraryIcon,
+  KeyIcon,
 } from "@heroicons/react/outline";
 import { ChevronUpIcon, ChevronDownIcon } from "@heroicons/react/solid";
 import Link from "next/link";
@@ -35,19 +32,19 @@ const solutions = [
     name: "Artifacts",
     description: "",
     href: "/artifacts",
-    icon: LightningBoltIcon,
+    icon: CollectionIcon,
   },
   {
     name: "Foods",
     description: "",
     href: "/foods",
-    icon: BeakerIcon,
+    icon: CakeIcon,
   },
   {
     name: "Weapons",
     description: "",
     href: "/weapons",
-    icon: FireIcon,
+    icon: ScissorsIcon,
   },
   {
     name: "Potions",
@@ -59,100 +56,93 @@ const solutions = [
     name: "Ingredients",
     description: "",
     href: "/ingredients",
-    icon: FireIcon,
+    icon: TruckIcon,
   },
   {
     name: "Common Materials",
     description: "",
     href: "/common_materials",
-    icon: FireIcon,
+    icon: ShoppingCartIcon,
   },
   {
     name: "Elemental Stone Materials",
     description: "",
     href: "/elemental_stone_materials",
-    icon: FireIcon,
+    icon: SparklesIcon,
   },
   {
     name: "Jewels Materials",
     description: "",
     href: "/jewels_materials",
-    icon: FireIcon,
+    icon: ScaleIcon,
   },
   {
     name: "Local Materials",
     description: "",
     href: "/local_materials",
-    icon: FireIcon,
+    icon: LibraryIcon,
   },
   {
     name: "Talent Lvl Up Materials",
     description: "",
     href: "talent_lvl_up_materials",
-    icon: FireIcon,
+    icon: KeyIcon,
   },
   {
     name: "Weapon Primary Materials",
     description: "",
     href: "weapon_primary_materials",
-    icon: FireIcon,
-  },
-  // {
-  //   name: "Other",
-  //   description: "",
-  //   href: "#",
-  //   icon: PlusSmIcon,
-  // },
-];
-const callsToAction = [
-  { name: "Watch Demo", href: "#", icon: PlayIcon },
-  { name: "Contact Sales", href: "#", icon: PhoneIcon },
-];
-const resources = [
-  {
-    name: "Help Center",
-    description:
-      "Get all of your questions answered in our forums or contact support.",
-    href: "#",
-    icon: SupportIcon,
-  },
-  {
-    name: "Guides",
-    description:
-      "Learn how to maximize our platform to get the most out of it.",
-    href: "#",
-    icon: BookmarkAltIcon,
-  },
-  {
-    name: "Events",
-    description:
-      "See what meet-ups and other events we might be planning near you.",
-    href: "#",
-    icon: CalendarIcon,
-  },
-  {
-    name: "Security",
-    description: "Understand how we take your privacy seriously.",
-    href: "#",
-    icon: ShieldCheckIcon,
+    icon: LightningBoltIcon,
   },
 ];
-const recentPosts = [
-  { id: 1, name: "Boost your conversion rate", href: "#" },
-  {
-    id: 2,
-    name: "How to use search engine optimization to drive traffic to your site",
-    href: "#",
-  },
-  { id: 3, name: "Improve your customer experience", href: "#" },
-];
+// const callsToAction = [
+//   { name: "Watch Demo", href: "#", icon: PlayIcon },
+//   { name: "Contact Sales", href: "#", icon: PhoneIcon },
+// ];
+// const resources = [
+//   {
+//     name: "Help Center",
+//     description:
+//       "Get all of your questions answered in our forums or contact support.",
+//     href: "#",
+//     icon: SupportIcon,
+//   },
+//   {
+//     name: "Guides",
+//     description:
+//       "Learn how to maximize our platform to get the most out of it.",
+//     href: "#",
+//     icon: BookmarkAltIcon,
+//   },
+//   {
+//     name: "Events",
+//     description:
+//       "See what meet-ups and other events we might be planning near you.",
+//     href: "#",
+//     icon: CalendarIcon,
+//   },
+//   {
+//     name: "Security",
+//     description: "Understand how we take your privacy seriously.",
+//     href: "#",
+//     icon: ShieldCheckIcon,
+//   },
+// ];
+// const recentPosts = [
+//   { id: 1, name: "Boost your conversion rate", href: "#" },
+//   {
+//     id: 2,
+//     name: "How to use search engine optimization to drive traffic to your site",
+//     href: "#",
+//   },
+//   { id: 3, name: "Improve your customer experience", href: "#" },
+// ];
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
 export default function IndexNavbar() {
-  const router = useRouter();
   const { locale } = useRouter();
 
   return (

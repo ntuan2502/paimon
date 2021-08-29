@@ -25,7 +25,7 @@ export default function JewelsMaterialCard({ jewelsMaterial }) {
         </div>
         <img
           className="w-40 h-auto float-right"
-          src={`/img/jewels_materials/item_${jewelsMaterial.id}.webp`}
+          src={`/img/items/item_${jewelsMaterial.id}.webp`}
         />
 
         <p className="text-lg text-white font-semibold px-5 py-1">---</p>
@@ -64,7 +64,7 @@ export default function JewelsMaterialCard({ jewelsMaterial }) {
             <div className="font-bold px-5 py-3">
               <div className="flex">
                 + Mora
-                <img className="w-7 h-auto mx-1" src={`/img/item/mora.png`} />x
+                <img className="w-7 h-auto mx-1" src={`/img/items/item_mora.webp`} />x
                 {jewelsMaterial.craft.cost}
               </div>
               {jewelsMaterial.craft.items.map((craft, index) => (
@@ -72,7 +72,7 @@ export default function JewelsMaterialCard({ jewelsMaterial }) {
                   + {craft.name}
                   <img
                     className="w-7 h-auto mx-1"
-                    src={`/img/jewels_materials/item_${craft.id}.webp`}
+                    src={`/img/items/item_${craft.id}.webp`}
                   />
                   x{craft.amount}
                 </div>

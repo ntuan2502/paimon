@@ -12,7 +12,7 @@ export default function IngredientCard({ ingredient }) {
         </div>
         <img
           className="w-40 h-auto float-right"
-          src={`/img/ingredient/item_${ingredient.id}.webp`}
+          src={`/img/items/item_${ingredient.id}.webp`}
         />
 
         <p className="text-lg text-white font-semibold px-5 py-1">
@@ -56,7 +56,7 @@ export default function IngredientCard({ ingredient }) {
                   + {processing.name}
                   <img
                     className="w-7 h-auto mx-1"
-                    src={`/img/ingredient/item_${processing.id}.webp`}
+                    src={`/img/items/item_${processing.id}.webp`}
                   />
                   x{processing.amount}
                 </div>
@@ -75,7 +75,7 @@ export default function IngredientCard({ ingredient }) {
                   -&gt; {craft.name}
                   <img
                     className="w-7 h-auto mx-1"
-                    src={`/img/ingredient/item_${craft.id}.webp`}
+                    src={`/img/items/item_${craft.id}.webp`}
                   />
                 </div>
               ))}
@@ -92,7 +92,7 @@ export default function IngredientCard({ ingredient }) {
                   =&gt;
                   <img
                     className="w-7 h-auto mx-1"
-                    src={`/img/food/item_${recipes.id}.webp`}
+                    src={`/img/items/item_${recipes.id}.webp`}
                   />
                   {recipes.name}
                 </div>

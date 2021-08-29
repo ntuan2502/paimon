@@ -25,7 +25,7 @@ export default function WeaponPrimaryMaterialCard({ weaponPrimaryMaterial }) {
         </div>
         <img
           className="w-40 h-auto float-right"
-          src={`/img/weapon_primary_materials/item_${weaponPrimaryMaterial.id}.webp`}
+          src={`/img/items/item_${weaponPrimaryMaterial.id}.webp`}
         />
 
         <p className="text-lg text-white font-semibold px-5 py-1">
@@ -82,7 +82,7 @@ export default function WeaponPrimaryMaterialCard({ weaponPrimaryMaterial }) {
             <div className="font-bold px-5 py-3 ">
               <div className="flex">
                 + Mora
-                <img className="w-7 h-auto mx-1" src={`/img/item/mora.png`} />x
+                <img className="w-7 h-auto mx-1" src={`/img/items/item_mora.webp`} />x
                 {weaponPrimaryMaterial.craft.cost}
               </div>
               {weaponPrimaryMaterial.craft.items.map((craft, index) => (
@@ -90,7 +90,7 @@ export default function WeaponPrimaryMaterialCard({ weaponPrimaryMaterial }) {
                   + {craft.name}
                   <img
                     className="w-7 h-auto mx-1"
-                    src={`/img/weapon_primary_materials/item_${craft.id}.webp`}
+                    src={`/img/items/item_${craft.id}.webp`}
                   />
                   x{craft.amount}
                 </div>

@@ -25,7 +25,7 @@ export default function CommonMaterialCard({ commonMaterial }) {
         </div>
         <img
           className="w-40 h-auto float-right"
-          src={`/img/common_materials/item_${commonMaterial.id}.webp`}
+          src={`/img/items/item_${commonMaterial.id}.webp`}
         />
 
         <p className="text-lg text-white font-semibold px-5 py-1">---</p>
@@ -64,7 +64,7 @@ export default function CommonMaterialCard({ commonMaterial }) {
             <div className="font-bold px-5 py-3">
               <div className="flex">
                 + Mora
-                <img className="w-7 h-auto mx-1" src={`/img/item/mora.png`} />x
+                <img className="w-7 h-auto mx-1" src={`/img/items/item_mora.webp`} />x
                 {commonMaterial.craft.cost}
               </div>
               {commonMaterial.craft.items.map((craft, index) => (
@@ -72,7 +72,7 @@ export default function CommonMaterialCard({ commonMaterial }) {
                   + {craft.name}
                   <img
                     className="w-7 h-auto mx-1"
-                    src={`/img/common_materials/item_${craft.id}.webp`}
+                    src={`/img/items/item_${craft.id}.webp`}
                   />
                   x{craft.amount}
                 </div>

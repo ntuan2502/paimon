@@ -11,7 +11,7 @@ export default function LocalMaterialCard({ localMaterial }) {
         </div>
         <img
           className="w-40 h-auto float-right"
-          src={`/img/local_materials/item_${localMaterial.id}.webp`}
+          src={`/img/items/item_${localMaterial.id}.webp`}
         />
 
         <p className="text-lg text-white font-semibold px-5 py-1">

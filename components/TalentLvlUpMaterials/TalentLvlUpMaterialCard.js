@@ -25,7 +25,7 @@ export default function TalentLvlUpMaterialCard({ talentLvlUpMaterial }) {
         </div>
         <img
           className="w-40 h-auto float-right"
-          src={`/img/talent_lvl_up_materials/item_${talentLvlUpMaterial.id}.webp`}
+          src={`/img/items/item_${talentLvlUpMaterial.id}.webp`}
         />
 
         <p className="text-lg text-white font-semibold px-5 py-1">
@@ -80,7 +80,7 @@ export default function TalentLvlUpMaterialCard({ talentLvlUpMaterial }) {
             <div className="font-bold px-5 py-3">
               <div className="flex">
                 + Mora
-                <img className="w-7 h-auto mx-1" src={`/img/item/mora.png`} />x
+                <img className="w-7 h-auto mx-1" src={`/img/items/item_mora.webp`} />x
                 {talentLvlUpMaterial.craft.cost}
               </div>
               {talentLvlUpMaterial.craft.items.map((craft, index) => (
@@ -88,7 +88,7 @@ export default function TalentLvlUpMaterialCard({ talentLvlUpMaterial }) {
                   + {craft.name}
                   <img
                     className="w-7 h-auto mx-1"
-                    src={`/img/talent_lvl_up_materials/item_${craft.id}.webp`}
+                    src={`/img/items/item_${craft.id}.webp`}
                   />
                   x{craft.amount}
                 </div>
@@ -110,7 +110,7 @@ export default function TalentLvlUpMaterialCard({ talentLvlUpMaterial }) {
                       * {item.name}
                       <img
                         className="w-7 h-auto mx-1"
-                        src={`/img/talent_lvl_up_materials/item_${item.id}.webp`}
+                        src={`/img/items/item_${item.id}.webp`}
                       />
                       x{item.amount}
                     </div>

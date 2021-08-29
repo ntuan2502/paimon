@@ -23,7 +23,7 @@ export default function ElementalStoneMaterialCard({ elementalStoneMaterial }) {
         </div>
         <img
           className="w-40 h-auto float-right"
-          src={`/img/elemental_stone_materials/item_${elementalStoneMaterial.id}.webp`}
+          src={`/img/items/item_${elementalStoneMaterial.id}.webp`}
         />
 
         <p className="text-lg text-white font-semibold px-5 py-1">
@@ -103,7 +103,7 @@ export default function ElementalStoneMaterialCard({ elementalStoneMaterial }) {
                   =&gt;
                   <img
                     className="w-7 h-auto mx-1"
-                    src={`/img/food/item_${recipes.id}.webp`}
+                    src={`/img/items/item_${recipes.id}.webp`}
                   />
                   {recipes.name}
                 </div>

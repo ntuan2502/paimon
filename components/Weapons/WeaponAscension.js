@@ -76,7 +76,7 @@ export default function WeaponAscension({ ascensions }) {
                                     : ""}
                                 </div>
                                 <img
-                                  src={`/img/item/${attribute.materials[0].id}.png`}
+                                  src={`/img/items/item_${attribute.materials[0].id}.webp`}
                                   className="w-auto h-10"
                                   alt=""
                                 />
@@ -99,7 +99,7 @@ export default function WeaponAscension({ ascensions }) {
                                     : ""}
                                 </div>
                                 <img
-                                  src={`/img/item/${attribute.materials[1].id}.png`}
+                                  src={`/img/items/item_${attribute.materials[1].id}.webp`}
                                   className="w-auto h-10"
                                   alt=""
                                 />
@@ -122,7 +122,7 @@ export default function WeaponAscension({ ascensions }) {
                                     : ""}
                                 </div>
                                 <img
-                                  src={`/img/item/${attribute.materials[2].id}.png`}
+                                  src={`/img/items/item_${attribute.materials[2].id}.webp`}
                                   className="w-auto h-10"
                                   alt=""
                                 />
@@ -141,7 +141,7 @@ export default function WeaponAscension({ ascensions }) {
                               <div className="flex items-center w-48">
                                 <div className="px-2">Mora</div>
                                 <img
-                                  src={`/img/item/mora.png`}
+                                  src={`/img/items/item_mora.webp`}
                                   className="w-auto h-10"
                                   alt=""
                                 />
@@ -154,9 +154,7 @@ export default function WeaponAscension({ ascensions }) {
                             )}
                           </td>
                         </tr>
-                      ) : (
-                        ""
-                      )
+                      ) : null
                     )}
                     <tr className={`bg-red-300`}>
                       <td
@@ -167,43 +165,43 @@ export default function WeaponAscension({ ascensions }) {
                       <td className="px-4 py-4 whitespace-nowrap text-sm">
                         <div className="flex items-center">
                           <img
-                            src={`/img/item/mora.png`}
+                            src={`/img/items/item_mora.webp`}
                             className="w-auto h-10"
                             alt=""
                           />
                           <div className="font-bold px-2">x{cost}</div>
                           <img
-                            src={`/img/item/${ascensions[1].materials[0].id}.png`}
+                            src={`/img/items/item_${ascensions[1].materials[0].id}.webp`}
                             className="w-auto h-10"
                             alt=""
                           />
                           <div className="font-bold px-2">x{mat11}</div>
                           <img
-                            src={`/img/item/${ascensions[1].materials[1].id}.png`}
+                            src={`/img/items/item_${ascensions[1].materials[1].id}.webp`}
                             className="w-auto h-10"
                             alt=""
                           />
                           <div className="font-bold px-2">x{mat21}</div>
                           <img
-                            src={`/img/item/${ascensions[1].materials[2].id}.png`}
+                            src={`/img/items/item_${ascensions[1].materials[2].id}.webp`}
                             className="w-auto h-10"
                             alt=""
                           />
                           <div className="font-bold px-2">x{mat31}</div>
                           <img
-                            src={`/img/item/${ascensions[3].materials[0].id}.png`}
+                            src={`/img/items/item_${ascensions[3].materials[0].id}.webp`}
                             className="w-auto h-10"
                             alt=""
                           />
                           <div className="font-bold px-2">x{mat12}</div>
                           <img
-                            src={`/img/item/${ascensions[4].materials[1].id}.png`}
+                            src={`/img/items/item_${ascensions[4].materials[1].id}.webp`}
                             className="w-auto h-10"
                             alt=""
                           />
                           <div className="font-bold px-2">x{mat22}</div>
                           <img
-                            src={`/img/item/${ascensions[4].materials[2].id}.png`}
+                            src={`/img/items/item_${ascensions[4].materials[2].id}.webp`}
                             className="w-auto h-10"
                             alt=""
                           />
@@ -211,19 +209,19 @@ export default function WeaponAscension({ ascensions }) {
                           {ascensions[6] ? (
                             <div className="flex items-center">
                               <img
-                                src={`/img/item/${ascensions[6].materials[0].id}.png`}
+                                src={`/img/items/item_${ascensions[6].materials[0].id}.webp`}
                                 className="w-auto h-10"
                                 alt=""
                               />
                               <div className="font-bold px-2">x{mat13}</div>
                               <img
-                                src={`/img/item/${ascensions[6].materials[1].id}.png`}
+                                src={`/img/items/item_${ascensions[6].materials[1].id}.webp`}
                                 className="w-auto h-10"
                                 alt=""
                               />
                               <div className="font-bold px-2">x{mat23}</div>
                               <img
-                                src={`/img/item/${ascensions[6].materials[2].id}.png`}
+                                src={`/img/items/item_${ascensions[6].materials[2].id}.webp`}
                                 className="w-auto h-10"
                                 alt=""
                               />
@@ -245,5 +243,3 @@ export default function WeaponAscension({ ascensions }) {
     </div>
   );
 }
-
-

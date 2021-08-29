@@ -48,7 +48,7 @@ export default function FoodCard({ food, foodEnglish }) {
         {food.results.suspicious && foodState == 1 ? (
           <img
             className="w-40 h-auto float-right"
-            src={`/img/food/item_suspicious_${food.id}.webp`}
+            src={`/img/items/item_suspicious_${food.id}.webp`}
           />
         ) : (
           ""
@@ -56,7 +56,7 @@ export default function FoodCard({ food, foodEnglish }) {
         {food.results.normal && foodState == 2 ? (
           <img
             className="w-40 h-auto float-right"
-            src={`/img/food/item_${food.id}.webp`}
+            src={`/img/items/item_${food.id}.webp`}
           />
         ) : (
           ""
@@ -64,7 +64,7 @@ export default function FoodCard({ food, foodEnglish }) {
         {food.results.delicious && foodState == 3 ? (
           <img
             className="w-40 h-auto float-right"
-            src={`/img/food/item_delicious_${food.id}.webp`}
+            src={`/img/items/item_delicious_${food.id}.webp`}
           />
         ) : (
           ""
@@ -72,7 +72,7 @@ export default function FoodCard({ food, foodEnglish }) {
         {food.results.special && foodState == 4 ? (
           <img
             className="w-40 h-auto float-right"
-            src={`/img/food/item_${foodEnglish.results.special.name
+            src={`/img/items/item_${foodEnglish.results.special.name
               .replace(/"/g, "")
               .replace(/\(/g, "")
               .replace(/\)/g, "")
