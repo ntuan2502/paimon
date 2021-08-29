@@ -4,7 +4,6 @@ import GenshinData from "genshin-data";
 import { getLocale } from "../../lib/localData";
 
 export default function LocalMaterialsPage({ localMaterials }) {
-  console.log(localMaterials);
   return (
     <div>
       <Head>
