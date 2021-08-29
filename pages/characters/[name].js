@@ -7,9 +7,9 @@ import CharacterTalentMaterials from "../../components/Characters/CharacterTalen
 import Head from "next/head";
 import GenshinData from "genshin-data";
 import { getLocale } from "../../lib/localData";
-import { useRouter } from "next/router";
 
 export default function CharacterPage({ character, region }) {
+  const basePath = "https://raw.githubusercontent.com/ntuan2502/paimon/main/public";
   return (
     <div>
       <Head>
@@ -18,14 +18,14 @@ export default function CharacterPage({ character, region }) {
         <meta itemProp="description" content={character.description} />
         <meta
           itemProp="image"
-          content={`/img/character/backgrounds/${character.id}.png`}
+          content={`${basePath}/img/character/backgrounds/${character.id}.png`}
         />
 
         <meta itemProp="name" content={character.title} />
         <meta itemProp="description" content={character.description} />
         <meta
           itemProp="image"
-          content={`/img/character/backgrounds/${character.id}.png`}
+          content={`${basePath}/img/character/backgrounds/${character.id}.png`}
         />
 
         <meta property="og:url" content="https://paimon.vercel.app" />
@@ -34,7 +34,7 @@ export default function CharacterPage({ character, region }) {
         <meta property="og:description" content={character.description} />
         <meta
           property="og:image"
-          content={`/img/character/backgrounds/${character.id}.png`}
+          content={`${basePath}/img/character/backgrounds/${character.id}.png`}
         />
 
         <meta name="twitter:card" content="summary_large_image" />
@@ -42,7 +42,7 @@ export default function CharacterPage({ character, region }) {
         <meta name="twitter:description" content={character.description} />
         <meta
           name="twitter:image"
-          content={`/img/character/backgrounds/${character.id}.png`}
+          content={`${basePath}/img/character/backgrounds/${character.id}.png`}
         />
       </Head>
       <div className="py-5">
