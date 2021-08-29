@@ -37,7 +37,7 @@ export default function WeaponCard({ weapon }) {
             </div>
             <img
               className="w-40 h-auto float-right p-2"
-              src={`/img/weapons/${weapon.id}.png`}
+              src={`/img/weapons/weapon_${weapon.id}${level == weapon.ascensions.length ? "_2nd" : ""}.webp`}
             />
             <p className="text-md text-white font-bold px-5 pt-1">
               {weapon.type}
