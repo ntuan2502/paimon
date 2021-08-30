@@ -4,10 +4,10 @@ export default function CharacterBackground({ character, region }) {
   return (
     <div
       className={`rounded-lg shadow-lg bg-gray-600 w-full flex flex-row flex-wrap p-3 antialiased ${
-        region == "Liyue" ? "bg-liyue" : ""
-      } ${region == "Mondstadt" ? "bg-mondstadt" : ""}
-      ${
-        region == "Inazuma" ? "bg-inazuma" : ""
+        region == "Mondstadt" ? "bg-mondstadt" : ""
+      }${region == "Liyue" ? "bg-liyue" : ""} 
+      ${region == "Inazuma" ? "bg-inazuma" : ""}${
+        region == "Fatui" ? "bg-fatui" : ""
       } bg-no-repeat bg-cover bg-blend-multiply`}
     >
       <div className="md:w-1/3 w-full px-3 flex flex-row flex-wrap">

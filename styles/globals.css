@@ -82,3 +82,7 @@ a {
 .bg-inazuma {
   background-image: url("/img/region/inazuma.png");
 }
+
+.bg-fatui {
+  background-image: url("/img/region/fatui.png");
+}
