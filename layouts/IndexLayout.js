@@ -4,12 +4,12 @@ import Head from "next/head";
 
 const Index = ({ children }) => {
   return (
-    <div>
+    <div className="select-none">
       <Head>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <IndexNavbar />
-      <div className="select-none py-16 pb-24 md:pb-20">{children}</div>
+      <div className="py-16 pb-24 md:pb-20">{children}</div>
       <IndexFooter />
     </div>
   );

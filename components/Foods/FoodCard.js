@@ -6,7 +6,6 @@ export default function FoodCard({ food, foodEnglish }) {
   const [foodState, setFoodState] = useState(2);
 
   return (
-    // <Link href={`/foods/${food.id}`}>
     <div className="w-96 hover:shadow-xl">
       <div
         className={`relative ${food.rarity == 1 ? "bg-gray-400" : ""}${
@@ -184,8 +183,25 @@ export default function FoodCard({ food, foodEnglish }) {
             ""
           )}
         </div>
+        {food.ingredients ? (
+          <div>
+            <div className="font-bold px-5 py-3">
+              {food.ingredients.map((item, index) => (
+                <div className="flex" key={index}>
+                  + {item.name}
+                  <img
+                    className="w-7 h-auto mx-1"
+                    src={`/img/items/item_${item.id}.webp`}
+                  />
+                  x{item.amount}
+                </div>
+              ))}
+            </div>
+          </div>
+        ) : (
+          ""
+        )}
       </div>
     </div>
-    // </Link>
   );
 }
