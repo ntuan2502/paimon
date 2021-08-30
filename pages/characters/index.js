@@ -13,6 +13,12 @@ export default function CharactersPage({ characters }) {
       <div className="flex items-center justify-center">
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
           <CharacterCard
+            id="thoma"
+            name="Thoma"
+            rarity="5"
+            disabled={true}
+          />
+          <CharacterCard
             id="raiden_shogun"
             name="Raiden Shogun"
             rarity="5"
