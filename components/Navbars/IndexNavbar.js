@@ -175,6 +175,11 @@ export default function IndexNavbar() {
                     Home
                   </a>
                 </Link>
+                <Link href="/emojis">
+                  <a className="text-base font-medium text-gray-500 hover:text-gray-900">
+                    Emojis
+                  </a>
+                </Link>
 
                 <Popover className="relative">
                   {({ open }) => (
@@ -505,6 +510,17 @@ export default function IndexNavbar() {
                           /> */}
                           <span className="ml-3 text-base font-medium text-gray-900">
                             Home
+                          </span>
+                        </a>
+                      </Link>
+                      <Link href="/emojis">
+                        <a className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50">
+                          {/* <item.icon
+                            className="flex-shrink-0 h-6 w-6 text-indigo-600"
+                            aria-hidden="true"
+                          /> */}
+                          <span className="ml-3 text-base font-medium text-gray-900">
+                            Emojis
                           </span>
                         </a>
                       </Link>
