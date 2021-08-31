@@ -1,0 +1,54 @@
+import Head from "next/head";
+export default function PreviewPage({ url, name }) {
+  return (
+    <div>
+      <Head>
+        <title>Preview {name}</title>
+      </Head>
+      <div className="min-w-full flex justify-center">
+        <iframe
+          src={url}
+          frameBorder="0"
+          width="100%"
+          height="720"
+          allowFullScreen
+        ></iframe>
+      </div>
+    </div>
+  );
+}
+
+export async function getStaticPaths() {
+  return {
+    paths: [
+      { params: { name: "2.1" } },
+      { params: { name: "2.0" } },
+      { params: { name: "1.6" } },
+      { params: { name: "1.5" } },
+      { params: { name: "1.4" } },
+      { params: { name: "1.3" } },
+      { params: { name: "1.2" } },
+    ],
+    fallback: false,
+  };
+}
+
+export async function getStaticProps(context) {
+  const name = context.params.name;
+  var url = "";
+  if(name == "1.2") url = "https://webstatic-sea.mihoyo.com/ys/event/e20201216new/index.html";
+  else if(name == "1.3") url = "https://webstatic-sea.mihoyo.com/ys/event/e20210128warmup/index.html";
+  else if(name == "1.4") url = "https://webstatic-sea.mihoyo.com/ys/event/e20210309prediction/index.html";
+  else if(name == "1.5") url = "https://webstatic-sea.mihoyo.com/ys/event/e20210422newver/index.html";
+  else if(name == "1.6") url = "https://webstatic-sea.mihoyo.com/ys/event/e20210603prepage/index.html";
+  else if(name == "2.0") url = "https://webstatic-sea.mihoyo.com/ys/event/e20210715-prepage/index.html";
+  else if(name == "2.1") url = "https://webstatic-sea.mihoyo.com/ys/event/e20210820-preview/index.html";
+  else url = null;
+
+  return {
+    props: {
+      url,
+      name,
+    },
+  };
+}

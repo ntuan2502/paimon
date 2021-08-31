@@ -59,16 +59,16 @@ export default function Home({ locale }) {
           content="http://webstatic-sea.mihoyo.com/hk4e/upload/fb/en.jpg"
         />
       </Head>
-      <div className="min-w-full min-h-screen flex justify-center">
+      <div className="min-w-full flex justify-center">
         <iframe
           src={`https://webstatic-sea.mihoyo.com/ys/event/e20210601blue_post/index.html?gamewebview=1&page_sn=c473a7d281024854&mode=fullscreen&lang=${locale}#/update`}
           frameBorder="0"
           width="100%"
-          height="1080"
+          height="720"
           allowFullScreen
         ></iframe>
       </div>
-      {/* <img src="/img/background/2.0.jpg" alt="" /> */}
+      <img src="/img/background/2.1.jpg" alt="" />
     </div>
   );
 }

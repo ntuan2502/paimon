@@ -1,9 +1,13 @@
+import Head from "next/head";
 import { useRouter } from "next/router";
 
 export default function Custom404() {
   const router = useRouter();
   return (
     <section className="page_404 text-center">
+      <Head>
+        <title>404</title>
+      </Head>
       <h1 className="text-8xl">404</h1>
       <div className="four_zero_four_bg bg-no-repeat"></div>
 

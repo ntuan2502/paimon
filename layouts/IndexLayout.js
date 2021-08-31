@@ -11,7 +11,7 @@ export default function Index({ children }) {
       <IndexNavbar />
 
       <div className="py-16 pb-24 md:pb-20">{children}</div>
-      <IndexFooter />
+      {/* <IndexFooter /> */}
     </div>
   );
 }
