@@ -2,17 +2,16 @@ import IndexNavbar from "../components/Navbars/IndexNavbar.js";
 import IndexFooter from "../components/Footers/IndexFooter.js";
 import Head from "next/head";
 
-const Index = ({ children }) => {
+export default function Index({ children }) {
   return (
     <div className="select-none">
       <Head>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <IndexNavbar />
+
       <div className="py-16 pb-24 md:pb-20">{children}</div>
       <IndexFooter />
     </div>
   );
-};
-
-export default Index;
+}

@@ -12,9 +12,13 @@ export default function EmojiPage({ posts }) {
       <div className="m-10 flex justify-center">
         <a
           href="/zip/emojis.zip"
-          className="flex-shrink-0 bg-red-600 text-white text-base font-semibold py-2 px-4 rounded-lg shadow-md hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 focus:ring-offset-purple-200"
+          className="flex flex-shrink-0 bg-red-600 text-white text-base font-semibold py-2 px-4 rounded-lg shadow-md hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 focus:ring-offset-purple-200"
         >
-          Download ZIP File
+          <div className="mr-2">Download ZIP File</div>
+          <DownloadIcon
+            className="flex-shrink-0 h-6 w-6 text-white"
+            aria-hidden="true"
+          />
         </a>
       </div>
       <div className="flex flex-wrap justify-center">
@@ -33,7 +37,7 @@ export default function EmojiPage({ posts }) {
               <DownloadIcon
                 className="flex-shrink-0 h-9 w-9 text-indigo-600"
                 aria-hidden="true"
-              ></DownloadIcon>
+              />
             </a>
           </div>
         ))}
