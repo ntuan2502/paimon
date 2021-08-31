@@ -1,7 +1,7 @@
 import Head from "next/head";
-export default function Home() {
+export default function Home({ locale }) {
   return (
-    <div className="">
+    <div>
       <Head>
         <title>Genshin Impact</title>
         <meta
@@ -60,8 +60,25 @@ export default function Home() {
         />
       </Head>
       <div className="min-w-full min-h-screen flex justify-center">
-        <img src="/img/background/2.0.jpg" alt="" />
+        <iframe
+          src={`https://webstatic-sea.mihoyo.com/ys/event/e20210601blue_post/index.html?gamewebview=1&page_sn=c473a7d281024854&mode=fullscreen&lang=${locale}#/update`}
+          frameBorder="0"
+          width="100%"
+          height="1080"
+          allowFullScreen
+        ></iframe>
       </div>
+      {/* <img src="/img/background/2.0.jpg" alt="" /> */}
     </div>
   );
+}
+
+export async function getStaticProps(context) {
+  const locale = context.locale;
+
+  return {
+    props: {
+      locale,
+    },
+  };
 }
