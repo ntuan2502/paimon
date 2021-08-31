@@ -26,11 +26,11 @@ export default function EmojiPage({ posts }) {
           <div className="relative" key={index}>
             <img
               className="hover:shadow-2xl hover:bg-gray-500 rounded-3xl m-5"
-              src={`/img/emojis/${post.filename}`}
+              src={`/img/emojis/Emoji%20(${index + 1}).png`}
               alt={post.filename}
             />
             <a
-              href={`/img/emojis/${post.filename}`}
+              href={`/img/emojis/Emoji%20(${index + 1}).png`}
               target="_blank"
               className="absolute bottom-0 right-0"
             >
