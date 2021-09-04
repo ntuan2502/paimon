@@ -63,7 +63,7 @@ export default function Home({ locale }) {
         <iframe
           src={`https://webstatic-sea.mihoyo.com/ys/event/e20210601blue_post/index.html?gamewebview=1&page_sn=c473a7d281024854&mode=fullscreen&lang=${locale}#/update`}
           frameBorder="0"
-          width="100%"
+          width="90%"
           height="720"
           allowFullScreen
         ></iframe>

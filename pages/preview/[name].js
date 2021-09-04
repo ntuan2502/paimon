@@ -9,7 +9,7 @@ export default function PreviewPage({ url, name }) {
         <iframe
           src={url}
           frameBorder="0"
-          width="100%"
+          width="90%"
           height="720"
           allowFullScreen
         ></iframe>

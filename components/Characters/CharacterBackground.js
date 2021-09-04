@@ -21,7 +21,7 @@ export default function CharacterBackground({ character, region }) {
           <div className="text-normal text-gray-300">
             <div
               className="pb-1 flex w-20 text-yellow-500"
-              dangerouslySetInnerHTML={star(character.rarity)}
+              dangerouslySetInnerHTML={star(character.rarity ? character.rarity : 5)}
             />
           </div>
           <br />

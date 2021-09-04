@@ -12,36 +12,13 @@ export default function CharactersPage({ characters }) {
       </Head>
       <div className="flex items-center justify-center">
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
-          <CharacterCard
-            id="thoma"
-            name="Thoma"
-            rarity="5"
-            disabled={true}
-          />
-          <CharacterCard
-            id="raiden_shogun"
-            name="Raiden Shogun"
-            rarity="5"
-            disabled={true}
-          />
-          <CharacterCard
-            id="sangonomiya_kokomi"
-            name="Sangonomiya Kokomi"
-            rarity="5"
-            disabled={true}
-          />
-          <CharacterCard
-            id="kujou_sara"
-            name="Kujou Sara"
-            rarity="4"
-            disabled={true}
-          />
+          <CharacterCard id="thoma" name="Thoma" rarity="4" disabled={true} />
 
           {characters.map((character, index) => (
             <CharacterCard
               id={character.id}
               name={character.name}
-              rarity={character.rarity}
+              rarity={character.rarity ? character.rarity : 5}
               disabled={false}
               key={index}
             />
@@ -55,9 +32,7 @@ export default function CharactersPage({ characters }) {
 export async function getStaticProps(context) {
   const locale = context.locale;
   const genshinData = new GenshinData({ language: getLocale(locale) });
-  const characters = await genshinData.characters({
-    select: ["id", "name", "rarity"],
-  });
+  const characters = await genshinData.characters();
 
   return {
     props: {

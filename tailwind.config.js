@@ -31,7 +31,4 @@ module.exports = {
     "visited",
     "disabled",
   ],
-  plugins: [
-    require('@tailwindcss/aspect-ratio'),
-  ],
 };

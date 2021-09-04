@@ -10,7 +10,7 @@ export default function Index({ children }) {
       </Head>
       <IndexNavbar />
 
-      <div className="py-16 pb-24 md:pb-20">{children}</div>
+      <div className="pt-10 pb-24 md:pb-20">{children}</div>
       {/* <IndexFooter /> */}
     </div>
   );
