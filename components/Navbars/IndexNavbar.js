@@ -15,6 +15,9 @@ import {
   ScaleIcon,
   LibraryIcon,
   KeyIcon,
+  PuzzleIcon,
+  HandIcon,
+  LinkIcon,
 } from "@heroicons/react/outline";
 import { ChevronDownIcon } from "@heroicons/react/solid";
 import Link from "next/link";
@@ -93,6 +96,24 @@ const solutions = [
     description: "",
     href: "weapon_primary_materials",
     icon: LightningBoltIcon,
+  },
+  {
+    name: "Baits",
+    description: "",
+    href: "baits",
+    icon: PuzzleIcon,
+  },
+  {
+    name: "Fish",
+    description: "",
+    href: "fish",
+    icon: HandIcon,
+  },
+  {
+    name: "Fishing Rods",
+    description: "",
+    href: "fishing_rods",
+    icon: LinkIcon,
   },
 ];
 

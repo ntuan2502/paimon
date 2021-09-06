@@ -9,7 +9,7 @@ function replaceMarkup(markup) {
 }
 export default function WeaponCard({ weapon }) {
   const [weaponState, setWeaponState] = useState(1);
-  const [level, setLevel] = useState(0);
+  const [level, setLevel] = useState(7);
 
   return (
     <div className="w-96 hover:shadow-xl">
