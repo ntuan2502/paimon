@@ -1,6 +1,6 @@
 // import Link from "next/link";
 // import { useState } from "react";
-import { star } from "../../lib/localData";
+import { star, removeBr } from "../../lib/localData";
 
 export default function PotionCard({ potion }) {
   return (
@@ -46,7 +46,7 @@ export default function PotionCard({ potion }) {
           <p>- {potion.effect}</p>
         </div>
         <div className="font-semibold px-5 py-3">
-          <p>{potion.description.replace(/<br\/>/g, " ")}</p>
+          <p>{removeBr(potion.description)}</p>
         </div>
       </div>
     </div>

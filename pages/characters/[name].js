@@ -55,7 +55,9 @@ export default function CharacterPage({ character, region, basePath }) {
               talent_materials={character.talent_materials}
             />
             <CharacterSkill id={character.id} skills={character.skills} />
+            <hr />
             <CharacterPassive id={character.id} passives={character.passives} />
+            <hr />
             <CharacterConstellation
               id={character.id}
               constellations={character.constellations}

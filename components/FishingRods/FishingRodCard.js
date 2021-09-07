@@ -1,4 +1,4 @@
-import { star } from "../../lib/localData";
+import { star, removeBr } from "../../lib/localData";
 
 export default function FishingRodCard({ fishingRod }) {
   return (
@@ -41,7 +41,7 @@ export default function FishingRodCard({ fishingRod }) {
       </div>
       <div className="bg-gray-200 pb-3 text-lg">
         <div className="font-semibold px-5 py-3">
-          <p>{fishingRod.description.replace(/<br\/>/g, " ")}</p>
+          <p>{removeBr(fishingRod.description)}</p>
         </div>
 
         {fishingRod.source ? (

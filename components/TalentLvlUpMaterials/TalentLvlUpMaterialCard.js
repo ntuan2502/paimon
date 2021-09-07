@@ -1,4 +1,4 @@
-import { star } from "../../lib/localData";
+import { star, removeBr } from "../../lib/localData";
 
 export default function TalentLvlUpMaterialCard({ talentLvlUpMaterial }) {
   return (
@@ -43,7 +43,7 @@ export default function TalentLvlUpMaterialCard({ talentLvlUpMaterial }) {
       </div>
       <div className="bg-gray-200 pb-3 text-lg">
         <div className="font-semibold px-5 py-3">
-          <p>{talentLvlUpMaterial.description.replace(/<br\/>/g, " ")}</p>
+          <p>{removeBr(talentLvlUpMaterial.description)}</p>
         </div>
 
         {talentLvlUpMaterial.source ? (

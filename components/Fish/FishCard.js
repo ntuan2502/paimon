@@ -1,4 +1,4 @@
-import { star } from "../../lib/localData";
+import { star, removeBr } from "../../lib/localData";
 
 export default function FishCard({ fish }) {
   return (
@@ -41,7 +41,7 @@ export default function FishCard({ fish }) {
       </div>
       <div className="bg-gray-200 pb-3 text-lg">
         <div className="font-semibold px-5 py-3">
-          <p>{fish.description.replace(/<br\/>/g, " ")}</p>
+          <p>{removeBr(fish.description)}</p>
         </div>
 
         {fish.source ? (

@@ -1,4 +1,4 @@
-import { star } from "../../lib/localData";
+import { star, removeBr } from "../../lib/localData";
 
 export default function WeaponPrimaryMaterialCard({ weaponPrimaryMaterial }) {
   return (
@@ -45,7 +45,7 @@ export default function WeaponPrimaryMaterialCard({ weaponPrimaryMaterial }) {
       </div>
       <div className="bg-gray-200 pb-3 text-lg">
         <div className="font-semibold px-5 py-3">
-          <p>{weaponPrimaryMaterial.description.replace(/<br\/>/g, " ")}</p>
+          <p>{removeBr(weaponPrimaryMaterial.description)}</p>
         </div>
 
         {weaponPrimaryMaterial.source ? (

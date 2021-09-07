@@ -1,4 +1,4 @@
-import { star } from "../../lib/localData";
+import { star, removeBr } from "../../lib/localData";
 
 export default function JewelsMaterialCard({ jewelsMaterial }) {
   return (
@@ -41,7 +41,7 @@ export default function JewelsMaterialCard({ jewelsMaterial }) {
       </div>
       <div className="bg-gray-200 pb-3 text-lg">
         <div className="font-semibold px-5 py-3">
-          <p>{jewelsMaterial.description.replace(/<br\/>/g, " ")}</p>
+          <p>{removeBr(jewelsMaterial.description)}</p>
         </div>
 
         {jewelsMaterial.source ? (

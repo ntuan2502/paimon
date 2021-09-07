@@ -1,4 +1,4 @@
-import { star } from "../../lib/localData";
+import { star, removeBr } from "../../lib/localData";
 
 export default function LocalMaterialCard({ localMaterial }) {
   return (
@@ -29,7 +29,7 @@ export default function LocalMaterialCard({ localMaterial }) {
       </div>
       <div className="bg-gray-200 pb-3 text-lg">
         <div className="font-semibold px-5 py-3">
-          <p>{localMaterial.description.replace(/<br\/>/g, " ")}</p>
+          <p>{removeBr(localMaterial.description)}</p>
         </div>
 
         {localMaterial.source ? (

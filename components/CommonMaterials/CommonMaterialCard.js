@@ -1,4 +1,4 @@
-import { star } from "../../lib/localData";
+import { star, removeBr } from "../../lib/localData";
 
 export default function CommonMaterialCard({ commonMaterial }) {
   return (
@@ -41,7 +41,7 @@ export default function CommonMaterialCard({ commonMaterial }) {
       </div>
       <div className="bg-gray-200 pb-3 text-lg">
         <div className="font-semibold px-5 py-3">
-          <p>{commonMaterial.description.replace(/<br\/>/g, " ")}</p>
+          <p>{removeBr(commonMaterial.description)}</p>
         </div>
 
         {commonMaterial.source ? (

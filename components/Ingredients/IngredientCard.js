@@ -1,5 +1,5 @@
 // import Link from "next/link";
-import { star } from "../../lib/localData";
+import { star, removeBr } from "../../lib/localData";
 
 export default function IngredientCard({ ingredient }) {
   return (
@@ -30,7 +30,7 @@ export default function IngredientCard({ ingredient }) {
       </div>
       <div className="bg-gray-200 pb-3 text-lg">
         <div className="font-semibold px-5 py-3">
-          <p>{ingredient.description.replace(/<br\/>/g, " ")}</p>
+          <p>{removeBr(ingredient.description)}</p>
         </div>
 
         {ingredient.source ? (
