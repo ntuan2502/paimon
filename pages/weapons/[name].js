@@ -10,14 +10,14 @@ export default function WeaponPage({ weapon, basePath }) {
     <div>
       <Head>
         <title>Genshin | {weapon.name}</title>
-        <meta itemProp="name" content={weapon.title} />
+        <meta itemProp="name" content={weapon.name} />
         <meta itemProp="description" content={weapon.description} />
         <meta
           itemProp="image"
           content={`${basePath}/img/weapons/weapon_${weapon.id}.webp`}
         />
 
-        <meta itemProp="name" content={weapon.title} />
+        <meta itemProp="name" content={weapon.name} />
         <meta itemProp="description" content={weapon.description} />
         <meta
           itemProp="image"
@@ -26,7 +26,7 @@ export default function WeaponPage({ weapon, basePath }) {
 
         <meta property="og:url" content="https://paimon.vercel.app" />
         <meta property="og:type" content="website" />
-        <meta property="og:title" content={weapon.title} />
+        <meta property="og:title" content={weapon.name} />
         <meta property="og:description" content={weapon.description} />
         <meta
           property="og:image"
@@ -34,7 +34,7 @@ export default function WeaponPage({ weapon, basePath }) {
         />
 
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={weapon.title} />
+        <meta name="twitter:title" content={weapon.name} />
         <meta name="twitter:description" content={weapon.description} />
         <meta
           name="twitter:image"

@@ -13,14 +13,14 @@ export default function CharacterPage({ character, region, basePath }) {
     <div>
       <Head>
         <title>Genshin | {character.name}</title>
-        <meta itemProp="name" content={character.title} />
+        <meta itemProp="name" content={`${character.name} - ${character.title}`} />
         <meta itemProp="description" content={character.description} />
         <meta
           itemProp="image"
           content={`${basePath}/img/character/backgrounds/${character.id}.png`}
         />
 
-        <meta itemProp="name" content={character.title} />
+        <meta itemProp="name" content={`${character.name} - ${character.title}`} />
         <meta itemProp="description" content={character.description} />
         <meta
           itemProp="image"
@@ -29,7 +29,7 @@ export default function CharacterPage({ character, region, basePath }) {
 
         <meta property="og:url" content="https://paimon.vercel.app" />
         <meta property="og:type" content="website" />
-        <meta property="og:title" content={character.title} />
+        <meta property="og:title" content={`${character.name} - ${character.title}`} />
         <meta property="og:description" content={character.description} />
         <meta
           property="og:image"
@@ -37,7 +37,7 @@ export default function CharacterPage({ character, region, basePath }) {
         />
 
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={character.title} />
+        <meta name="twitter:title" content={`${character.name} - ${character.title}`} />
         <meta name="twitter:description" content={character.description} />
         <meta
           name="twitter:image"
