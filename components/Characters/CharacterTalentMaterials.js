@@ -20,7 +20,7 @@ export default function CharacterTalentMaterials({ id, talent_materials }) {
   for (let index = 0; index < talent_materials.length; index++) {
     cost += talent_materials[index].cost;
 
-    if (id.search("traveler") != -1) {
+    if (id.search("traveler") == -1) {
       if (index == 0) {
         mat11 += talent_materials[index].items[0].amount;
         mat21 += talent_materials[index].items[1].amount;
@@ -128,7 +128,7 @@ export default function CharacterTalentMaterials({ id, talent_materials }) {
                         +
                       </td>
                       <td className="px-4 py-4 whitespace-nowrap text-sm">
-                        {id.search("traveler") != -1 ? (
+                        {id.search("traveler") == -1 ? (
                           <div className="flex items-center">
                             <img
                               src={`/img/items/item_mora.webp`}
