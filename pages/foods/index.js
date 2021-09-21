@@ -4,8 +4,9 @@ import GenshinData from "genshin-data";
 import { getLocale } from "../../lib/localData";
 import { useState } from "react";
 
-export default function FoodsPage({ foods, foodsEnglish }) {
+export default function FoodsPage({ foods, foodsEnglish, }) {
   const [special, setSpecial] = useState(false);
+
   return (
     <div>
       <Head>

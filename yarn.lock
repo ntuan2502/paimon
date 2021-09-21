@@ -967,10 +967,10 @@ genshin-data@^0.13.1:
   resolved "https://registry.yarnpkg.com/genshin-data/-/genshin-data-0.13.1.tgz#bc1696a9c9cee8072c4dc47abb122c26df21de47"
   integrity sha512-ZkzYvpUduQOIsHu40ACexyeyCHs1H6fmnP7jzg2CMniO6Cu3FUcgsZiFGfSkwyktdi8V1tiObwY08lwyICo+zw==
 
-genshin-db@^3.10.0:
-  version "3.10.0"
-  resolved "https://registry.yarnpkg.com/genshin-db/-/genshin-db-3.10.0.tgz#b0f5805b878510295cd367b8738c87fdbaa91304"
-  integrity sha512-jX1cttmzy9a8nykoDTiGq2Cmx97cCZtBznQ9hfaF94VfY7t+OoHpOG/6wUE/JERh2TqQZVZrP9R8oj7b1aX/iw==
+genshin-db@^3.10.3:
+  version "3.10.3"
+  resolved "https://registry.yarnpkg.com/genshin-db/-/genshin-db-3.10.3.tgz#4c10fd2b46773fb46800db2ca1f8b4fbb9ba2067"
+  integrity sha512-d0c/k1bUANpg4ee4Gg3isGBk1Zq0B5x3j9FGVVQlTAerUoKB5xo1pRKMHXuFHio0p9qDJzGNX5p8/L50wSWH6w==
   dependencies:
     fuzzysort "^1.1.4"
 

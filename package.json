@@ -15,7 +15,7 @@
     "@heroicons/react": "^1.0.1",
     "autoprefixer": "^10.2.5",
     "genshin-data": "^0.13.1",
-    "genshin-db": "^3.10.0",
+    "genshin-db": "^3.10.3",
     "next": "11.1.0",
     "react": "17.0.2",
     "react-dom": "17.0.2",
