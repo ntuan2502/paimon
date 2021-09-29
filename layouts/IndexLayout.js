@@ -6,7 +6,7 @@ export default function Index({ children }) {
   return (
     <div className="select-none">
       <Head>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/icon.png" />
       </Head>
       <IndexNavbar />
 
