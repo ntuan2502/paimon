@@ -5,6 +5,14 @@ const datas = [
     name: "",
     description: "",
     imageSrc:
+      "https://webstatic-sea.mihoyo.com/upload/static-resource/2021/09/29/2a6e116e491d21376d9aa78de96fba97_1143853868013281783.jpg",
+    imageAlt: "",
+    href: "/preview/2.2",
+  },
+  {
+    name: "",
+    description: "",
+    imageSrc:
       "https://webstatic-sea.mihoyo.com/upload/static-resource/2021/08/17/88c0d39f0d25503b262acc92ae78b724_8731313710328186113.jpg",
     imageAlt: "",
     href: "/preview/2.1",

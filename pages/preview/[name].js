@@ -21,6 +21,7 @@ export default function PreviewPage({ url, name }) {
 export async function getStaticPaths() {
   return {
     paths: [
+      { params: { name: "2.2" } },
       { params: { name: "2.1" } },
       { params: { name: "2.0" } },
       { params: { name: "1.6" } },
@@ -43,6 +44,7 @@ export async function getStaticProps(context) {
   else if(name == "1.6") url = "https://webstatic-sea.mihoyo.com/ys/event/e20210603prepage/index.html";
   else if(name == "2.0") url = "https://webstatic-sea.mihoyo.com/ys/event/e20210715-prepage/index.html";
   else if(name == "2.1") url = "https://webstatic-sea.mihoyo.com/ys/event/e20210820-preview/index.html";
+  else if(name == "2.2") url = "https://webstatic-sea.mihoyo.com/ys/event/e20211004-preview/index.html";
   else url = null;
 
   return {
