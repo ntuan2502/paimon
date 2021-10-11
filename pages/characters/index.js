@@ -12,6 +12,8 @@ export default function CharactersPage({ characters }) {
       </Head>
       <div className="flex items-center justify-center">
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
+          <CharacterCard id="gorou" name="Gorou" rarity="4" disabled={true} />
+          <CharacterCard id="arataki_itto" name="Arataki Itto" rarity="5" disabled={true} />
           <CharacterCard id="thoma" name="Thoma" rarity="4" disabled={true} />
 
           {characters.map((character, index) => (
