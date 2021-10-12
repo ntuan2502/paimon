@@ -34,8 +34,8 @@ export default function FishingRodsPage({ fishingRods }) {
   );
 }
 
-export async function getStaticProps(context) {
-  const locale = context.locale;
+export async function getServerSideProps(ctx) {
+  const locale = ctx.locale;
   const genshinData = new GenshinData({ language: getLocale(locale) });
   const fishingRods = await genshinData.fishingRods();
 

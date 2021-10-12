@@ -20,7 +20,7 @@ export default function Home({ locale }) {
   );
 }
 
-export async function getStaticProps(context) {
+export async function getServerSideProps(context) {
   const locale = context.locale;
 
   return {

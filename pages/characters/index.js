@@ -30,8 +30,8 @@ export default function CharactersPage({ characters }) {
   );
 }
 
-export async function getServerSideProps(context) {
-  const locale = context.locale;
+export async function getServerSideProps(ctx) {
+  const locale = ctx.locale;
   const genshinData = new GenshinData({ language: getLocale(locale) });
   const characters = await genshinData.characters();
 

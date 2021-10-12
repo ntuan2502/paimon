@@ -46,7 +46,7 @@ export default function Emojis2Page({ posts }) {
   );
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps(ctx) {
   const postsDirectory = path.join(process.cwd(), "/public/img/emojis/emojis2");
   const filenames = await fs.readdir(postsDirectory);
 

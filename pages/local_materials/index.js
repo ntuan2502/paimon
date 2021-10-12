@@ -31,8 +31,8 @@ export default function LocalMaterialsPage({ localMaterials }) {
   );
 }
 
-export async function getStaticProps(context) {
-  const locale = context.locale;
+export async function getServerSideProps(ctx) {
+  const locale = ctx.locale;
   const genshinData = new GenshinData({ language: getLocale(locale) });
   const localMaterials = await genshinData.localMaterials();
 

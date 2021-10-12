@@ -30,8 +30,8 @@ export default function ElementalStoneMaterialsPage({ elementalStoneMaterials })
   );
 }
 
-export async function getStaticProps(context) {
-  const locale = context.locale;
+export async function getServerSideProps(ctx) {
+  const locale = ctx.locale;
   const genshinData = new GenshinData({ language: getLocale(locale) });
   const elementalStoneMaterials = await genshinData.elementalStoneMaterials();
 

@@ -23,8 +23,8 @@ export default function IngredientsPage({ ingredients }) {
   );
 }
 
-export async function getStaticProps(context) {
-  const locale = context.locale;
+export async function getServerSideProps(ctx) {
+  const locale = ctx.locale;
   const genshinData = new GenshinData({ language: getLocale(locale) });
   const ingredients = await genshinData.ingredients();
 

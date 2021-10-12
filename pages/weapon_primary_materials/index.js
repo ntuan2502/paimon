@@ -52,8 +52,8 @@ export default function WeaponPrimaryMaterialsPage({
   );
 }
 
-export async function getStaticProps(context) {
-  const locale = context.locale;
+export async function getServerSideProps(ctx) {
+  const locale = ctx.locale;
   const genshinData = new GenshinData({ language: getLocale(locale) });
   const weaponPrimaryMaterials = await genshinData.weaponPrimaryMaterials();
   const weaponSecondaryMaterials = await genshinData.weaponSecondaryMaterials();
