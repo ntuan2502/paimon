@@ -18,33 +18,32 @@ export default function PreviewPage({ url, name }) {
   );
 }
 
-export async function getStaticPaths() {
-  return {
-    paths: [
-      { params: { name: "2.2" } },
-      { params: { name: "2.1" } },
-      { params: { name: "2.0" } },
-      { params: { name: "1.6" } },
-      { params: { name: "1.5" } },
-      { params: { name: "1.4" } },
-      { params: { name: "1.3" } },
-      { params: { name: "1.2" } },
-    ],
-    fallback: false,
-  };
-}
-
-export async function getStaticProps(context) {
+export async function getServerSideProps(ctx) {
   const name = context.params.name;
   var url = "";
-  if(name == "1.2") url = "https://webstatic-sea.mihoyo.com/ys/event/e20201216new/index.html";
-  else if(name == "1.3") url = "https://webstatic-sea.mihoyo.com/ys/event/e20210128warmup/index.html";
-  else if(name == "1.4") url = "https://webstatic-sea.mihoyo.com/ys/event/e20210309prediction/index.html";
-  else if(name == "1.5") url = "https://webstatic-sea.mihoyo.com/ys/event/e20210422newver/index.html";
-  else if(name == "1.6") url = "https://webstatic-sea.mihoyo.com/ys/event/e20210603prepage/index.html";
-  else if(name == "2.0") url = "https://webstatic-sea.mihoyo.com/ys/event/e20210715-prepage/index.html";
-  else if(name == "2.1") url = "https://webstatic-sea.mihoyo.com/ys/event/e20210820-preview/index.html";
-  else if(name == "2.2") url = "https://webstatic-sea.mihoyo.com/ys/event/e20211004-preview/index.html";
+  if (name == "1.2")
+    url = "https://webstatic-sea.mihoyo.com/ys/event/e20201216new/index.html";
+  else if (name == "1.3")
+    url =
+      "https://webstatic-sea.mihoyo.com/ys/event/e20210128warmup/index.html";
+  else if (name == "1.4")
+    url =
+      "https://webstatic-sea.mihoyo.com/ys/event/e20210309prediction/index.html";
+  else if (name == "1.5")
+    url =
+      "https://webstatic-sea.mihoyo.com/ys/event/e20210422newver/index.html";
+  else if (name == "1.6")
+    url =
+      "https://webstatic-sea.mihoyo.com/ys/event/e20210603prepage/index.html";
+  else if (name == "2.0")
+    url =
+      "https://webstatic-sea.mihoyo.com/ys/event/e20210715-prepage/index.html";
+  else if (name == "2.1")
+    url =
+      "https://webstatic-sea.mihoyo.com/ys/event/e20210820-preview/index.html";
+  else if (name == "2.2")
+    url =
+      "https://webstatic-sea.mihoyo.com/ys/event/e20211004-preview/index.html";
   else url = null;
 
   return {

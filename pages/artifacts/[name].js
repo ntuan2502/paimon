@@ -659,33 +659,11 @@ export default function ArtifactPage({ artifact }) {
   );
 }
 
-export async function getStaticPaths({ locales }) {
-  const genshinData = new GenshinData({ language: "vietnamese" });
-  const artifacts = await genshinData.artifacts({
-    select: ["id"],
-  });
-
-  const paths = [];
-
-  for (const locale of locales) {
-    artifacts.forEach((artifact) => {
-      paths.push({
-        params: {
-          name: artifact.id,
-        },
-        locale,
-      });
-    });
-  }
-
-  return { paths, fallback: false };
-}
-
-export async function getStaticProps(context) {
-  const locale = context.locale;
+export async function getServerSideProps(ctx) {
+  const { locale, params } = ctx;
   const genshinData = new GenshinData({ language: getLocale(locale) });
   const artifacts = await genshinData.artifacts();
-  const artifact = artifacts.find((c) => c.id === context.params.name);
+  const artifact = artifacts.find((c) => c.id === params.name);
   return {
     props: {
       artifact,

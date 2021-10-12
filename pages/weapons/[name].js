@@ -55,31 +55,11 @@ export default function WeaponPage({ weapon, basePath }) {
   );
 }
 
-export async function getStaticPaths({ locales }) {
-  const genshinData = new GenshinData({ language: "vietnamese" });
-  const weapons = await genshinData.weapons();
-
-  const paths = [];
-
-  for (const locale of locales) {
-    weapons.forEach((weapon) => {
-      paths.push({
-        params: {
-          name: weapon.id,
-        },
-        locale,
-      });
-    });
-  }
-
-  return { paths, fallback: false };
-}
-
-export async function getStaticProps(context) {
-  const locale = context.locale;
+export async function getServerSideProps(ctx) {
+  const { locale, params } = ctx;
   const genshinData = new GenshinData({ language: getLocale(locale) });
   const weapons = await genshinData.weapons();
-  const weapon = weapons.find((c) => c.id === context.params.name);
+  const weapon = weapons.find((c) => c.id === params.name);
 
   const basePath =
     "https://raw.githubusercontent.com/ntuan2502/paimon/main/public";

@@ -13,14 +13,20 @@ export default function CharacterPage({ character, region, basePath }) {
     <div>
       <Head>
         <title>Genshin | {character.name}</title>
-        <meta itemProp="name" content={`${character.name} - ${character.title}`} />
+        <meta
+          itemProp="name"
+          content={`${character.name} - ${character.title}`}
+        />
         <meta itemProp="description" content={character.description} />
         <meta
           itemProp="image"
           content={`${basePath}/img/character/backgrounds/${character.id}.png`}
         />
 
-        <meta itemProp="name" content={`${character.name} - ${character.title}`} />
+        <meta
+          itemProp="name"
+          content={`${character.name} - ${character.title}`}
+        />
         <meta itemProp="description" content={character.description} />
         <meta
           itemProp="image"
@@ -29,7 +35,10 @@ export default function CharacterPage({ character, region, basePath }) {
 
         <meta property="og:url" content="https://paimon.vercel.app" />
         <meta property="og:type" content="website" />
-        <meta property="og:title" content={`${character.name} - ${character.title}`} />
+        <meta
+          property="og:title"
+          content={`${character.name} - ${character.title}`}
+        />
         <meta property="og:description" content={character.description} />
         <meta
           property="og:image"
@@ -37,7 +46,10 @@ export default function CharacterPage({ character, region, basePath }) {
         />
 
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={`${character.name} - ${character.title}`} />
+        <meta
+          name="twitter:title"
+          content={`${character.name} - ${character.title}`}
+        />
         <meta name="twitter:description" content={character.description} />
         <meta
           name="twitter:image"
@@ -69,37 +81,15 @@ export default function CharacterPage({ character, region, basePath }) {
   );
 }
 
-export async function getStaticPaths({ locales }) {
-  const genshinData = new GenshinData({ language: "vietnamese" });
-  const characters = await genshinData.characters({
-    select: ["id"],
-  });
-
-  const paths = [];
-
-  for (const locale of locales) {
-    characters.forEach((character) => {
-      paths.push({
-        params: {
-          name: character.id,
-        },
-        locale,
-      });
-    });
-  }
-
-  return { paths, fallback: false };
-}
-
-export async function getStaticProps(context) {
-  const locale = context.locale;
+export async function getServerSideProps(ctx) {
+  const { locale, params } = ctx;
   const genshinData = new GenshinData({ language: getLocale(locale) });
   const characters = await genshinData.characters();
-  const character = characters.find((c) => c.id === context.params.name);
+  const character = characters.find((c) => c.id === params.name);
 
   const genshinData1 = new GenshinData();
   const characters1 = await genshinData1.characters();
-  const character1 = characters1.find((c) => c.id === context.params.name);
+  const character1 = characters1.find((c) => c.id === params.name);
   var region = "Mondstadt";
   if (character1.region) region = character1.region;
 
