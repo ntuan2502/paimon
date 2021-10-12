@@ -20,8 +20,8 @@ export default function Home({ locale }) {
   );
 }
 
-export async function getServerSideProps(context) {
-  const locale = context.locale;
+export async function getServerSideProps(ctx) {
+  const locale = ctx.locale;
 
   return {
     props: {

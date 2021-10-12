@@ -31,8 +31,8 @@ export default function TalentLvlUpMaterialsPage({ talentLvlUpMaterials }) {
   );
 }
 
-export async function getServerSideProps(context) {
-  const locale = context.locale;
+export async function getServerSideProps(ctx) {
+  const locale = ctx.locale;
   const genshinData = new GenshinData({ language: getLocale(locale) });
   const talentLvlUpMaterials = await genshinData.talentLvlUpMaterials();
 
