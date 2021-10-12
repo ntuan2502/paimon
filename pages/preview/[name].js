@@ -19,7 +19,7 @@ export default function PreviewPage({ url, name }) {
 }
 
 export async function getServerSideProps(ctx) {
-  const name = context.params.name;
+  const name = ctx.params.name;
   var url = "";
   if (name == "1.2")
     url = "https://webstatic-sea.mihoyo.com/ys/event/e20201216new/index.html";
