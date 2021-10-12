@@ -14,7 +14,6 @@ export default function CharactersPage({ characters }) {
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
           <CharacterCard id="gorou" name="Gorou" rarity="4" disabled={true} />
           <CharacterCard id="arataki_itto" name="Arataki Itto" rarity="5" disabled={true} />
-          <CharacterCard id="thoma" name="Thoma" rarity="4" disabled={true} />
 
           {characters.map((character, index) => (
             <CharacterCard
@@ -31,7 +30,7 @@ export default function CharactersPage({ characters }) {
   );
 }
 
-export async function getStaticProps(context) {
+export async function getServerSideProps(context) {
   const locale = context.locale;
   const genshinData = new GenshinData({ language: getLocale(locale) });
   const characters = await genshinData.characters();

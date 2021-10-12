@@ -3,12 +3,12 @@ import { skillFunction } from "../../lib/localData";
 export default function CharacterSkill({ id, skills }) {
   return (
     <div>
-      {skills.map((value, key) => (
+      {skills.map((skill, key) => (
         <div className="py-4 rounded-xl bg-item flex flex-col mb-4" key={key}>
           <div className="mb-2 items-start px-4">
             <img
               className={`w-16 h-16 mr-4 bg-blue-500 rounded-full float-left`}
-              src={`/img/character/skills/${id}/talent_${skills[key].id.replace(
+              src={`/img/character/skills/${id}/talent_${skill.id.replace(
                 "normal_attack_",
                 ""
               )}.webp`}
@@ -16,11 +16,11 @@ export default function CharacterSkill({ id, skills }) {
             />
             <div>
               <p className="font-black font-display text-xl h-16 flex items-center">
-                {skills[key].name}
+                {skill.name}
               </p>
               <div
                 className="py-2"
-                dangerouslySetInnerHTML={skillFunction(skills[key].description)}
+                dangerouslySetInnerHTML={skillFunction(skill.description)}
               />
             </div>
           </div>
@@ -34,19 +34,20 @@ export default function CharacterSkill({ id, skills }) {
                         <th scope="col" className="relative px-6 py-3">
                           <span className="sr-only">Level</span>
                         </th>
-                        {skills[key].attributes[0][1].map((value, key) => (
+                        {skill.attributes[0].values.map((val, index) => (
                           <th
-                            key={key}
+                            key={index}
                             scope="col"
                             className="px-6 py-3 text-left text-xs text-gray-500 font-bold uppercase tracking-wider"
                           >
-                            {key + 1}
+                            {index + 1}
+                            {/* Level */}
                           </th>
                         ))}
                       </tr>
                     </thead>
                     <tbody className="bg-white divide-y divide-gray-200">
-                      {skills[key].attributes.map((attribute, index) => (
+                      {skill.attributes.map((attribute, index) => (
                         <tr
                           key={index}
                           className={`${
@@ -58,14 +59,14 @@ export default function CharacterSkill({ id, skills }) {
                               index % 2 != 0 ? "bg-green-200" : "bg-blue-200"
                             }`}
                           >
-                            {attribute[0]}
+                            {attribute.label}
                           </td>
-                          {skills[key].attributes[0][1].map((value, key) => (
+                          {attribute.values.map((value, index) => (
                             <td
-                              key={key}
+                              key={index}
                               className="px-4 py-4 whitespace-nowrap text-sm text-gray-500"
                             >
-                              {attribute[1][key]}
+                              {value}
                             </td>
                           ))}
                         </tr>
