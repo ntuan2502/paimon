@@ -63,7 +63,7 @@ export default function ArtifactPage({ artifact }) {
                   <p className="text-lg text-green-400 font-semibold px-5 pt-1 pb-1">
                     {artifact.name}:
                   </p>
-                  {artifact["1pc"] ? (
+                  {artifact.one_pc ? (
                     <div className="px-5 flex">
                       <div>
                         <svg
@@ -82,7 +82,7 @@ export default function ArtifactPage({ artifact }) {
                         </svg>
                       </div>
                       <div className="px-5 font-semibold">
-                        {artifact["1pc"]}
+                        {artifact.one_pc}
                       </div>
                     </div>
                   ) : (
@@ -105,7 +105,7 @@ export default function ArtifactPage({ artifact }) {
                           </svg>
                         </div>
                         <div className="px-5 font-semibold">
-                          {artifact["2pc"]}
+                          {artifact.two_pc}
                         </div>
                       </div>
                       <div className="px-5 flex">
@@ -126,7 +126,7 @@ export default function ArtifactPage({ artifact }) {
                           </svg>
                         </div>
                         <div className="px-5 font-semibold">
-                          {artifact["4pc"]}
+                          {artifact.four_pc}
                         </div>
                       </div>
                     </div>
@@ -191,7 +191,7 @@ export default function ArtifactPage({ artifact }) {
                   <p className="text-lg text-green-400 font-semibold px-5 pt-1 pb-1">
                     {artifact.name}:
                   </p>
-                  {artifact["1pc"] ? (
+                  {artifact.one_pc ? (
                     <div className="px-5 flex">
                       <div>
                         <svg
@@ -210,7 +210,7 @@ export default function ArtifactPage({ artifact }) {
                         </svg>
                       </div>
                       <div className="px-5 font-semibold">
-                        {artifact["1pc"]}
+                        {artifact.one_pc}
                       </div>
                     </div>
                   ) : (
@@ -233,7 +233,7 @@ export default function ArtifactPage({ artifact }) {
                           </svg>
                         </div>
                         <div className="px-5 font-semibold">
-                          {artifact["2pc"]}
+                          {artifact.two_pc}
                         </div>
                       </div>
                       <div className="px-5 flex">
@@ -254,7 +254,7 @@ export default function ArtifactPage({ artifact }) {
                           </svg>
                         </div>
                         <div className="px-5 font-semibold">
-                          {artifact["4pc"]}
+                          {artifact.four_pc}
                         </div>
                       </div>
                     </div>
@@ -319,7 +319,7 @@ export default function ArtifactPage({ artifact }) {
                   <p className="text-lg text-green-400 font-semibold px-5 pt-1 pb-1">
                     {artifact.name}:
                   </p>
-                  {artifact["1pc"] ? (
+                  {artifact.one_pc ? (
                     <div className="px-5 flex">
                       <div>
                         <svg
@@ -338,7 +338,7 @@ export default function ArtifactPage({ artifact }) {
                         </svg>
                       </div>
                       <div className="px-5 font-semibold">
-                        {artifact["1pc"]}
+                        {artifact.one_pc}
                       </div>
                     </div>
                   ) : (
@@ -361,7 +361,7 @@ export default function ArtifactPage({ artifact }) {
                           </svg>
                         </div>
                         <div className="px-5 font-semibold">
-                          {artifact["2pc"]}
+                          {artifact.two_pc}
                         </div>
                       </div>
                       <div className="px-5 flex">
@@ -382,7 +382,7 @@ export default function ArtifactPage({ artifact }) {
                           </svg>
                         </div>
                         <div className="px-5 font-semibold">
-                          {artifact["4pc"]}
+                          {artifact.four_pc}
                         </div>
                       </div>
                     </div>
@@ -447,7 +447,7 @@ export default function ArtifactPage({ artifact }) {
                   <p className="text-lg text-green-400 font-semibold px-5 pt-1 pb-1">
                     {artifact.name}:
                   </p>
-                  {artifact["1pc"] ? (
+                  {artifact.one_pc ? (
                     <div className="px-5 flex">
                       <div>
                         <svg
@@ -466,7 +466,7 @@ export default function ArtifactPage({ artifact }) {
                         </svg>
                       </div>
                       <div className="px-5 font-semibold">
-                        {artifact["1pc"]}
+                        {artifact.one_pc}
                       </div>
                     </div>
                   ) : (
@@ -489,7 +489,7 @@ export default function ArtifactPage({ artifact }) {
                           </svg>
                         </div>
                         <div className="px-5 font-semibold">
-                          {artifact["2pc"]}
+                          {artifact.two_pc}
                         </div>
                       </div>
                       <div className="px-5 flex">
@@ -510,7 +510,7 @@ export default function ArtifactPage({ artifact }) {
                           </svg>
                         </div>
                         <div className="px-5 font-semibold">
-                          {artifact["4pc"]}
+                          {artifact.four_pc}
                         </div>
                       </div>
                     </div>
@@ -575,7 +575,7 @@ export default function ArtifactPage({ artifact }) {
                   <p className="text-lg text-green-400 font-semibold px-5 pt-1 pb-1">
                     {artifact.name}:
                   </p>
-                  {artifact["1pc"] ? (
+                  {artifact.one_pc ? (
                     <div className="px-5 flex">
                       <div>
                         <svg
@@ -594,7 +594,7 @@ export default function ArtifactPage({ artifact }) {
                         </svg>
                       </div>
                       <div className="px-5 font-semibold">
-                        {artifact["1pc"]}
+                        {artifact.one_pc}
                       </div>
                     </div>
                   ) : (
@@ -617,7 +617,7 @@ export default function ArtifactPage({ artifact }) {
                           </svg>
                         </div>
                         <div className="px-5 font-semibold">
-                          {artifact["2pc"]}
+                          {artifact.two_pc}
                         </div>
                       </div>
                       <div className="px-5 flex">
@@ -638,7 +638,7 @@ export default function ArtifactPage({ artifact }) {
                           </svg>
                         </div>
                         <div className="px-5 font-semibold">
-                          {artifact["4pc"]}
+                          {artifact.four_pc}
                         </div>
                       </div>
                     </div>

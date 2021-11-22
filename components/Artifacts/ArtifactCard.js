@@ -42,7 +42,7 @@ function ArtifactCard({ artifact }) {
             <p className="text-lg text-green-400 font-semibold px-5 pt-5 pb-1">
               {artifact.name}:
             </p>
-            {artifact["1pc"] ? (
+            {artifact.one_pc ? (
               <div className="px-5 flex">
                 <div>
                   <svg
@@ -60,7 +60,7 @@ function ArtifactCard({ artifact }) {
                     />
                   </svg>
                 </div>
-                <div className="px-5 font-semibold">{artifact["1pc"]}</div>
+                <div className="px-5 font-semibold">{artifact.one_pc}</div>
               </div>
             ) : (
               <div>
@@ -81,7 +81,7 @@ function ArtifactCard({ artifact }) {
                       />
                     </svg>
                   </div>
-                  <div className="px-5 font-semibold">{artifact["2pc"]}</div>
+                  <div className="px-5 font-semibold">{artifact.two_pc}</div>
                 </div>
                 <div className="px-5 flex">
                   <div>
@@ -100,7 +100,7 @@ function ArtifactCard({ artifact }) {
                       />
                     </svg>
                   </div>
-                  <div className="px-5 font-semibold">{artifact["4pc"]}</div>
+                  <div className="px-5 font-semibold">{artifact.four_pc}</div>
                 </div>
               </div>
             )}

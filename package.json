@@ -14,13 +14,13 @@
     "@headlessui/react": "^1.2.0",
     "@heroicons/react": "^1.0.1",
     "autoprefixer": "^10.2.5",
-    "genshin-data": "^0.14.0",
+    "genshin-data": "^0.14.1",
     "genshin-db": "^3.10.3",
     "next": "11.1.0",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "swr": "^0.5.6",
-    "tailwindcss": "^2.1.2",
+    "tailwindcss": "^2.2.17",
     "yarn": "^1.22.10"
   }
 }
