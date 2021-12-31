@@ -15,7 +15,7 @@ export default function Home({ locale }) {
           allowFullScreen
         ></iframe>
       </div> */}
-      <img src="/img/background/2.2.png" alt="" />
+      <img src="/img/background/2.3.jpg" alt="" />
     </div>
   );
 }

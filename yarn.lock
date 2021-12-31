@@ -970,15 +970,15 @@ fuzzysort@^1.1.4:
   resolved "https://registry.yarnpkg.com/fuzzysort/-/fuzzysort-1.1.4.tgz#a0510206ed44532cbb52cf797bf5a3cb12acd4ba"
   integrity sha512-JzK/lHjVZ6joAg3OnCjylwYXYVjRiwTY6Yb25LvfpJHK8bjisfnZJ5bY8aVWwTwCXgxPNgLAtmHL+Hs5q1ddLQ==
 
-genshin-data@^0.15.0:
-  version "0.15.0"
-  resolved "https://registry.yarnpkg.com/genshin-data/-/genshin-data-0.15.0.tgz#0f2414ece0e6acd7a0b033084a03bbd3bc076d20"
-  integrity sha512-zl4JFdolayVkoKLgXPfZ17e6C1ecAXl8J3VEZReyZGhSwNtqcLxMcr+bD8E+3cv3evZHmrcemNtaBmysn9Le/w==
+genshin-data@^0.16.0:
+  version "0.16.0"
+  resolved "https://registry.yarnpkg.com/genshin-data/-/genshin-data-0.16.0.tgz#b2106310bc04a6e7834c48d0ae0e2203c7b5c786"
+  integrity sha512-ClwFG7/0nW/6AH5Ddsq6xunhfBelpJF7pFh7AoARJBpHwy5vFeau7d7FBGy75fs5OqDmdyVfyk4Y05lKp6eiww==
 
-genshin-db@^3.10.3:
-  version "3.11.2"
-  resolved "https://registry.yarnpkg.com/genshin-db/-/genshin-db-3.11.2.tgz#a2e2d9f72aacc9e46f0e5fbce7c763e209a5c034"
-  integrity sha512-E4emazdyCy9FQv0mfvjcZShtkZuMqNW1lv/5oaKrZvqFNQSVIejTMy/yDNWioJ3Q2GCdGwLQaxoWvU3zDoAOaw==
+genshin-db@^3.12.3:
+  version "3.12.3"
+  resolved "https://registry.yarnpkg.com/genshin-db/-/genshin-db-3.12.3.tgz#73d390e7067d13d03ef939878eb5bdd09ad26562"
+  integrity sha512-2opIVnAyvLijYssm3nbeK9D2KXWa/npp4O0rSLfWvfXlmCdMSd/BXCy2x/pnWjriCn2YmjujqduYrFFPMaafxg==
   dependencies:
     fuzzysort "^1.1.4"
 
